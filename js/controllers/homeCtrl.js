@@ -1,4 +1,4 @@
-angular.module("homeSite").controller("homeCtrl", function ($scope) {
+angular.module("homeSite").controller("homeCtrl", function ($scope, $http) {
     // Generic home page of website messages:
     $scope.welcome_message = "Seja bem vindo à Imobiliária Florença";
     $scope.como_alugar_message = "Ao locador a documentação necessária é a certidão atualizada do imóvel, comprovante de endereço, CPF e documento de identidade.";
@@ -8,10 +8,32 @@ angular.module("homeSite").controller("homeCtrl", function ($scope) {
     $scope.ligue_para_nos_message = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, expedita, saepe, vero rerum deleniti beatae veniam harum neque nemo praesentium cum alias asperiores commodi.";
 
     // Specific lists of home page:
+
+    $scope.active_banners = [];
+
+    var loadBanners = function () {
+        $http.get("http://localhost:3412/contatos").success(function (data) {
+            $scope.active_banners = data;
+        }).error(function (data, status) {
+            $scope.message = "Aconteceu um problema: " + data;
+        });
+    };
+
+    $scope.imoveis_in_destaq = [];
+
+    var loadDestaques = function () {
+        $http.get("http://localhost:3412/contatos").success(function (data) {
+            $scope.active_banners = data;
+        }).error(function (data, status) {
+            $scope.message = "Aconteceu um problema: " + data;
+        });
+
+    };
+
     $scope.active_banners = [
-        {src: "img/foto_01_1900x1080.jpg", caption: "Transparência e Comprometimento."},
-        {src: "img/foto_02_1900x1080.jpg", caption: "Encontre o imóvel dos seus sonhos."},
-        {src: "img/foto_03_1900x1080.jpg", caption: "Atendimento personalizado."}
+        {src: "img/foto_08_1900x1080.jpg", caption: "Experiência no mercado imobiliário."},
+        {src: "img/foto_02_1900x1080.jpg", caption: "Departamento jurídico próprio."},
+        {src: "img/foto_07_1900x1080.jpg", caption: "Atendimento personalizado."}
     ];
     $scope.imoveis_in_destaq = [
         {href: "casa_venda_001.html", code: "C001", title: "Casa de 01 de Dormitório em Canoas.", src: "img/foto_01_700x450.jpg"},
@@ -21,4 +43,8 @@ angular.module("homeSite").controller("homeCtrl", function ($scope) {
         {href: "casa_venda_001.html", code: "C001", title: "Casa de 01 de Dormitório em Canoas.", src: "img/foto_05_700x450.jpg"},
         {href: "casa_venda_001.html", code: "C001", title: "Casa de 01 de Dormitório em Canoas.", src: "img/foto_06_700x450.jpg"}
     ];
+
+    //loadBanners();
+    //loadDestaques();
+
 });
