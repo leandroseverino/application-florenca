@@ -128,7 +128,7 @@
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4><i class="fa fa-fw fa-compass"></i> Benefícios</h4>
+                        <h4><i class="fa fa-fw fa-compass"></i> Indicadores</h4>
                     </div>
                     <div class="panel-body">
                         <p class="default">{{beneficios_message}}</p>
@@ -145,11 +145,12 @@
                 <h2 class="page-header">Em Destaque</h2>
             </div>
             <div class="col-md-4 col-sm-6" ng-repeat="destaque in imoveis_in_destaq">
-                <a href="{{destaque.href}}" title="Cod.: {{destque.code}} - {{destaque.title}}">
+                <a href="{{destaque.href}}" title="Cod.: {{destaque.code}} - {{destaque.title}}">
                     <img class="img-responsive img-portfolio img-hover"
                          src="{{destaque.src}}"
-                         alt="Foto do Imóvel: Cod.: {{destque.code}} - {{destaque.title}}"
-                         title="Foto de Frente do Imóvel {{destque.code}} - {{destaque.title}}" />
+                         style="width: 360px; height: 231px;"
+                         alt="Foto do Imóvel: Cod.: {{destaque.code}} - {{destaque.title}}"
+                         title="Foto de Frente do Imóvel {{destaque.code}} - {{destaque.title}}" />
                 </a>
             </div>
         </div>
