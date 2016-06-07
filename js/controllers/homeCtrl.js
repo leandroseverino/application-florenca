@@ -1,4 +1,4 @@
-angular.module("homeSite").controller("homeCtrl", function ($scope, $http) {
+angular.module("homeSite").controller("homeCtrl", function ($scope, bannerAPI, $http) {
     // Generic home page of website messages:
     $scope.welcome_message = "Seja bem vindo à Imobiliária Florença";
     $scope.como_alugar_message = "Ao locador a documentação necessária é a certidão atualizada do imóvel, comprovante de endereço, CPF e documento de identidade.";
@@ -9,13 +9,28 @@ angular.module("homeSite").controller("homeCtrl", function ($scope, $http) {
 
     // Specific lists of home page:
 
+    $scope.parameters = []
+
+    var loadParameters = function () {
+        // $http.get("http://localhost:3412/contatos").success(function (data) {
+        bannerAPI.getBanners().success(function (data) {
+            $scope.parameters = data;
+        }).error(function (data, status) {
+            console.log("Aconteceu um problema no backend: " + data)
+            $scope.message = "Aconteceu um problema no backend: " + data;
+        });
+    };
+
+
     $scope.active_banners = [];
 
     var loadBanners = function () {
-        $http.get("http://localhost:3412/contatos").success(function (data) {
+        // $http.get("http://localhost:3412/contatos").success(function (data) {
+        bannerAPI.getBanners().success(function (data) {
             $scope.active_banners = data;
         }).error(function (data, status) {
-            $scope.message = "Aconteceu um problema: " + data;
+            console.log("Aconteceu um problema no backend: " + data)
+            $scope.message = "Aconteceu um problema no backend: " + data;
         });
     };
 
@@ -23,9 +38,10 @@ angular.module("homeSite").controller("homeCtrl", function ($scope, $http) {
 
     var loadDestaques = function () {
         $http.get("http://localhost:3412/contatos").success(function (data) {
-            $scope.active_banners = data;
+            $scope.imoveis_in_destaq = data;
         }).error(function (data, status) {
-            $scope.message = "Aconteceu um problema: " + data;
+            console.log("Aconteceu um problema no backend: " + data)
+            $scope.message = "Aconteceu um problema no backend: " + data;
         });
 
     };
@@ -160,6 +176,7 @@ angular.module("homeSite").controller("homeCtrl", function ($scope, $http) {
         {href: "casa_venda_001.html", code: "C001", title: "Casa de 01 de Dormitório em Canoas.", src: "img/foto_06_700x450.jpg"}
     ];
 
+    //loadParametros();
     //loadBanners();
     //loadDestaques();
 
