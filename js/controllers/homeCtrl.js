@@ -49,7 +49,6 @@ angular.module("homeSite").controller("homeCtrl", function ($scope, bannerAPI, $
     $scope.active_banners = [
         {src: "img/foto_10_1900x1080.jpg", caption: "Experiência no mercado imobiliário."},
         {src: "img/foto_07_1900x1080.jpg", caption: "Atendimento personalizado."},
-        {src: "img/foto_02_1900x1080.jpg", caption: "Departamento jurídico próprio."},
         {src: "img/foto_11_1900x1080.jpg", caption: ""},
         {src: "img/foto_12_1900x1080.jpg", caption: ""}
     ];
