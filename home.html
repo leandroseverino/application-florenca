@@ -1,0 +1,136 @@
+<!-- Header Carousel -->
+    <header id="myCarousel" class="carousel slide">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" ng-repeat="p in active_banners" data-slide-to="{{$index}}" ng-class="{active: $index == 0}"></li>
+        </ol>
+        
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item" ng-repeat="banner in active_banners" ng-class="{active: $index == 0}">
+                <div class="fill" style="background-image:url('{{banner.src}}');"></div>
+                <div class="carousel-caption">
+                    <h2>{{banner.caption}}</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="icon-prev"></span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="icon-next"></span>
+        </a>
+    </header>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Marketing Icons Section -->
+        <div class="row">
+            <div class="col-lg-12" style="text-align: center;">
+                <img src="img/florenca_transparente.png" style="margin-top: 30px;" />
+            </div>
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    {{welcome_message}}
+                </h1>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4><i class="fa fa-fw fa-check"></i> Como alugar</h4>
+                    </div>
+                    <div class="panel-body">
+                        <p class="default">{{como_alugar_message}}</p>
+                        <a href="como-alugar.html" class="btn btn-default" title="Veja como alugar seu imóvel conosco.">Veja mais</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4><i class="fa fa-fw fa-gift"></i> Como vender</h4>
+                    </div>
+                    <div class="panel-body">
+                        <p class="default">{{como_vender_message}}</p>
+                        <a href="como-vender.html" class="btn btn-default" title="Veja como vender seu imóvel conosco.">Veja mais</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4><i class="fa fa-fw fa-compass"></i> Indicadores</h4>
+                    </div>
+                    <div class="panel-body">
+                        <p class="default">{{beneficios_message}}</p>
+                        <a href="beneficios.html" class="btn btn-default" title="Conheça nossos beneficios.">Veja mais</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Portfolio Section -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">Em Destaque</h2>
+            </div>
+            <div class="col-md-4 col-sm-6" ng-repeat="destaque in imoveis_in_destaq">
+                <a href="{{destaque.href}}" title="Cod.: {{destaque.code}} - {{destaque.title}}">
+                    <img class="img-responsive img-portfolio img-hover"
+                         src="{{destaque.src}}"
+                         style="width: 360px; height: 231px;"
+                         alt="Foto do Imóvel: Cod.: {{destaque.code}} - {{destaque.title}}"
+                         title="Foto de Frente do Imóvel {{destaque.code}} - {{destaque.title}}" />
+                </a>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Features Section -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">Facilidades para você:</h2>
+            </div>
+            <div class="col-md-6">
+                <p>Processo simplificado:</p>
+                <ul>
+                    <li><strong>Envie a documentação online</strong></li>
+                    <li>Faça a reserva pelo site</li>
+                    <li>Agende a visita online</li>
+                    <li>Tire suas dúvidas pelo nosso Chat</li>
+                    <li>Ou venha tomar um café consco</li>
+                    <li>Ambiente climatizado</li>
+                </ul>
+                <p>{{facilidades_message}}</p>
+            </div>
+            <div class="col-md-6">
+                <img class="img-responsive" src="img/foto_01_700x450.jpg" alt="Foto das Facilidades." title="Conheça as nossas Facilidades." />
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Call to Action Section -->
+        <div class="well">
+            <div class="row">
+                <div class="col-md-8">
+                    <p>{{ligue_para_nos_message}}</p>
+                </div>
+                <div class="col-md-4">
+                    <a class="btn btn-lg btn-default btn-block" href="#" title="Ligue para nós.">Ligue para nós</a>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- Footer -->
+        <footer ng-include="'view/footer.html'"></footer>
+
+    </div>
+    <!-- /.container -->

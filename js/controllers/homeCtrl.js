@@ -1,4 +1,4 @@
-angular.module("homeSite").controller("homeCtrl", function ($scope, bannerAPI, $http) {
+angular.module("appSite").controller("homeCtrl", function ($scope, active_banners, $http) {
     // Generic home page of website messages:
     $scope.welcome_message = "Seja bem vindo à Imobiliária Florença";
     $scope.como_alugar_message = "Ao locador a documentação necessária é a certidão atualizada do imóvel, comprovante de endereço, CPF e documento de identidade.";
@@ -22,7 +22,7 @@ angular.module("homeSite").controller("homeCtrl", function ($scope, bannerAPI, $
     };
 
 
-    $scope.active_banners = [];
+    $scope.active_banners = active_banners;
 
     var loadBanners = function () {
         // $http.get("http://localhost:3412/contatos").success(function (data) {
@@ -36,22 +36,6 @@ angular.module("homeSite").controller("homeCtrl", function ($scope, bannerAPI, $
 
     $scope.imoveis_in_destaq = [];
 
-    var loadDestaques = function () {
-        $http.get("http://localhost:3412/contatos").success(function (data) {
-            $scope.imoveis_in_destaq = data;
-        }).error(function (data, status) {
-            console.log("Aconteceu um problema no backend: " + data)
-            $scope.message = "Aconteceu um problema no backend: " + data;
-        });
-
-    };
-
-    $scope.active_banners = [
-        {src: "img/foto_10_1900x1080.jpg", caption: "Experiência no mercado imobiliário."},
-        {src: "img/foto_07_1900x1080.jpg", caption: "Atendimento personalizado."},
-        {src: "img/foto_11_1900x1080.jpg", caption: ""},
-        {src: "img/foto_12_1900x1080.jpg", caption: ""}
-    ];
     $scope.imoveis_in_destaq = [
         {href: "#", code: "A 04.02", title: "<p>Apartamento com 1 dormit&oacute;rio, sala, cozinha, &aacute;rea de servi&ccedil;o, banheiro e Box para carro.</p>", src: "https://lh6.googleusercontent.com/-LmZEYBVNVwE/UPb-qMavopI/AAAAAAAADNQ/v6hSQukTLvg/s576/DSC05073.JPG"},
         {href: "#", code: "L 02.01", title: "<p>Sal&atilde;o grande com banheiro.</p>", src: "https://lh4.googleusercontent.com/-P6zH-jR1yDU/Ty84bsy66NI/AAAAAAAABzk/B2xIZTXJOtw/s576/DSC02211.JPG"},
