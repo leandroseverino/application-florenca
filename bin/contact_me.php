@@ -1,5 +1,7 @@
 <?php
 
+$redirect = "http://www.application.imobiliariaflorenca.com.br/#/contato";
+
 // check if fields passed are empty
 if(empty($_POST['name'])  		||
    empty($_POST['phone']) 		||
@@ -23,6 +25,7 @@ $email_body = "Você recebeu uma nova mensagem do form de contato do website da 
 $headers = "From: contato@imobiliariaflorenca.com.br\n";
 $headers .= "Reply-To: $email_address";
 mail($to,$email_subject,$email_body,$headers);
+header("location:$redirect");
 return true;
 
 ?>
