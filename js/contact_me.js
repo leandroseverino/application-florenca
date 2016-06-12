@@ -1,6 +1,6 @@
 /*
   Jquery Validation using jqBootstrapValidation
-   example is taken from jqBootstrapValidation docs 
+   example is taken from jqBootstrapValidation docs
   */
 $(function() {
 
@@ -9,8 +9,10 @@ $(function() {
         submitError: function($form, event, errors) {
             // something to have when submit produces an error ?
             // Not decided if I need it yet
+            console.log("-------submitError-------");
         },
         submitSuccess: function($form, event) {
+            console.log("-------submitSuccess-------");
             event.preventDefault(); // prevent default submit behaviour
             // get values from FORM
             var name = $("input#name").val();
@@ -33,6 +35,7 @@ $(function() {
                 },
                 cache: false,
                 success: function() {
+                    console.log("-------success-------");
                     // Success message
                     $('#success').html("<div class='alert alert-success'>");
                     $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
@@ -46,6 +49,7 @@ $(function() {
                     $('#contactForm').trigger("reset");
                 },
                 error: function() {
+                    console.log("-------error-------");
                     // Fail message
                     $('#success').html("<div class='alert alert-danger'>");
                     $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
