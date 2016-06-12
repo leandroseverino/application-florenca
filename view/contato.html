@@ -57,30 +57,30 @@
     <div class="row">
         <div class="col-md-8">
             <h3>Deixe sua mensagem</h3>
-            <form name="sentMessage" id="contactForm" novalidate>
+            <form name="sentMessage" id="contactForm" action="bin/contact_me.php" method="post">
                 <div class="control-group form-group">
                     <div class="controls">
                         <label>Nome Completo:</label>
-                        <input type="text" class="form-control" id="name" required data-validation-required-message="Please enter your name.">
+                        <input type="text" class="form-control" id="name" required data-validation-required-message="Por favor, informe o seu nome." placeholder="Informe o seu nome.">
                         <p class="help-block"></p>
                     </div>
                 </div>
                 <div class="control-group form-group">
                     <div class="controls">
                         <label>Telefone:</label>
-                        <input type="tel" class="form-control" id="phone" required data-validation-required-message="Please enter your phone number.">
+                        <input type="tel" class="form-control" id="phone" required data-validation-required-message="Por favor, informe o seu telefone." placeholder="Informe o seu telefone.">
                     </div>
                 </div>
                 <div class="control-group form-group">
                     <div class="controls">
                         <label>E-mail:</label>
-                        <input type="email" class="form-control" id="email" required data-validation-required-message="Please enter your email address.">
+                        <input type="email" class="form-control" id="email" required data-validation-required-message="Por favor, informe o seu e-mail." placeholder="Informe o seu e-mail.">
                     </div>
                 </div>
                 <div class="control-group form-group">
                     <div class="controls">
                         <label>Mensagem:</label>
-                        <textarea rows="10" cols="100" class="form-control" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
+                        <textarea rows="10" cols="100" class="form-control" id="message" required data-validation-required-message="Por favor, deixe a sua mensagem." maxlength="999" style="resize:none"  placeholder="Deixe a sua mensagem que entraremos em contato."></textarea>
                     </div>
                 </div>
                 <div id="success"></div>
