@@ -9,10 +9,10 @@ angular.module("appSite").config(function ($routeProvider) {
             },
             active_banners: function (bannerAPI) {
                 var _banners = [
-                    {src: "img/foto_10_1900x1080.jpg", caption: "Experiência no mercado imobiliário."},
-                    {src: "img/foto_07_1900x1080.jpg", caption: "Atendimento personalizado."},
-                    {src: "img/foto_11_1900x1080.jpg", caption: ""},
-                    {src: "img/foto_12_1900x1080.jpg", caption: ""}
+                    {id: 1, src: "img/foto_10_1900x1080.jpg", caption: "Experiência no mercado imobiliário."},
+                    {id: 2, src: "img/foto_07_1900x1080.jpg", caption: "Atendimento personalizado."},
+                    {id: 3, src: "img/foto_11_1900x1080.jpg", caption: ""},
+                    {id: 4, src: "img/foto_12_1900x1080.jpg", caption: ""}
                 ];
                 //return bannerAPI.getBanners();
                 return _banners;
