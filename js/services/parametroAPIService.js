@@ -1,4 +1,4 @@
-angular.module("appSite").factory("parametroAPI", function($http, config) {
+angular.module("appSite").factory("parametroAPI", ["$http", "config", function($http, config) {
     var _getParametros = function () {
         return $http.get(config.baseUrl + "/parametros");
     };
@@ -6,5 +6,4 @@ angular.module("appSite").factory("parametroAPI", function($http, config) {
     return {
         getParametros: _getParametros
     };
-});
-
+}]);

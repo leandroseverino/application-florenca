@@ -1,0 +1,38 @@
+{
+  "name": "application-florenca",
+  "version": "1.0.0",
+  "description": "Site da Imobiliaria Florença",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leandroseverino/application-florenca.git"
+  },
+  "keywords": [
+    "site",
+    "imobiliaria"
+  ],
+  "author": "Leandro Severino",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leandroseverino/application-florenca/issues"
+  },
+  "homepage": "https://github.com/leandroseverino/application-florenca#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-clean-css": "^2.0.10",
+    "gulp-concat": "^2.6.0",
+    "gulp-htmlmin": "^2.0.0",
+    "gulp-jshint": "^2.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.5.3",
+    "jshint": "^2.9.2"
+  },
+  "dependencies": {
+    "event-stream": "^3.3.3",
+    "run-sequence": "^1.2.1"
+  }
+}

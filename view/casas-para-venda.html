@@ -4,11 +4,11 @@
     <!-- Page Heading/Breadcrumbs -->
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">
-                <small>{{tipoImovel}} para venda</small>
+            <h1 class="page-header">Vendas
+                <small> - {{tipoImovel}} para venda</small>
             </h1>
             <ol class="breadcrumb">
-                <li><a href="#/home" title="Página Inicial do site da Imobiliária Florença.">Inicio</a></li>
+                <li><i class="fa fa-home fa-1x"></i><a href="#/home" title="Página Inicial do site da Imobiliária Florença."> Inicio</a></li>
                 <li>{{finalidadeImovel}}</li>
                 <li class="active">{{tipoImovel}}</li>
             </ol>
@@ -28,29 +28,23 @@
             <h4>Filtro de Pesquisa:</h4>
         </div>
         <div class="col-md-12">
-            <form action="/search" method="POST" name="form_search" id="form_search" class=form-inline">
+            <form action="#/search" method="POST" name="form_search" id="form_search" class="form-inline">
                 <div class="table-responsive">
                     <table border="0" cellspacing="0" cellpadding="0" class="table">
                         <tbody>
                         <tr>
-                            <th>Finalidade:</th>
-                            <th>Modalidade:</th>
                             <th>Cód. Imóvel:</th>
+                            <th>Modalidade:</th>
                             <th>Cidade:</th>
                             <th>Bairro:</th>
                             <th>Rua:</th>
-                            <th>Tipo:</th>
                             <th>Nº Dorm.:</th>
                             <th>Valores Entre:</th>
                             <th></th>
                         </tr>
                         <tr>
                             <td align="left">
-                                <select id="objetivo" name="objetivo" class="form_int form-control" style="float: none;">
-                                    <option>[Selecione]</option>
-                                    <option value="Venda">Venda</option>
-                                    <option value="Locação">Locação</option>
-                                </select>
+                                <input name="codigo" id="codigo" type="text" class="form_int form-control" size="10">
                             </td>
                             <td align="left">
                                 <select id="finalidade" name="finalidade" class="form_int form-control" style="float: none;">
@@ -58,9 +52,6 @@
                                     <option value="Residêncial">Residêncial</option>
                                     <option value="Comercial">Comercial</option>
                                 </select>
-                            </td>
-                            <td align="left">
-                                <input name="codigo" id="codigo" type="text" class="form_int form-control" size="10">
                             </td>
                             <td align="left">
                                  <select id="cidade_value" name="cidade_value" class="form_int form-control" style="float: none;">
@@ -76,19 +67,6 @@
                             </td>
                             <td align="left">
                                 <input id="rua" name="rua" type="text" class="form_int form-control" size="10">
-                            </td>
-                            <td align="left">
-                                <select id="tipo" name="tipo" class="form_int form-control" style="float: none;">
-                                    <option>[Selecione]</option>
-                                    <option value="Apartamento">Apartamento</option>
-                                    <option value="Casa">Casa</option>
-                                    <option value="JK">JK</option>
-                                    <option value="Loja">Loja</option>
-                                    <option value="Pavilhão">Pavilhão</option>
-                                    <option value="Sala">Sala</option>
-                                    <option value="Salão de Festas">Salão de Festas</option>
-                                    <option value="Terreno">Terreno</option>
-                                </select>
                             </td>
                             <td align="left">
                                 <select id="dormitorios" name="dormitorios" class="form_int form-control" style="float: none;">

@@ -31,12 +31,12 @@ body {
     border-color: #072855;
 }
 
-.navbar-inverse .navbar-brand { 
-    color: #E2B65F !important; 
-    font-weight: bold; 
+.navbar-inverse .navbar-brand {
+    color: #E2B65F !important;
+    font-weight: bold;
 }
-.navbar-inverse .navbar-nav>li>a { 
-    color: #E2B65F !important; 
+.navbar-inverse .navbar-nav>li>a {
+    color: #E2B65F !important;
     font-weight: bold;
     font-size: 17px;
 }
@@ -50,10 +50,62 @@ body {
     color: white !important;
 }
 
+tabs-nav {padding: 20px 0 0 0; list-style: none;}
+	.tabs-nav li {display: inline;}
+	.tabs-nav a {
+		display:inline-block;
+		border: 1px solid #ddd;
+		border-bottom: none;
+		padding: 15px;
+		cursor: pointer;
+		border-radius: 5px 5px 0 0;
+		font-size: 14px;
+		color: #fff;
+		background: #072855;
+	}
+
+	.tabs-nav .active {
+		background: #fff;
+		color: #072855;
+		border-bottom: 1px solid #fff;
+		margin-bottom: -1px;
+	}
+
+    .tab-content {
+        padding: 0px 20px 20px 45px;
+    }
+
+	p {
+		margin-bottom: 15px;
+	}
+
 p.default {
     text-align: justify;
     text-indent: 40px;
 }
+.social{
+    text-align:center;
+    width:64px;
+    height:64px;
+    float:right;
+    background:rgb(255,255,255);
+    border:1px solid rgb(204,204,204);
+    box-shadow:0 2px 4px rgba(0,0,0,0.15), inset 0 0 50px rgba(0,0,0,0.1);
+    border-radius:5px;
+    margin:0 10px 10px 0;
+    padding:17px;
+    font-size: .7rem;
+}
+.social-link { color: inherit;}
+.google-pluse:hover{background:#DD4B39;color:#FFF;}
+.facebook:hover{background:#3b5998;color:#FFF;}
+.twitter:hover{background:#00acee;color:#FFF;}
+.pinterest:hover{background:#c8232c;color:#FFF;}
+.linkedin:hover{background:#0e76a8;color:#FFF;}
+.skype:hover{background:#00aff0;color:#FFF;}
+.youtube:hover{background:#c4302b;color:#FFF;}
+.tumblr:hover{background:#34526f;color:#FFF;}
+
 
 #main {
     height: 99%;
@@ -128,3 +180,4 @@ footer {
         height: 70%;
     }
 }
+h1 { font-size: 28px; }

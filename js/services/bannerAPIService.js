@@ -1,4 +1,4 @@
-angular.module("appSite").factory("bannerAPI", function($http, config) {
+angular.module("appSite").factory("bannerAPI", ["$http", "config", function($http, config) {
     var _getBanners = function () {
         return $http.get(config.baseUrl + "/banners");
     };
@@ -6,4 +6,4 @@ angular.module("appSite").factory("bannerAPI", function($http, config) {
     return {
         getBanners: _getBanners
     };
-});
+}]);
