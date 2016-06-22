@@ -1,12 +1,10 @@
 angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
-    console.log("1");
     $routeProvider.when("/home", {
         templateUrl: "view/home.html",
         controller: "homeCtrl",
         resolve: {
             parameters: ["parametroAPI", function (parametroAPI) {
                 //return parametroAPI.getParametros();
-                console.log("2");
                 return [];
             }],
             active_banners: ["bannerAPI", function (bannerAPI) {
@@ -16,13 +14,11 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
                     {id: 3, src: "img/foto_11_1900x1080.jpg", caption: ""},
                     {id: 4, src: "img/foto_12_1900x1080.jpg", caption: ""}
                 ];
-                console.log("3");
                 //return bannerAPI.getBanners();
                 return _banners;
             }],
             imoveis_in_destaq: ["destaqueAPI", function (destaqueAPI) {
                 //return destaqueAPI.getDestaques();
-                console.log("4");
                 return [];
             }]
         }

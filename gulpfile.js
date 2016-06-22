@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var connect = require('gulp-connect');
 var jshint = require('gulp-jshint');
 var clean = require('gulp-clean');
 var concat = require('gulp-concat');
@@ -8,6 +9,23 @@ var htmlmin = require('gulp-htmlmin');
 var cleanCSS = require('gulp-clean-css');
 var runSequence = require('run-sequence');
 var rename = require('gulp-rename');
+
+var files = ['index.html',
+             'view/home.html',
+             'view/empresa.html',
+             'css/modern-business.css'];
+
+gulp.task('files', function() {
+    gulp.src(files).pipe( connect.reload() );
+});
+
+gulp.task('watch', function() {
+   gulp.watch(files, ['files']);
+});
+
+gulp.task('connect', function() {
+    connect.server({ livereload: true });
+});
 
 gulp.task('clean', function() {
     return gulp.src('dist/')
@@ -67,6 +85,8 @@ gulp.task('copy_fonts', function() {
     return gulp.src(['fonts/*', 'font-awesome/fonts/*'])
     .pipe(gulp.dest('dist/fonts'))
 });
+
+gulp.task('server', ['connect', 'watch']);
 
 gulp.task('default', function(cb) {
     return runSequence('clean', ['uglifly', 'htmlmin', 'cssmin', 'copy', 'copy_imgs', 'copy_fonts'], cb)
