@@ -5,8 +5,9 @@
             <li data-target="#myCarousel" ng-repeat="p in active_banners track by p.id" data-slide-to="{{::$index}}" ng-class="{active: $index == 0}"></li>
         </ol>
 
+        <div class="btn btn-danger btn-lg" ng-show={{active_banners_error[0]}}>{{active_banners_error[0]}}</div>
         <!-- Wrapper for slides -->
-        <div class="carousel-inner">
+        <div class="carousel-inner" ng-show={{!active_banners_error[0]}}>
             <div class="item" ng-repeat="banner in active_banners track by banner.id" ng-class="{active: $index == 0}">
                 <div class="fill" style="background-image:url('{{::banner.src}}');"></div>
                 <div class="carousel-caption">
@@ -30,22 +31,22 @@
         <!-- Marketing Icons Section -->
         <div class="row">
             <div class="col-lg-12 text-right" style="padding-top: 20px;">
-                <a href="#" title="Visite nossa página no Google +." class="social-link">
+                <a href="{{parameters[0].endereco_google_plus}}" title="Visite nossa página no Google +." class="social-link">
                     <div class="social google-pluse">
                         <i class="fa fa-google-plus fa-5x"></i>
                     </div>
                 </a>
-                <a href="#" title="Visite nossa página no Facebook." class="social-link">
+                <a href="{{parameters[0].endereco_facebook}}" title="Visite nossa página no Facebook." class="social-link" target="_blank">
                     <div class="social facebook">
                         <i class="fa fa-facebook fa-5x"></i>
                     </div>
                 </a>
-                <a href="#" title="Siga-nos no Twitter." class="social-link">
+                <a href="{{parameters[0].endereco_twitter}}" title="Siga-nos no Twitter." class="social-link">
                     <div class="social twitter">
                         <i class="fa fa-twitter fa-5x"></i>
                     </div>
                 </a>
-                <a href="#" title="Visite nosso canal no Youtube." class="social-link">
+                <a href="{{parameters[0].endereco_youtube}}" title="Visite nosso canal no Youtube." class="social-link">
                     <div class="social youtube">
                         <i class="fa fa-youtube fa-5x"></i>
                     </div>
