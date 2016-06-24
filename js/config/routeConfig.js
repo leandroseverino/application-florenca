@@ -59,6 +59,9 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
                     {id:"10", href: "#", code: "M 01.01", title: "<p>Apartamento &Aacute;rea privativa: 2 Dormit&oacute;rios, 1 Banheiro, Sala, Cozinha, &Aacute;rea de servi&ccedil;o e Garagem para 1 carro coberta. &Aacute;rea social: P&aacute;tio com Brinquedos, Portaria 24h, Sal&atilde;o de festas e Quadra de Esportes.</p>", src: "https://lh5.googleusercontent.com/-MDNn3KfvixE/TlaeY-pzDGI/AAAAAAAAAuk/rU-Y8Q5HKYU/C%2525C3%2525B3pia%252520de%252520C%2525C3%2525B3pia%252520de%252520DSC00662.JPG"}
                 ];
                 return _destaq_imoveis;
+            }],
+            destaques: ["destaqueAPI", function(destaqueAPI) {
+                return destaqueAPI.getDestaques();
             }]
         }
     });

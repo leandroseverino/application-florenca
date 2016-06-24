@@ -2,7 +2,8 @@ angular.module("appSite").controller("homeCtrl", ["$scope",
                                                   "active_banners",
                                                   "loaded_parameters",
                                                   "imoveis_in_destaq",
-    function ($scope, active_banners, loaded_parameters, imoveis_in_destaq) {
+                                                  "destaques",
+    function ($scope, active_banners, loaded_parameters, imoveis_in_destaq, destaques) {
         // Generic home page of website messages:
         $scope.welcome_message = "Seja bem vindo à Imobiliária Florença";
         $scope.como_alugar_message = "Ao locador a documentação necessária é a certidão atualizada do imóvel, comprovante de endereço, CPF e documento de identidade.";
@@ -15,5 +16,7 @@ angular.module("appSite").controller("homeCtrl", ["$scope",
         $scope.active_banners = active_banners[0];
         $scope.active_banners_error = active_banners[1];
         $scope.imoveis_in_destaq = imoveis_in_destaq;
+        console.log("deu pau: " + destaques);
+        $scope.destaques = destaques.data;
     }
 ]);

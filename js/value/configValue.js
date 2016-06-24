@@ -1,3 +1,3 @@
 angular.module("appSite").constant("config",  {
-    baseUrl: "http://localhost:3412"
+    baseUrl: "http://127.0.0.1:8000"
 });
