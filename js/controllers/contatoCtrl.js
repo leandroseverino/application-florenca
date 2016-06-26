@@ -15,7 +15,7 @@ angular.module("appSite").controller("contatoCtrl", ["$scope", "$http", "$locati
                 headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  //set the headers so angular passing info as form data (not request payload)
             }).success(function(data){
                 if (data.success) { //success comes from the return json object
-                    $scope.submitButtonDisabled = true;
+                    $scope.submitButtonDisabled = false;
                     $scope.resultMessage = data.message;
                     $scope.result='bg-success';
                     delete $scope.formData;
@@ -25,7 +25,6 @@ angular.module("appSite").controller("contatoCtrl", ["$scope", "$http", "$locati
                 } else {
                     $scope.submitButtonDisabled = false;
                     $scope.resultMessage = data.message;
-                    console.log(data.message);
                     $scope.result='bg-danger';
                 }
             });
