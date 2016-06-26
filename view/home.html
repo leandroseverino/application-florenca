@@ -4,14 +4,12 @@
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" ng-repeat="p in active_banners track by p.id" data-slide-to="{{::$index}}" ng-class="{active: $index == 0}"></li>
         </ol>
-
-        <div class="btn btn-danger btn-lg" ng-show={{active_banners_error[0]}}>{{active_banners_error[0]}}</div>
         <!-- Wrapper for slides -->
-        <div class="carousel-inner" ng-show={{!active_banners_error[0]}}>
+        <div class="carousel-inner">
             <div class="item" ng-repeat="banner in active_banners track by banner.id" ng-class="{active: $index == 0}">
-                <div class="fill" style="background-image:url('{{::banner.src}}');"></div>
+                <div class="fill" style="background-image:url('{{::banner.resource_path}}');"></div>
                 <div class="carousel-caption">
-                    <h2>{{::banner.caption}}</h2>
+                    <h2>{{::banner.descricao}}</h2>
                 </div>
             </div>
         </div>
@@ -30,26 +28,28 @@
 
         <!-- Marketing Icons Section -->
         <div class="row">
-            <div class="col-md-12 text-center btn-danger" ng-repeat="item in destaques">
-                <span>{{item.resource_path}} {{item.imovel.codigo}} {{item.imovel.slug}} {{item.imovel.descricao}}</span>
-            </div>
             <div class="col-lg-12 text-right" style="padding-top: 20px;">
-                <a href="{{parameters[0].endereco_google_plus}}" title="Visite nossa página no Google +." class="social-link">
+                <a href="{{::parameters[7].valor}}" title="Assine nossos feeds e receba as novidades por e-mail." class="social-link" target="_blank">
+                    <div class="social rss">
+                        <i class="fa fa-rss fa-5x"></i>
+                    </div>
+                </a>
+                <a href="{{::parameters[4].valor}}" title="Visite nossa página no Google +." class="social-link" target="_blank">
                     <div class="social google-pluse">
                         <i class="fa fa-google-plus fa-5x"></i>
                     </div>
                 </a>
-                <a href="{{parameters[0].endereco_facebook}}" title="Visite nossa página no Facebook." class="social-link" target="_blank">
+                <a href="{{::parameters[1].valor}}" title="Visite nossa página no Facebook." class="social-link" target="_blank">
                     <div class="social facebook">
                         <i class="fa fa-facebook fa-5x"></i>
                     </div>
                 </a>
-                <a href="{{parameters[0].endereco_twitter}}" title="Siga-nos no Twitter." class="social-link">
+                <a href="{{::parameters[3].valor}}" title="Siga-nos no Twitter." class="social-link" target="_blank">
                     <div class="social twitter">
                         <i class="fa fa-twitter fa-5x"></i>
                     </div>
                 </a>
-                <a href="{{parameters[0].endereco_youtube}}" title="Visite nosso canal no Youtube." class="social-link">
+                <a href="{{::parameters[2].valor}}" title="Visite nosso canal no Youtube." class="social-link" target="_blank">
                     <div class="social youtube">
                         <i class="fa fa-youtube fa-5x"></i>
                     </div>
@@ -60,7 +60,7 @@
             </div>
             <div class="col-lg-12">
                 <h1 class="page-header">
-                    {{::welcome_message}}
+                    {{::parameters[0].valor}}
                 </h1>
             </div>
             <div class="col-lg-12">
@@ -75,21 +75,28 @@
         <!-- Portfolio Section -->
         <div class="row">
             <div class="col-lg-12 text-center">
-                <button type="button" class="btn btn-danger btn-lg">133 imóveis cadastrados em nosso site !</button>
+                <button type="button" class="btn btn-danger btn-lg" ng-if="total_imoveis > 1">{{::total_imoveis}} imóveis cadastrados em nosso site !</button>
+                <button type="button" class="btn btn-danger btn-lg" ng-if="total_imoveis == 1">{{::total_imoveis}} imóvel cadastrado em nosso site !</button>
             </div>
             <div class="col-lg-12">
                 <h2 class="page-header">Em Destaque</h2>
                 <p>Aqui estão os nossos principais imóveis em destaque !</p>
             </div>
 
-            <div class="col-md-4 col-sm-6" ng-repeat="destaque in destaques track by destaque.imovel.codigo">
-                <a href="#/imovel/{{::destaque.imovel.slug}}" title="Cod.: {{::destaque.imovel.codigo}} - {{::destaque.imovel.descricao}}">
+            <div class="col-md-4 col-sm-6" ng-repeat="destaque in destaques track by destaque.imovel.id">
+                <a href="#/imovel/{{::destaque.imovel.slug}}" title="Cod.: {{::destaque.imovel.codigo}}" ng-if="destaque.tipo_recurso == 'Foto'">
                     <img class="img-responsive img-portfolio img-hover"
                          ng-src="{{::destaque.resource_path}}"
                          style="width: 360px; height: 231px;"
-                         alt="Foto do Imóvel: Cod.: {{::destaque.imovel.codigo}} - {{::destaque.imovel.descricao}}"
-                         title="Foto de Frente do Imóvel {{::destaque.imovel.codigo}} - {{::destaque.imovel.descricao}}" />
+                         alt="Foto do Imóvel: Cod.: {{::destaque.imovel.codigo}}"
+                         title="Foto de Destaque do Imóvel {{::destaque.imovel.codigo}}" />
                 </a>
+                <div class="video_painel" ng-if="destaque.tipo_recurso == 'Video'">
+                    <div ng-bind-html="destaque.resource_path | escapeHtml" ng-show="!destaque.uploaded"></div>
+                    <video controls width="65%" height="60%" ng-show="destaque.uploaded">
+                        <source src="{{::destaque.resource_path}}"  type="video/mp4; codecs='avc1.42E01E, mp4a.40.2'"
+                    </video>
+                </div>
             </div>
         </div>
         <!-- /.row -->
@@ -126,9 +133,64 @@
                     <p class="default">{{::ligue_para_nos_message}}</p>
                 </div>
                 <div class="col-md-4">
-                    <a class="btn btn-lg btn-primary btn-block" href="#" title="Deixe o seu número que ligamos para você.">Ligamos para você</a>
+                    <button type="button" class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#exampleModal">Entramos em contato com você</button>
                 </div>
             </div>
+        </div>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="exampleModalLabel"><i class="fa fa-phone"></i> Nós entramos em contato com você</h4>
+              </div>
+              <div class="modal-body">
+                <form role="form">
+                  <div class="form-group">
+                       <p>Descreva a sua necessidade e deixe os dados de contato que nós entramos em contato com você !</p>
+                  </div>
+                  <div class="form-group">
+                    <label for="recipient-name" class="control-label">Nome:</label>
+                    <input type="text" class="form-control" id="recipient-name" required placeholder="Informe o seu nome (Obrigatório)." />
+                  </div>
+                  <div class="form-group">
+                    <label for="recipient-name" class="control-label">E-mail:</label>
+                    <input type="text" class="form-control" id="recipient-name" placeholder="Informe o seu E-mail." />
+                  </div>
+                  <div class="form-group">
+                    <label for="recipient-name" class="control-label">Telefone:</label>
+                    <input type="text" class="form-control" id="recipient-name" required placeholder="Informe o seu Telefone/Whatsapp (Obrigatório)." />
+                  </div>
+                  <div class="form-group">
+                    <label for="recipient-name" class="control-label">Desejo ser contatado:</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fa fa-phone"></i> Telefone <input type="checkbox" id="recipient-name" />
+                        </span>
+                        <span class="input-group-addon">
+                           <i class="fa fa-phone-square"></i> Whatsapp <input type="checkbox" id="recipient-name" />
+                        </span>
+                        <span class="input-group-addon">
+                            <i class="fa fa-envelope-o"></i> E-mail <input type="checkbox" id="recipient-name" />
+                        </span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="message-text" class="control-label">Mensagem:</label>
+                    <textarea class="form-control" id="message-text" placeholder="Deixa sua mensagem descrevendo a sua necessidade."></textarea>
+                  </div>
+                  <div class="form-group">
+                       <p>Ao enviar, você concorda com os Termos de Uso, Política de Privacidade e recebimento de sugestões de imóveis.</p>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+              </div>
+            </div>
+          </div>
         </div>
 
         <hr>

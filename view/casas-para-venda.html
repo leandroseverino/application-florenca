@@ -134,97 +134,31 @@
     </div>
 
     <!-- Project One -->
-    <div class="row">
+    <div class="row" ng-repeat="item in imoveis" ng-if="imoveis">
         <div class="col-md-7">
-            <a href="casa_venda_001.html">
-                <img class="img-responsive img-hover" src="img/casas_vendas/casa_venda_001.jpg" alt="">
+            <a href="/#imovel/{{::item.imovel.slug}}">
+                <img class="img-responsive img-hover" src="{{::item.resource_path}}" alt="">
             </a>
         </div>
         <div class="col-md-5">
-            <h3>Código: C001</h3>
+            <h3>Código: {{::item.imovel.codigo}}</h3>
             <h4>Casa de 01 Dormitório</h4>
-            <p>Casa de alvenaria de 100m² em excelente localização com garagem para 02 carros.</p>
-            <a class="btn btn-primary" href="casa_venda_001.html">Detalhes</i></a>
+            <p ng-bind-html="item.imovel.descricao | escapeHtml"></p>
+            <a class="btn btn-primary" href="/#imovel/{{::item.imovel.slug}}">Detalhes</i></a>
         </div>
     </div>
-    <!-- /.row -->
 
     <hr>
 
-    <!-- Project Two -->
-    <div class="row">
-        <div class="col-md-7">
-            <a href="casa_venda_001.html">
-                <img class="img-responsive img-hover" src="img/casas_vendas/apartamento_001.jpg" alt="">
-            </a>
-        </div>
-        <div class="col-md-5">
-            <h3>Código: A002</h3>
-            <h4>Apartamento de 03 Dormitórios</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, odit velit cumque vero doloremque repellendus distinctio maiores rem expedita a nam vitae modi quidem similique ducimus! Velit, esse totam tempore.</p>
-            <a class="btn btn-primary" href="casa_venda_001.html">Detalhes</i></a>
+    <div class="row" ng-if="!imoveis">
+        <div class="col-md-12 text-center">
+            <p>Sem registros !</p>
         </div>
     </div>
-    <!-- /.row -->
 
     <hr>
 
-    <!-- Project Three -->
-    <div class="row">
-        <div class="col-md-7">
-            <a href="casa_venda_001.html">
-                <img class="img-responsive img-hover" src="img/casas_vendas/casa_venda_001.jpg" alt="">
-            </a>
-        </div>
-        <div class="col-md-5">
-            <h3>Código: T003</h3>
-            <h4>Terreno de 20m x 15m</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, temporibus, dolores, at, praesentium ut unde repudiandae voluptatum sit ab debitis suscipit fugiat natus velit excepturi amet commodi deleniti alias possimus!</p>
-            <a class="btn btn-primary" href="casa_venda_001.html">Detalhes</i></a>
-        </div>
-    </div>
-    <!-- /.row -->
-
-    <hr>
-
-    <!-- Project Four -->
-    <div class="row">
-
-        <div class="col-md-7">
-            <a href="casa_venda_001.html">
-                <img class="img-responsive img-hover" src="img/casas_vendas/casa_venda_001.jpg" alt="">
-            </a>
-        </div>
-        <div class="col-md-5">
-            <h3>Código: L001</h3>
-            <h4>Loja Comercial</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, quidem, consectetur, officia rem officiis illum aliquam perspiciatis aspernatur quod modi hic nemo qui soluta aut eius fugit quam in suscipit?</p>
-            <a class="btn btn-primary" href="casa_venda_001.html">Detalhes</i></a>
-        </div>
-    </div>
-    <!-- /.row -->
-
-    <hr>
-
-    <!-- Project Five -->
-    <div class="row">
-        <div class="col-md-7">
-            <a href="#">
-                <img class="img-responsive img-hover" src="img/casas_vendas/casa_venda_001.jpg" alt="">
-            </a>
-        </div>
-        <div class="col-md-5">
-            <h3>Código: S005</h3>
-            <h4>Sala Comercial</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, quo, minima, inventore voluptatum saepe quos nostrum provident ex quisquam hic odio repellendus atque porro distinctio quae id laboriosam facilis dolorum.</p>
-            <a class="btn btn-primary" href="casa_venda_001.html">Detalhes</i></a>
-        </div>
-    </div>
-    <!-- /.row -->
-
-    <hr>
-
-    <!-- Pagination -->
+    <!-- Pagination
     <div class="row text-center">
         <div class="col-lg-12">
             <ul class="pagination">
@@ -251,10 +185,8 @@
                 </li>
             </ul>
         </div>
-    </div>
+    </div-->
     <!-- /.row -->
-
-    <hr>
 
     <!-- Footer -->
     <footer ng-include="'view/footer.html'"></footer>
