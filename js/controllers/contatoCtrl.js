@@ -1,11 +1,7 @@
 angular.module("appSite").controller("contatoCtrl", ["$scope", "$http", function ($scope, $http) {
     $scope.result = 'hidden'
     $scope.resultMessage;
-    console.log("Scope: ");
-    console.log($scope);
-    console.log("Dados do Form: ");
     $scope.formData; //formData is an object holding the name, email, subject, and message
-    console.log($scope.formData);
     $scope.submitButtonDisabled = false;
     $scope.submitted = false; //used so that form errors are shown only after the form has been submitted
     $scope.submit = function(contactform) {
