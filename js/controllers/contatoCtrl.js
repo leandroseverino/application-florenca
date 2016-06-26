@@ -12,7 +12,7 @@ angular.module("appSite").controller("contatoCtrl", ["$scope", "$http", function
         if (contactform.$valid) {
             $http({
                 method  : 'POST',
-                url     : 'contact_me.php',
+                url     : 'bin/contact_me.php',
                 data    : $.param($scope.formData),  //param method from jQuery
                 headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  //set the headers so angular passing info as form data (not request payload)
             }).success(function(data){
