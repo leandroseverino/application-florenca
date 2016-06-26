@@ -27,6 +27,8 @@ $email_subject = "Mensagem enviada pelo site por:  $name"; // EDIT THE EMAIL SUB
 $email_body = "Você recebeu uma nova mensagem do form de contato do website da Imobiliaria Florença.\n\n"."Aqui estão os Detalhes:\n\nRemetente: $name\n\nTelefone: $phone\n\nE-mail: $email_address\n\nMensagem:\n$message";
 $headers = "From: contato@imobiliariaflorenca.com.br\n";
 $headers .= "Reply-To: $email_address";
+$headers .= "MIME-Version: 1.0\n";
+$headers .= "Content-type: text/html; charset=UTF-8\r\n";
 mail($to,$email_subject,$email_body,$headers);
 // header("location:$redirect");
 //return true;
