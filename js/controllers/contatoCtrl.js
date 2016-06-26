@@ -14,16 +14,15 @@ angular.module("appSite").controller("contatoCtrl", ["$scope", "$http", "$locati
                 data    : $.param($scope.formData),  //param method from jQuery
                 headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  //set the headers so angular passing info as form data (not request payload)
             }).success(function(data){
-                console.log("Dados retornados no PHP: " + data);
                 if (data.success) { //success comes from the return json object
                     $scope.submitButtonDisabled = true;
                     $scope.resultMessage = data.message;
-                    console.log(data.message);
                     $scope.result='bg-success';
+                    delete $scope.formData;
+                    $scope.formData = [];
                     $scope.contactForm.$setPristine();
 			        $location.path("/contato");
                 } else {
-                    console.log("FALHA");
                     $scope.submitButtonDisabled = false;
                     $scope.resultMessage = data.message;
                     console.log(data.message);
@@ -31,7 +30,6 @@ angular.module("appSite").controller("contatoCtrl", ["$scope", "$http", "$locati
                 }
             });
         } else {
-            console.log("FORM INVÁLIDO !");
             $scope.submitButtonDisabled = false;
             $scope.resultMessage = 'Failed <img src="http://www.chaosm.net/blog/wp-includes/images/smilies/icon_sad.gif" alt=":(" class="wp-smiley">  Please fill out all the fields.';
             $scope.result='bg-danger';
