@@ -22,7 +22,7 @@ $email_address = $_POST['inputEmail'];
 $message = $_POST['inputMessage'];
 
 // create email body and send it
-$to = 'contato@imobiliariaflorenca.com.br'; // PUT YOUR EMAIL ADDRESS HERE
+$to = 'vendas@imobiliariaflorenca.com.br'; // PUT YOUR EMAIL ADDRESS HERE
 $email_subject = "Mensagem enviada pelo site por:  $name"; // EDIT THE EMAIL SUBJECT LINE HERE
 $email_body = "Você recebeu uma nova mensagem do form de contato do website da Imobiliaria Florença.\n\n"."Aqui estão os Detalhes:\n\nRemetente: $name\n\nTelefone: $phone\n\nE-mail: $email_address\n\nMensagem:\n$message";
 $headers = "From: contato@imobiliariaflorenca.com.br\n";
