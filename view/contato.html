@@ -53,41 +53,42 @@
 
     <!-- Contact Form -->
     <!-- In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
-    <div class="row">
+    <div class="row" ng-controller="contatoCtrl">
         <div class="col-md-8">
             <h3><i class="fa fa-envelope-o"></i> Deixe sua mensagem</h3>
             <p>Deixe aqui a sua mensagem que com certeza entraremos em contato com você.</p>
             </br>
-            <form name="sentMessage" id="contactForm" accept-charset="UTF-8" method="post" action="bin/contact_me.php">
-                <div class="control-group form-group">
+            <form name="contactForm" id="contactForm" ng-submit="submit(contactForm)" accept-charset="UTF-8" method="post" action="" role="form">
+                <div class="control-group form-group" ng-class="{ 'has-error': contactform.inputName.$invalid && submitted }">
                     <div class="controls">
                         <label>Nome Completo:</label>
-                        <input type="text" class="form-control" id="name" name="name" required data-validation-required-message="Por favor, informe o seu nome." placeholder="Informe o seu nome.">
+                        <input type="text" class="form-control" ng-model="formData.inputName" id="name" name="name" required placeholder="Informe o seu nome.">
                         <p class="help-block"></p>
                     </div>
                 </div>
-                <div class="control-group form-group">
+                <div class="control-group form-group" ng-class="{ 'has-error': contactform.inputPhone.$invalid && submitted }">
                     <div class="controls">
                         <label>Telefone:</label>
-                        <input type="tel" class="form-control" id="phone" name="phone" required data-validation-required-message="Por favor, informe o seu telefone." placeholder="Informe o seu telefone.">
+                        <input type="tel" class="form-control" ng-model="formData.inputPhone" id="phone" name="phone" required placeholder="Informe o seu telefone.">
                     </div>
                 </div>
-                <div class="control-group form-group">
+                <div class="control-group form-group" ng-class="{ 'has-error': contactform.inputEmail.$invalid && submitted }">
                     <div class="controls">
                         <label>E-mail:</label>
-                        <input type="email" class="form-control" id="email" name="email" required data-validation-required-message="Por favor, informe o seu e-mail." placeholder="Informe o seu e-mail.">
+                        <input type="email" class="form-control" ng-model="formData.inputEmail" id="email" name="email" required placeholder="Informe o seu e-mail.">
                     </div>
                 </div>
-                <div class="control-group form-group">
+                <div class="control-group form-group" ng-class="{ 'has-error': contactform.inputMessage.$invalid && submitted }">
                     <div class="controls">
                         <label>Mensagem:</label>
-                        <textarea rows="10" cols="100" class="form-control" id="message" name="message" required data-validation-required-message="Por favor, deixe a sua mensagem." maxlength="999" style="resize:none"  placeholder="Deixe a sua mensagem que entraremos em contato."></textarea>
+                        <textarea rows="10" cols="100" class="form-control" ng-model="formData.inputMessage" id="message" name="message" required maxlength="999" style="resize:none"  placeholder="Deixe a sua mensagem que entraremos em contato."></textarea>
                     </div>
                 </div>
                 <div id="success"></div>
                 <!-- For success/fail messages -->
-                <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
+                <button type="submit" class="btn btn-primary btn-lg" ng-disabled="submitButtonDisabled">Enviar</button>
             </form>
+             <p ng-class="result" style="padding: 15px; margin: 0;">{{ resultMessage }}</p>
         </div>
 
     </div>

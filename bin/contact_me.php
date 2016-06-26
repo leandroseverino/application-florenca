@@ -1,22 +1,25 @@
 <?php
 
-$redirect = "http://www.application.imobiliariaflorenca.com.br/#/contato";
+// require_once 'phpmailer/PHPMailerAutoload.php';
 
 // check if fields passed are empty
-if(empty($_POST['name'])  		||
-   empty($_POST['phone']) 		||
-   empty($_POST['email']) 		||
-   empty($_POST['message'])	||
-   !filter_var($_POST['email'],FILTER_VALIDATE_EMAIL))
+if(empty($_POST['inputName'])  		||
+   empty($_POST['inputPhone']) 		||
+   empty($_POST['inputEmail']) 		||
+   empty($_POST['inputMessage'])	||
+   !filter_var($_POST['inputEmail'],FILTER_VALIDATE_EMAIL))
    {
-	echo "Dados inválidos fornecidos !";
-	return false;
+	//echo "Dados inválidos fornecidos !";
+	//return false;
+    $data = array('success' => false, 'message' => 'Por favor !, preencha os dados do formulário corretamente  !.');
+    echo json_encode($data);
+    exit;
    }
 
-$name = $_POST['name'];
-$phone = $_POST['phone'];
-$email_address = $_POST['email'];
-$message = $_POST['message'];
+$name = $_POST['inputName'];
+$phone = $_POST['inputPhone'];
+$email_address = $_POST['inputEmail'];
+$message = $_POST['inputMessage'];
 
 // create email body and send it
 $to = 'contato@imobiliariaflorenca.com.br'; // PUT YOUR EMAIL ADDRESS HERE
@@ -25,7 +28,8 @@ $email_body = "Você recebeu uma nova mensagem do form de contato do website da 
 $headers = "From: contato@imobiliariaflorenca.com.br\n";
 $headers .= "Reply-To: $email_address";
 mail($to,$email_subject,$email_body,$headers);
-header("location:$redirect");
-return true;
-
+// header("location:$redirect");
+//return true;
+$data = array('success' => true, 'message' => 'Muito Obrigado! Nós recebemos sua mensagem e em breve estaremos entrando em contato.');
+echo json_encode($data);
 ?>
