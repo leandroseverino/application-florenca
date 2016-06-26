@@ -58,6 +58,7 @@
             <h3><i class="fa fa-envelope-o"></i> Deixe sua mensagem</h3>
             <p>Deixe aqui a sua mensagem que com certeza entraremos em contato com você.</p>
             </br>
+            <p ng-class="result" style="padding: 15px; margin: 0; margin-bottom: 10px;">{{ resultMessage }}</p>
             <form name="contactForm" id="contactForm" ng-submit="submit(contactForm)" accept-charset="UTF-8" method="post" role="form">
                 <div class="control-group form-group" ng-class="{ 'has-error': contactform.inputName.$invalid && submitted }">
                     <div class="controls">
@@ -88,7 +89,7 @@
                 <!-- For success/fail messages -->
                 <button type="submit" class="btn btn-primary btn-lg" ng-disabled="submitButtonDisabled">Enviar</button>
             </form>
-             <p ng-class="result" style="padding: 15px; margin: 0;">{{ resultMessage }}</p>
+
         </div>
 
     </div>

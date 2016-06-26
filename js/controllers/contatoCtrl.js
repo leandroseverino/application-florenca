@@ -20,7 +20,7 @@ angular.module("appSite").controller("contatoCtrl", ["$scope", "$http", "$locati
                     $scope.resultMessage = data.message;
                     console.log(data.message);
                     $scope.result='bg-success';
-                    //$scope.contactForm.$setPristine();
+                    $scope.contactForm.$setPristine();
 			        //$location.path("/empresa");
                 } else {
                     console.log("FALHA");
