@@ -1,4 +1,4 @@
-angular.module("appSite").controller("contatoCtrl", ["$scope", "$http", function ($scope, $http) {
+angular.module("appSite").controller("contatoCtrl", ["$scope", "$http", "$location", function ($scope, $http, $location) {
     $scope.result = 'hidden'
     $scope.resultMessage;
     $scope.formData; //formData is an object holding the name, email, subject, and message
@@ -16,11 +16,12 @@ angular.module("appSite").controller("contatoCtrl", ["$scope", "$http", function
             }).success(function(data){
                 console.log("Dados retornados no PHP: " + data);
                 if (data.success) { //success comes from the return json object
-                    console.log("SUCCESS");
                     $scope.submitButtonDisabled = true;
                     $scope.resultMessage = data.message;
                     console.log(data.message);
                     $scope.result='bg-success';
+                    $scope.contactForm.$setPristine();
+			        $location.path("/contatos");
                 } else {
                     console.log("FALHA");
                     $scope.submitButtonDisabled = false;
