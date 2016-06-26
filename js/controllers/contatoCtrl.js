@@ -21,7 +21,7 @@ angular.module("appSite").controller("contatoCtrl", ["$scope", "$http", "$locati
                     console.log(data.message);
                     $scope.result='bg-success';
                     $scope.contactForm.$setPristine();
-			        //$location.path("/empresa");
+			        $location.path("/contato");
                 } else {
                     console.log("FALHA");
                     $scope.submitButtonDisabled = false;
