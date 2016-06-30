@@ -84,7 +84,7 @@
             </div>
 
             <div class="col-md-4 col-sm-6" ng-repeat="destaque in destaques track by destaque.imovel.id">
-                <a href="#/imovel/{{::destaque.imovel.slug}}" title="Cod.: {{::destaque.imovel.codigo}}" ng-if="destaque.tipo_recurso == 'Foto'">
+                <a href="#/detalhe-imovel/{{::destaque.imovel.slug}}" title="Cod.: {{::destaque.imovel.codigo}}" ng-if="destaque.tipo_recurso == 'Foto'">
                     <img class="img-responsive img-portfolio img-hover"
                          ng-src="{{::destaque.resource_path}}"
                          style="width: 360px; height: 231px;"

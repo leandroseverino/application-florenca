@@ -216,14 +216,16 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
         controller: "contatoCtrl"
     });
 
-    $routeProvider.when("/detalhesContato/:id", {
-        templateUrl: "view/detalhesContato.html",
-        controller: "detalhesContatoCtrl",
+    $routeProvider.when("/detalhe-imovel/:slug", {
+        templateUrl: "view/detalhe-imovel.html",
+        controller: "detalhesImovelCtrl",
         resolve: {
-            contato: ["contatosAPI", "$route", function (contatosAPI, $route) {
-                return contatosAPI.getContato($route.current.params.id);
+            imovel: ["detalhesImovelAPI", "$route", function (detalhesImovelAPI, $route) {
+                console.log("========== ID ========= " + $route.current.params.slug);
+                return detalhesImovelAPI.getImovel($route.current.params.slug);
             }]
         }
     });
+
     $routeProvider.otherwise({redirectTo: "/home"});
 }]);
