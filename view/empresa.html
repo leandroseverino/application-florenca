@@ -49,19 +49,22 @@
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet impedit dolorem quae, quo nobis omnis? Officia quibusdam quaerat assumenda ipsam, et quos laborum quae ex iste numquam laboriosam obcaecati iure.</p>
 		</div>
 
-		<div class="tab-content" ng-show="tab == 3">
+		<div class="tab-content" ng-show="tab == 3" ng-controller="empresaCtrl">
 			<h2 class="page-header">Trabalhe Conosco</h2>
             <p>Faça parte de nossa equipe. Deixe os seus dados que entraremos em contato com você.</p>
-            <form name="sentMessage" id="contactForm" accept-charset="UTF-8" method="post" action="bin/contact_me.php">
-                <div class="control-group form-group">
-                    <div class="controls col-sm-8">
-                        <label>Nome Completo:</label>
-                        <input type="text" class="form-control" id="name" name="name" required data-validation-required-message="Por favor, informe o seu nome." placeholder="Informe o seu nome.">
-                        <p class="help-block"></p>
+            <form name="empresaForm" id="empresaForm" ng-submit="submit(empresaForm)" accept-charset="UTF-8" method="post" role="form" novalidate>
+                <p ng-class="result" style="padding: 15px; margin: 0; margin-bottom: 10px;">{{ resultMessage }} </p>
+                <div class="control-group form-group row">
+                    <div class="controls col-sm-8 col-md-8">
+                        <label>Nome Completo:<span class="text-danger" ng-if="empresaForm.name.$error.required || empresaForm.name.$invalid"> (requerido)</span></label>
+                        <input type="text" class="form-control" ng-model="formData.inputName" id="name" name="name" required data-validation-required-message="Por favor, informe o seu nome." placeholder="Informe o seu nome.">
+                        <div ng-if="(empresaForm.name.$touched || empresaForm.$submitted) && empresaForm.name.$invalid" class="has-error">
+                            <p class="help-block" ng-if="empresaForm.name.$error.required">Por favor, informe o seu nome.</p>
+                        </div>
                     </div>
                     <div class="controls col-sm-4">
-                        <label>Cargo Pretendido:</label>
-                        <select name="occupation" id="occupation" class="form-control" required data-validation-required-message="Por favor, informe o cargo pretendido.">
+                        <label>Cargo Pretendido:<span class="text-danger" ng-if="empresaForm.occupation.$error.required || empresaForm.occupation.$invalid"> (requerido)</span></label>
+                        <select name="occupation" id="occupation" class="form-control" ng-model="formData.inputCargo" required>
                             <option value="">Selecione</option>
                             <option value="Outro Cargo">Outro Cargo</option>
                             <option value="Administrativo/Financeiro">Administrativo/Financeiro</option>
@@ -80,59 +83,74 @@
                             <option value="Vistoriador de Imóveis">Vistoriador de Imóveis</option>
                             <option value="Zelador">Zelador</option>
                         </select>
-                        <p class="help-block"></p>
+                        <div ng-if="(empresaForm.occupation.$touched || empresaForm.$submitted) && empresaForm.occupation.$invalid" class="has-error">
+                            <p class="help-block" ng-if="empresaForm.occupation.$error.required">Por favor, informe o cargo pretendido.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="control-group form-group">
+                <div class="control-group form-group row">
                     <div class="controls col-sm-3">
-                        <label>Telefone:</label>
-                        <input type="tel" class="form-control" id="phone" name="phone" required data-validation-required-message="Por favor, informe o seu telefone." placeholder="Informe o seu telefone.">
-                        <p class="help-block"></p>
+                        <label>Telefone:<span class="text-danger" ng-if="empresaForm.phone.$error.required || empresaForm.phone.$invalid"> (requerido)</span></label>
+                        <input type="tel" class="form-control" id="phone" name="phone" ng-model="formData.inputPhone" required placeholder="Informe o seu telefone.">
+                        <div ng-if="(empresaForm.phone.$touched || empresaForm.$submitted) && empresaForm.phone.$invalid" class="has-error">
+                            <p class="help-block" ng-if="empresaForm.phone.$error.required">Por favor, informe o seu telefone.</p>
+                        </div>
                     </div>
                     <div class="controls col-sm-3">
-                        <label>Celular:</label>
-                        <input type="tel" class="form-control" id="celular" name="celular" required data-validation-required-message="Por favor, informe o seu celular." placeholder="Informe o seu celular.">
-                        <p class="help-block"></p>
+                        <label>Celular:<span class="text-danger" ng-if="empresaForm.celular.$error.required || empresaForm.celular.$invalid"> (requerido)</span></label>
+                        <input type="tel" class="form-control" id="celular" name="celular" ng-model="formData.inputCelular" required placeholder="Informe o seu celular.">
+                        <div ng-if="(empresaForm.celular.$touched || empresaForm.$submitted) && empresaForm.celular.$invalid" class="has-error">
+                            <p class="help-block" ng-if="empresaForm.celular.$error.required">Por favor, informe o seu celular.</p>
+                        </div>
                     </div>
                     <div class="controls col-sm-6">
-                        <label>E-mail:</label>
-                        <input type="email" class="form-control" id="email" name="email" required data-validation-required-message="Por favor, informe o seu e-mail." placeholder="Informe o seu e-mail.">
-                        <p class="help-block"></p>
+                        <label>E-mail:<span class="text-danger" ng-if="empresaForm.email.$error.required || empresaForm.email.$invalid"> (requerido)</span></label>
+                        <input type="email" class="form-control" id="email" name="email" ng-model="formData.inputEmail" required placeholder="Informe o seu e-mail.">
+                        <div ng-if="(empresaForm.email.$touched || empresaForm.$submitted) && empresaForm.email.$invalid" class="has-error">
+                            <p class="help-block" ng-if="empresaForm.email.$error.required">Por favor, informe o seu e-mail.</p>
+                        </div>
                     </div>
                 </div>
 
-                <div class="control-group form-group">
+                <div class="control-group form-group row">
                     <div class="controls col-sm-10">
-                        <label>Endereço:</label>
-                        <input type="text" class="form-control" id="endereco" name="endereco" required data-validation-required-message="Por favor, informe o Endereço (Rua, Avenida e etc)." placeholder="Informe o Endereço (Rua, Avenida e etc).">
-                        <p class="help-block"></p>
+                        <label>Endereço:<span class="text-danger" ng-if="empresaForm.endereco.$error.required || empresaForm.endereco.$invalid"> (requerido)</span></label>
+                        <input type="text" class="form-control" id="endereco" name="endereco" ng-model="formData.inputEndereco" required placeholder="Informe o Endereço (Rua, Avenida e etc).">
+                        <div ng-if="(empresaForm.endereco.$touched || empresaForm.$submitted) && empresaForm.endereco.$invalid" class="has-error">
+                            <p class="help-block" ng-if="empresaForm.endereco.$error.required">Por favor, informe o Endereço (Rua, Avenida e etc).</p>
+                        </div>
                     </div>
                     <div class="controls col-sm-2">
-                        <label>Número:</label>
-                        <input type="text" class="form-control" id="endereco_numero" name="endereco_numero" required data-validation-required-message="Por favor, informe o número." placeholder="Informe o número.">
-                        <p class="help-block"></p>
+                        <label>Número:<span class="text-danger" ng-if="empresaForm.endereco_numero.$error.required || empresaForm.endereco_numero.$invalid"> (requerido)</span></label>
+                        <input type="text" class="form-control" id="endereco_numero" name="endereco_numero" ng-model="formData.inputNumero" required placeholder="Informe o número.">
+                        <div ng-if="(empresaForm.endereco_numero.$touched || empresaForm.$submitted) && empresaForm.endereco_numero.$invalid" class="has-error">
+                            <p class="help-block" ng-if="empresaForm.endereco_numero.$error.required">Por favor, informe o número.</p>
+                        </div>
                     </div>
                 </div>
 
-                <div class="control-group form-group">
+                <div class="control-group form-group row">
                     <div class="controls col-sm-3">
                         <label>Complemento:</label>
-                        <input type="text" class="form-control" id="endereco_complemento" name="endereco_complemento" placeholder="Informe o complemento do endereço.">
-                        <p class="help-block"></p>
+                        <input type="text" class="form-control" id="endereco_complemento" name="endereco_complemento" ng-model="formData.inputComplemento" placeholder="Informe o complemento do endereço.">
                     </div>
                     <div class="controls col-sm-3">
-                        <label>Bairro:</label>
-                        <input type="text" class="form-control" id="bairro" name="bairro" required data-validation-required-message="Por favor, informe o bairro." placeholder="Informe o bairro.">
-                        <p class="help-block"></p>
+                        <label>Bairro:<span class="text-danger" ng-if="empresaForm.bairro.$error.required || empresaForm.bairro.$invalid"> (requerido)</span></label>
+                        <input type="text" class="form-control" id="bairro" name="bairro" ng-model="formData.inputBairro" required placeholder="Informe o bairro.">
+                        <div ng-if="(empresaForm.bairro.$touched || empresaForm.$submitted) && empresaForm.bairro.$invalid" class="has-error">
+                            <p class="help-block" ng-if="empresaForm.bairro.$error.required">Por favor, informe o bairro.</p>
+                        </div>
                     </div>
                     <div class="controls col-sm-4">
-                        <label>Cidade:</label>
-                        <input type="text" class="form-control" id="cidade" name="cidade" required data-validation-required-message="Por favor, informe a cidade." placeholder="Informe a cidade.">
-                        <p class="help-block"></p>
+                        <label>Cidade:<span class="text-danger" ng-if="empresaForm.cidade.$error.required || empresaForm.cidade.$invalid"> (requerido)</span></label>
+                        <input type="text" class="form-control" id="cidade" name="cidade" ng-model="formData.inputCidade" required placeholder="Informe a cidade.">
+                        <div ng-if="(empresaForm.cidade.$touched || empresaForm.$submitted) && empresaForm.cidade.$invalid" class="has-error">
+                            <p class="help-block" ng-if="empresaForm.cidade.$error.required">Por favor, informe a cidade.</p>
+                        </div>
                     </div>
                     <div class="controls col-sm-2">
-                        <label>Estado:</label>
-                        <select name="uf" id="uf" class="form-control" required data-validation-required-message="Por favor, selecione a UF.">
+                        <label>Estado:<span class="text-danger" ng-if="empresaForm.uf.$error.required || empresaForm.uf.$invalid"> (requerido)</span></label>
+                        <select name="uf" id="uf" ng-model="formData.inputUf" class="form-control" required>
                         	<option value="">Selecione</option>
                         	<option value="AC">AC</option>
                         	<option value="AL">AL</option>
@@ -162,52 +180,46 @@
                         	<option value="SP">SP</option>
                         	<option value="TO">TO</option>
                          </select>
-                        <p class="help-block"></p>
+                        <div ng-if="(empresaForm.uf.$touched || empresaForm.$submitted) && empresaForm.uf.$invalid" class="has-error">
+                            <p class="help-block" ng-if="empresaForm.uf.$error.required">Por favor, selecione a UF.</p>
+                        </div>
                     </div>
                 </div>
-
-                <div class="control-group form-group">
+                <div class="control-group form-group row">
                     <div class="controls col-sm-12">
                         <label>Currículo:</label>
-                         <input type="file" id="curriculo" name="curriculo" required data-validation-required-message="Por favor, anexar o arquivo do currículo."/>
-                         <p class="help-block"></p>
+                        <div class="controls col-sm-4">
+                             <button type="file"
+                                     ngf-select="uploadFiles($file, $invalidFiles)"
+                                     accept="application/msword, application/pdf"
+                                     ngf-max-height="1000"
+                                     ngf-max-size="20MB"
+                                     class="btn btn-default">Selecionar arquivo</button>
+                        </div>
+                        <div class="controls col-sm-8">
+                              <label>Arquivo Selecionado:</label>
+                              <div style="font:smaller">
+                                  {{f.name}} {{errFile.name}} {{errFile.$error}} {{errFile.$errorParam}}
+                                  <span class="progress" ng-show="f.progress >= 0">
+                                      <div style="width:{{f.progress}}%" ng-bind="f.progress + '%' + ' enviado !'"></div>
+                                  </span>
+                              </div>
+                             {{errorMsg}}
+                        </div>
                     </div>
                 </div>
                 <div id="success"></div>
                 <!-- For success/fail messages -->
-                <button type="submit" class="btn btn-primary">Enviar</button>
+                <div class="control-group form-group row">
+                    <div class="controls col-sm-12">
+                        <button type="submit" class="btn btn-primary" ng-disabled="submitButtonDisabled || empresaForm.$invalid">Enviar dados</button>
+                    </div>
+                </div>
             </form>
 		</div>
 
 	</div>
 
-    <!--
-
-    <div class="row">
-        <div class="col-lg-12">
-            <h2 class="page-header">Missão</h2>
-        </div>
-        <div class="col-lg-12">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-12">
-            <h2 class="page-header">Valores</h2>
-        </div>
-        <div class="col-lg-12">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-12">
-            <h2 class="page-header">Trabalhe Conosco</h2>
-        </div>
-        <div class="col-lg-12">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p>
-        </div>
-    </div>
-    -->
     <hr>
 
     <!-- Footer -->

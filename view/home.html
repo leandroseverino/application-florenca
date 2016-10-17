@@ -1,5 +1,109 @@
 <!-- Header Carousel -->
-    <header id="myCarousel" class="carousel slide">
+    <header id="myCarousel" class="carousel slide" style="background-color: #eee;">
+        <!--div style="background-color: #fff;width: 95%;margin:0px auto;border: 01px solid #ccc; margin-bottom: 10px;">
+            <form action="#/search" method="POST" name="form_search" id="form_search" class="form-inline">
+                <div class="table-responsive">
+                    <table border="0" cellspacing="0" cellpadding="0" class="table">
+                        <tbody>
+                        <tr>
+                            <th>Cód. Imóvel:</th>
+                            <th>Modalidade:</th>
+                            <th>Cidade:</th>
+                            <th>Bairro:</th>
+                            <th>Rua:</th>
+                            <th>Nº Dorm.:</th>
+                            <th>Valores Entre:</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <td align="left">
+                                <input name="codigo" id="codigo" type="text" class="form_int form-control" size="10">
+                            </td>
+                            <td align="left">
+                                <select id="finalidade" name="finalidade" class="form_int form-control" style="float: none;">
+                                    <option>[Selecione]</option>
+                                    <option value="Residêncial">Residêncial</option>
+                                    <option value="Comercial">Comercial</option>
+                                </select>
+                            </td>
+                            <td align="left">
+                                 <select id="cidade_value" name="cidade_value" class="form_int form-control" style="float: none;">
+                                    <option>[Selecione]</option>
+                                    <option>Canoas</option>
+                                    <option>Porto Alegre</option>
+                                    <option>Sapucaia</option>
+                                    <option>Esteio</option>
+                                 </select>
+                            </td>
+                            <td align="left">
+                                <input id="bairro" name="bairro" type="text" class="form_int form-control" size="10">
+                            </td>
+                            <td align="left">
+                                <input id="rua" name="rua" type="text" class="form_int form-control" size="10">
+                            </td>
+                            <td align="left">
+                                <select id="dormitorios" name="dormitorios" class="form_int form-control" style="float: none;">
+                                    <option>........</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                </select>
+                            </td>
+                            <td align="left">
+                                <select id="valor_inicial" name="valor_inicial" class="form_int form-control" style="float: none;width:100px;display:inline;">
+                                    <option>[Selecione]</option>
+                                    <option value="100">100,00</option>
+                                    <option value="500">500,00</option>
+                                    <option value="1000">1.000,00</option>
+                                    <option value="2000">2.000,00</option>
+                                    <option value="3000">3.000,00</option>
+                                    <option value="5000">5.000,00</option>
+                                    <option value="10000">10.000,00</option>
+                                    <option value="50000">50.000,00</option>
+                                    <option value="100000">100.000,00</option>
+                                    <option value="200000">200.000,00</option>
+                                    <option value="300000">300.000,00</option>
+                                    <option value="500000">500.000,00</option>
+                                    <option value="1000000000">1.000.000,00</option>
+                                    <option value="10000000000">10.000.000,00</option>
+                                </select>
+                            </td>
+                            <td align="left">
+                                <select id="valor_final" name="valor_final" class="form_int form-control" style="float: none;width:100px;display:inline;">
+                                    <option>[Selecione]</option>
+                                    <option value="100">100,00</option>
+                                    <option value="500">500,00</option>
+                                    <option value="1000">1.000,00</option>
+                                    <option value="2000">2.000,00</option>
+                                    <option value="3000">3.000,00</option>
+                                    <option value="5000">5.000,00</option>
+                                    <option value="10000">10.000,00</option>
+                                    <option value="50000">50.000,00</option>
+                                    <option value="100000">100.000,00</option>
+                                    <option value="200000">200.000,00</option>
+                                    <option value="300000">300.000,00</option>
+                                    <option value="500000">500.000,00</option>
+                                    <option value="1000000000">1.000.000,00</option>
+                                    <option value="10000000000">10.000.000,00</option>
+                                </select>
+                            </td>
+                            <td colspan="10" align="right">
+                                <input type="button" class="btn btn-default" value="Pesquisar" />
+                                <!--a href="#" onclick="form_search.submit();">
+                                    <img src="http://media.imobiliariaflorenca.com.br/images/bot_busca.png" alt="pesquisar" title="pesquisar" width="50" height="30">
+                                </a-->
+                            <!--/td>
+                        </tr>
+
+                    </tbody></table>
+                </div>
+            </form>
+        </div-->
         <!-- Indicators -->
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" ng-repeat="p in active_banners track by p.id" data-slide-to="{{::$index}}" ng-class="{active: $index == 0}"></li>
@@ -130,7 +234,7 @@
         <div class="well">
             <div class="row">
                 <div class="col-md-8">
-                    <p class="default">{{::ligue_para_nos_message}}</p>
+                    <p class="default">{{::ligue_para_nos_message}}<i class="fa fa-phone-square" style="display:inline;margin-left:05px;color:green"></i> <span style="color:blue">(51) 9993-7292</span></p>
                 </div>
                 <div class="col-md-4">
                     <button type="button" class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#exampleModal">Entramos em contato com você</button>

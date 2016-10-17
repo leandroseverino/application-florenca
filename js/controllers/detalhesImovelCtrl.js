@@ -1,4 +1,4 @@
-angular.module("appSite").controller("detalhesImovelCtrl", ["$scope", "$routeParams", "imovel", function ($scope, $routeParams, imovel) {
-    // Generic home page of website messages:
+angular.module("appSite").controller("detalhesImovelCtrl", ["$scope", "$routeParams", "imovel", "imoveisRelacionados", function ($scope, $routeParams, imovel, imoveisRelacionado) {
     $scope.imovel = imovel.data;
+    $scope.imoveisRelacionados = []; // imoveisRelacionados.data
 }]);

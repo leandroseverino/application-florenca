@@ -18,7 +18,8 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
         }
     });
     $routeProvider.when("/empresa", {
-        templateUrl: "view/empresa.html"
+        templateUrl: "view/empresa.html",
+        controller: "empresaCtrl"
     });
     // Imóveis para venda
     $routeProvider.when("/casas-para-venda", {
@@ -221,9 +222,11 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
         controller: "detalhesImovelCtrl",
         resolve: {
             imovel: ["detalhesImovelAPI", "$route", function (detalhesImovelAPI, $route) {
-                console.log("========== ID ========= " + $route.current.params.slug);
                 return detalhesImovelAPI.getImovel($route.current.params.slug);
-            }]
+            }],
+            imoveisRelacionados: ["detalhesImovelAPI", "$route", function (detalhesImovelAPI, $route) {
+                return detalhesImovelAPI.getImoveisRelacionados($route.current.params.slug);
+            }],
         }
     });
 
