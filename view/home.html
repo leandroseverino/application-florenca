@@ -248,7 +248,7 @@
                     <div class="modal-body">
                         <div class="form-group">
                             <p>Descreva a sua necessidade e deixe os dados de contato que nós entramos em contato com você !</p>
-                            <p ng-class="result" style="margin: 0; margin-bottom: 10px; margin-top: 10px;">{{ resultMessage }}</p>
+                            <p ng-class="result" ng-show="submitted" style="margin: 0; margin-bottom: 10px; margin-top: 10px;">{{ resultMessage }}</p>
                         </div>
                         <div class="control-group form-group" ng-class="{ 'has-error': callForm.inputName.$invalid && submitted }">
                             <div class="controls">
