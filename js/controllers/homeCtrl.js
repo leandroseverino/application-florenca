@@ -76,8 +76,15 @@ angular.module("appSite").controller("homeCtrl", ["$scope",
                 $scope.result='bg-danger';
             }
         }
-        $scope.cleanForm = function() {
+        $scope.cleanForm = function(callForm) {
             $scope.submitted = false;
+            $scope.result = 'hidden'
+            $scope.resultMessage = '';
+            $scope.formData; //formData is an object holding the name, email, subject, and message
+            $scope.submitButtonDisabled = false;
+            delete $scope.formData;
+            $scope.formData = [];
+            $scope.callForm.$setPristine();
         }
     }
 ]);
