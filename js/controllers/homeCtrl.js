@@ -76,5 +76,12 @@ angular.module("appSite").controller("homeCtrl", ["$scope",
                 $scope.result='bg-danger';
             }
         }
+        $scope.cleanForm = function() {
+            $scope.result = 'hidden';
+            $scope.resultMessage = '';
+            delete $scope.formData;
+            $scope.formData = [];
+            $scope.callForm.$setPristine();
+        }
     }
 ]);
