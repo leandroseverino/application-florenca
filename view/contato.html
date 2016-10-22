@@ -82,7 +82,12 @@
                 <div class="control-group form-group" ng-class="{ 'has-error': contactform.inputMessage.$invalid && submitted }">
                     <div class="controls">
                         <label>Mensagem:</label>
-                        <textarea rows="10" cols="100" class="form-control" ng-model="formData.inputMessage" id="message" name="message" required maxlength="999" style="resize:none"  placeholder="Deixe a sua mensagem que entraremos em contato."></textarea>
+                        <!--textarea rows="10" cols="100" class="form-control" ng-model="formData.inputMessage" id="message" name="message" required maxlength="999" style="resize:none"  placeholder="Deixe a sua mensagem que entraremos em contato."></textarea-->
+
+                        <div ng-cloak ng-show="isReady">
+                           <textarea ckeditor="editorOptions" name="editor" class="form-control" ng-model="formData.inputMessage" placeholder="Deixe a sua mensagem que entraremos em contato." required></textarea>
+                       </div>
+
                     </div>
                 </div>
                 <div id="success"></div>

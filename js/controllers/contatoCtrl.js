@@ -1,4 +1,12 @@
 angular.module("appSite").controller("contatoCtrl", ["$scope", "$http", "$location", function ($scope, $http, $location) {
+    // setup editor options
+    $scope.editorOptions = {
+        language: 'en',
+        uiColor: '#ffffff'
+    };
+    $scope.$on("ckeditor.ready", function( event ) {
+        $scope.isReady = true;
+    });
     $scope.result = 'hidden'
     $scope.resultMessage;
     $scope.formData; //formData is an object holding the name, email, subject, and message
@@ -7,6 +15,8 @@ angular.module("appSite").controller("contatoCtrl", ["$scope", "$http", "$locati
     $scope.submit = function(contactForm) {
         $scope.submitted = true;
         $scope.submitButtonDisabled = true;
+        console.log($scope.formData);
+        return;
         if (contactForm.$valid) {
             $http({
                 method  : 'POST',

@@ -1,1 +1,1 @@
-angular.module("appSite", ["ngMessages", "ngRoute", "ngFileUpload"]);
+angular.module("appSite", ["ngMessages", "ngRoute", "ngCkeditor", "ngFileUpload"]);
