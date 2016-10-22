@@ -82,8 +82,8 @@ angular.module("appSite").controller("homeCtrl", ["$scope",
             $scope.resultMessage = '';
             $scope.submitButtonDisabled = false;
             //delete $scope.formData;
-            $scope.formData = [];
-            //$scope.callForm.$setPristine();
+            //$scope.formData = [];
+            $scope.callForm.$setPristine(true);
         }
     }
 ]);
