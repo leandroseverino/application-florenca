@@ -30,6 +30,8 @@ angular.module("appSite").controller("empresaCtrl", ["$scope", "$http", "$locati
         $scope.submitted = true;
         console.log($scope.formData);
         console.log($scope.f);
+        $scope.formData.append('file', $scope.f.file);
+        console.log($scope.formData);
         if (empresaform.$valid) {
             $http({
                 method  : 'POST',
@@ -42,7 +44,7 @@ angular.module("appSite").controller("empresaCtrl", ["$scope", "$http", "$locati
                     $scope.resultMessage = 'Muito obrigado, dados enviados com sucesso !, aguarde nosso contato.';
                     $scope.result='bg-success';
                     delete $scope.formData;
-                    $scope.formData = [];
+                    $scope.formData = {};
                     $scope.empresaform.$setPristine();
 			        $location.path("/empresa");
                 } else {

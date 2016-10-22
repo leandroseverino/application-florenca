@@ -31,7 +31,7 @@
 		<div class="tab-content" ng-controller="empresaCtrl" ng-class="active">
 			<h2 class="page-header">Trabalhe Conosco</h2>
             <p>Faça parte de nossa equipe. Deixe os seus dados que entraremos em contato com você.</p>
-            <form name="empresaForm" id="empresaForm" ng-submit="submit(empresaForm)" accept-charset="UTF-8" method="post" role="form" novalidate>
+            <form name="empresaForm" id="empresaForm" ng-submit="submit(empresaForm)" accept-charset="UTF-8" method="post" role="form" novalidate enctype="application/x-www-form-urlencoded">
                 <p ng-class="result" style="padding: 15px; margin: 0; margin-bottom: 10px;">{{ resultMessage }} </p>
                 <div class="control-group form-group row">
                     <div class="controls col-sm-8 col-md-8">
