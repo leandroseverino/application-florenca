@@ -15,8 +15,6 @@ angular.module("appSite").controller("contatoCtrl", ["$scope", "$http", "$locati
     $scope.submit = function(contactForm) {
         $scope.submitted = true;
         $scope.submitButtonDisabled = true;
-        console.log($scope.formData);
-        return;
         if (contactForm.$valid) {
             $http({
                 method  : 'POST',
