@@ -30,14 +30,24 @@ angular.module("appSite").controller("empresaCtrl", ["$scope", "$http", "$locati
         $scope.submitted = true;
         console.log($scope.formData);
         console.log($scope.f);
-        $scope.formData.append('file', $scope.f.file);
-        console.log($scope.formData);
+
+        var fdata = new FormData();
+        fdata.append("file", $scope.f);
+        console.log('fdata');
+        console.log(fdata);
+
+        Object.keys($scope.formData).forEach(function(key) {
+            console.log('dentro');
+            console.log($scope.formData[key]);
+            fdata.append(key, $scope.formData[key]);
+        });
+
         if (empresaform.$valid) {
             $http({
                 method  : 'POST',
                 url     : 'bin/contact_me.php',
-                data    : $.param($scope.formData),  //param method from jQuery
-                headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  //set the headers so angular passing info as form data (not request payload)
+                data    : $.param(fdata),  // $scope.formData param method from jQuery
+                headers : { 'Content-Type': 'undefined' }  //set the headers so angular passing info as form data (not request payload)
             }).success(function(data){
                 if (data.success) { //success comes from the return json object
                     $scope.submitButtonDisabled = false;
