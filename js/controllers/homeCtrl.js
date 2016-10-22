@@ -60,9 +60,9 @@ angular.module("appSite").controller("homeCtrl", ["$scope",
                         $scope.submitButtonDisabled = false;
                         $scope.resultMessage = data.message;
                         $scope.result='bg-success';
-                        delete $scope.formData;
+                        //delete $scope.formData;
                         $scope.formData = [];
-                        $scope.callForm.$setPristine();
+                        //$scope.callForm.$setPristine();
     			        $location.path("/home");
                     } else {
                         $scope.submitButtonDisabled = false;
@@ -80,11 +80,10 @@ angular.module("appSite").controller("homeCtrl", ["$scope",
             $scope.submitted = false;
             $scope.result = 'hidden'
             $scope.resultMessage = '';
-            $scope.formData; //formData is an object holding the name, email, subject, and message
             $scope.submitButtonDisabled = false;
-            delete $scope.formData;
+            //delete $scope.formData;
             $scope.formData = [];
-            $scope.callForm.$setPristine();
+            //$scope.callForm.$setPristine();
         }
     }
 ]);
