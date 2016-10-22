@@ -19,7 +19,7 @@ angular.module("appSite").controller("contatoCtrl", ["$scope", "$http", "$locati
                     $scope.resultMessage = data.message;
                     $scope.result='bg-success';
                     delete $scope.formData;
-                    $scope.formData = [];
+                    $scope.formData = {};
                     $scope.contactForm.$setPristine();
 			        $location.path("/contato");
                 } else {

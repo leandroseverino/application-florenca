@@ -60,7 +60,6 @@ angular.module("appSite").controller("homeCtrl", ["$scope",
                         $scope.submitButtonDisabled = false;
                         $scope.resultMessage = data.message;
                         $scope.result='bg-success';
-                        //delete $scope.formData;
                         $scope.formData = {};
                         $scope.callForm.$setPristine(true);
     			        $location.path("/home");
@@ -81,7 +80,6 @@ angular.module("appSite").controller("homeCtrl", ["$scope",
             $scope.result = 'hidden'
             $scope.resultMessage = '';
             $scope.submitButtonDisabled = false;
-            //delete $scope.formData;
             $scope.formData = {};
             $scope.callForm.$setPristine(true);
         }
