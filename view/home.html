@@ -176,7 +176,6 @@
         <div class="col-lg-12 text-center">
             <button type="button" class="btn btn-danger btn-lg" ng-if="total_imoveis > 1">{{::total_imoveis}} imóveis cadastrados em nosso site !</button>
             <button type="button" class="btn btn-danger btn-lg" ng-if="total_imoveis == 1">{{::total_imoveis}} imóvel cadastrado em nosso site !</button>
-            <p ng-class="result" style="margin: 0; margin-bottom: 10px; margin-top: 10px;">{{ resultMessage }}</p>
         </div>
         <div class="col-lg-12">
             <h2 class="page-header">Em Destaque</h2>
@@ -249,6 +248,7 @@
                     <div class="modal-body">
                         <div class="form-group">
                             <p>Descreva a sua necessidade e deixe os dados de contato que nós entramos em contato com você !</p>
+                            <p ng-class="result" style="margin: 0; margin-bottom: 10px; margin-top: 10px;">{{ resultMessage }}</p>
                         </div>
                         <div class="control-group form-group" ng-class="{ 'has-error': callForm.inputName.$invalid && submitted }">
                             <div class="controls">
