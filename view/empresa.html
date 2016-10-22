@@ -27,29 +27,8 @@
     <!-- TABS https://codepen.io/jasoncluck/pen/iDcbh -->
     <br/>
     <br/>
-    <div class="row">
-        <div class="col-md-12" ng-init="tab=1">
-            <ul class="tabs-nav">
-              <li><a ng-click="tab=1" ng-class="{'active' : tab==1}">Missão</a></li>
-              <li><a ng-click="tab=2" ng-class="{'active' : tab==2}">Valores</a></li>
-              <li><a ng-click="tab=3" ng-class="{'active' : tab==3}">Trabalhe Conosco</a></li>
-            </ul>
-        </div>
-    </div>
-
-	<div class="tabs-container">
-		<div class="tab-content" ng-show="tab == 1">
-			<h2 class="page-header">Missão</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero dolores laborum doloribus iusto quaerat dicta nemo aperiam. Voluptas repudiandae, enim, illum perspiciatis harum officia inventore iusto fugit, repellat asperiores maiores.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero dolores laborum doloribus iusto quaerat dicta nemo aperiam. Voluptas repudiandae, enim, illum perspiciatis harum officia inventore iusto fugit, repellat asperiores maiores.</p>
-		</div>
-
-		<div class="tab-content" ng-show="tab == 2">
-			<h2 class="page-header">Valores</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet impedit dolorem quae, quo nobis omnis? Officia quibusdam quaerat assumenda ipsam, et quos laborum quae ex iste numquam laboriosam obcaecati iure.</p>
-		</div>
-
-		<div class="tab-content" ng-show="tab == 3" ng-controller="empresaCtrl">
+    <div class="tabs-container">
+		<div class="tab-content" ng-controller="empresaCtrl" ng-class="active">
 			<h2 class="page-header">Trabalhe Conosco</h2>
             <p>Faça parte de nossa equipe. Deixe os seus dados que entraremos em contato com você.</p>
             <form name="empresaForm" id="empresaForm" ng-submit="submit(empresaForm)" accept-charset="UTF-8" method="post" role="form" novalidate>

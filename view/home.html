@@ -1,301 +1,311 @@
 <!-- Header Carousel -->
-    <header id="myCarousel" class="carousel slide" style="background-color: #eee;">
-        <!--div style="background-color: #fff;width: 95%;margin:0px auto;border: 01px solid #ccc; margin-bottom: 10px;">
-            <form action="#/search" method="POST" name="form_search" id="form_search" class="form-inline">
-                <div class="table-responsive">
-                    <table border="0" cellspacing="0" cellpadding="0" class="table">
-                        <tbody>
-                        <tr>
-                            <th>Cód. Imóvel:</th>
-                            <th>Modalidade:</th>
-                            <th>Cidade:</th>
-                            <th>Bairro:</th>
-                            <th>Rua:</th>
-                            <th>Nº Dorm.:</th>
-                            <th>Valores Entre:</th>
-                            <th></th>
-                            <th></th>
-                        </tr>
-                        <tr>
-                            <td align="left">
-                                <input name="codigo" id="codigo" type="text" class="form_int form-control" size="10">
-                            </td>
-                            <td align="left">
-                                <select id="finalidade" name="finalidade" class="form_int form-control" style="float: none;">
-                                    <option>[Selecione]</option>
-                                    <option value="Residêncial">Residêncial</option>
-                                    <option value="Comercial">Comercial</option>
-                                </select>
-                            </td>
-                            <td align="left">
-                                 <select id="cidade_value" name="cidade_value" class="form_int form-control" style="float: none;">
-                                    <option>[Selecione]</option>
-                                    <option>Canoas</option>
-                                    <option>Porto Alegre</option>
-                                    <option>Sapucaia</option>
-                                    <option>Esteio</option>
-                                 </select>
-                            </td>
-                            <td align="left">
-                                <input id="bairro" name="bairro" type="text" class="form_int form-control" size="10">
-                            </td>
-                            <td align="left">
-                                <input id="rua" name="rua" type="text" class="form_int form-control" size="10">
-                            </td>
-                            <td align="left">
-                                <select id="dormitorios" name="dormitorios" class="form_int form-control" style="float: none;">
-                                    <option>........</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                </select>
-                            </td>
-                            <td align="left">
-                                <select id="valor_inicial" name="valor_inicial" class="form_int form-control" style="float: none;width:100px;display:inline;">
-                                    <option>[Selecione]</option>
-                                    <option value="100">100,00</option>
-                                    <option value="500">500,00</option>
-                                    <option value="1000">1.000,00</option>
-                                    <option value="2000">2.000,00</option>
-                                    <option value="3000">3.000,00</option>
-                                    <option value="5000">5.000,00</option>
-                                    <option value="10000">10.000,00</option>
-                                    <option value="50000">50.000,00</option>
-                                    <option value="100000">100.000,00</option>
-                                    <option value="200000">200.000,00</option>
-                                    <option value="300000">300.000,00</option>
-                                    <option value="500000">500.000,00</option>
-                                    <option value="1000000000">1.000.000,00</option>
-                                    <option value="10000000000">10.000.000,00</option>
-                                </select>
-                            </td>
-                            <td align="left">
-                                <select id="valor_final" name="valor_final" class="form_int form-control" style="float: none;width:100px;display:inline;">
-                                    <option>[Selecione]</option>
-                                    <option value="100">100,00</option>
-                                    <option value="500">500,00</option>
-                                    <option value="1000">1.000,00</option>
-                                    <option value="2000">2.000,00</option>
-                                    <option value="3000">3.000,00</option>
-                                    <option value="5000">5.000,00</option>
-                                    <option value="10000">10.000,00</option>
-                                    <option value="50000">50.000,00</option>
-                                    <option value="100000">100.000,00</option>
-                                    <option value="200000">200.000,00</option>
-                                    <option value="300000">300.000,00</option>
-                                    <option value="500000">500.000,00</option>
-                                    <option value="1000000000">1.000.000,00</option>
-                                    <option value="10000000000">10.000.000,00</option>
-                                </select>
-                            </td>
-                            <td colspan="10" align="right">
-                                <input type="button" class="btn btn-default" value="Pesquisar" />
-                                <!--a href="#" onclick="form_search.submit();">
-                                    <img src="http://media.imobiliariaflorenca.com.br/images/bot_busca.png" alt="pesquisar" title="pesquisar" width="50" height="30">
-                                </a-->
-                            <!--/td>
-                        </tr>
+<header id="myCarousel" class="carousel slide" style="background-color: #eee;">
+    <!--div style="background-color: #fff;width: 95%;margin:0px auto;border: 01px solid #ccc; margin-bottom: 10px;">
+    <form action="#/search" method="POST" name="form_search" id="form_search" class="form-inline">
+    <div class="table-responsive">
+    <table border="0" cellspacing="0" cellpadding="0" class="table">
+    <tbody>
+    <tr>
+    <th>Cód. Imóvel:</th>
+    <th>Modalidade:</th>
+    <th>Cidade:</th>
+    <th>Bairro:</th>
+    <th>Rua:</th>
+    <th>Nº Dorm.:</th>
+    <th>Valores Entre:</th>
+    <th></th>
+    <th></th>
+</tr>
+<tr>
+<td align="left">
+<input name="codigo" id="codigo" type="text" class="form_int form-control" size="10">
+</td>
+<td align="left">
+<select id="finalidade" name="finalidade" class="form_int form-control" style="float: none;">
+<option>[Selecione]</option>
+<option value="Residêncial">Residêncial</option>
+<option value="Comercial">Comercial</option>
+</select>
+</td>
+<td align="left">
+<select id="cidade_value" name="cidade_value" class="form_int form-control" style="float: none;">
+<option>[Selecione]</option>
+<option>Canoas</option>
+<option>Porto Alegre</option>
+<option>Sapucaia</option>
+<option>Esteio</option>
+</select>
+</td>
+<td align="left">
+<input id="bairro" name="bairro" type="text" class="form_int form-control" size="10">
+</td>
+<td align="left">
+<input id="rua" name="rua" type="text" class="form_int form-control" size="10">
+</td>
+<td align="left">
+<select id="dormitorios" name="dormitorios" class="form_int form-control" style="float: none;">
+<option>........</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+</select>
+</td>
+<td align="left">
+<select id="valor_inicial" name="valor_inicial" class="form_int form-control" style="float: none;width:100px;display:inline;">
+<option>[Selecione]</option>
+<option value="100">100,00</option>
+<option value="500">500,00</option>
+<option value="1000">1.000,00</option>
+<option value="2000">2.000,00</option>
+<option value="3000">3.000,00</option>
+<option value="5000">5.000,00</option>
+<option value="10000">10.000,00</option>
+<option value="50000">50.000,00</option>
+<option value="100000">100.000,00</option>
+<option value="200000">200.000,00</option>
+<option value="300000">300.000,00</option>
+<option value="500000">500.000,00</option>
+<option value="1000000000">1.000.000,00</option>
+<option value="10000000000">10.000.000,00</option>
+</select>
+</td>
+<td align="left">
+<select id="valor_final" name="valor_final" class="form_int form-control" style="float: none;width:100px;display:inline;">
+<option>[Selecione]</option>
+<option value="100">100,00</option>
+<option value="500">500,00</option>
+<option value="1000">1.000,00</option>
+<option value="2000">2.000,00</option>
+<option value="3000">3.000,00</option>
+<option value="5000">5.000,00</option>
+<option value="10000">10.000,00</option>
+<option value="50000">50.000,00</option>
+<option value="100000">100.000,00</option>
+<option value="200000">200.000,00</option>
+<option value="300000">300.000,00</option>
+<option value="500000">500.000,00</option>
+<option value="1000000000">1.000.000,00</option>
+<option value="10000000000">10.000.000,00</option>
+</select>
+</td>
+<td colspan="10" align="right">
+<input type="button" class="btn btn-default" value="Pesquisar" />
+<!--a href="#" onclick="form_search.submit();">
+<img src="http://media.imobiliariaflorenca.com.br/images/bot_busca.png" alt="pesquisar" title="pesquisar" width="50" height="30">
+</a-->
+<!--/td>
+</tr>
 
-                    </tbody></table>
+</tbody></table>
+</div>
+</form>
+</div-->
+<!-- Indicators -->
+<ol class="carousel-indicators">
+    <li data-target="#myCarousel" ng-repeat="p in active_banners track by p.id" data-slide-to="{{::$index}}" ng-class="{active: $index == 0}"></li>
+</ol>
+<!-- Wrapper for slides -->
+<div class="carousel-inner">
+    <div class="item" ng-repeat="banner in active_banners track by banner.id" ng-class="{active: $index == 0}">
+        <div class="fill" style="background-image:url('{{::banner.resource_path}}');"></div>
+        <div class="carousel-caption">
+            <h2>{{::banner.descricao}}</h2>
+        </div>
+    </div>
+</div>
+
+<!-- Controls -->
+<a class="left carousel-control" href="#myCarousel" data-slide="prev" onclick="return false;">
+    <span class="icon-prev"></span>
+</a>
+<a class="right carousel-control" href="#myCarousel" data-slide="next" onclick="return false;">
+    <span class="icon-next"></span>
+</a>
+</header>
+
+<!-- Page Content -->
+<div class="container">
+
+    <!-- Marketing Icons Section -->
+    <div class="row">
+        <div class="col-lg-12 text-right" style="padding-top: 20px;">
+            <a href="{{::rss_link}}" title="Assine nossos feeds e receba as novidades por e-mail." class="social-link" target="_blank">
+                <div class="social rss">
+                    <i class="fa fa-rss fa-5x"></i>
                 </div>
-            </form>
-        </div-->
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" ng-repeat="p in active_banners track by p.id" data-slide-to="{{::$index}}" ng-class="{active: $index == 0}"></li>
-        </ol>
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner">
-            <div class="item" ng-repeat="banner in active_banners track by banner.id" ng-class="{active: $index == 0}">
-                <div class="fill" style="background-image:url('{{::banner.resource_path}}');"></div>
-                <div class="carousel-caption">
-                    <h2>{{::banner.descricao}}</h2>
+            </a>
+            <a href="{{::google_plus_link}}" title="Visite nossa página no Google +." class="social-link" target="_blank">
+                <div class="social google-pluse">
+                    <i class="fa fa-google-plus fa-5x"></i>
                 </div>
-            </div>
-        </div>
-
-        <!-- Controls -->
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev" onclick="return false;">
-            <span class="icon-prev"></span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" data-slide="next" onclick="return false;">
-            <span class="icon-next"></span>
-        </a>
-    </header>
-
-    <!-- Page Content -->
-    <div class="container">
-
-        <!-- Marketing Icons Section -->
-        <div class="row">
-            <div class="col-lg-12 text-right" style="padding-top: 20px;">
-                <a href="{{::parameters[7].valor}}" title="Assine nossos feeds e receba as novidades por e-mail." class="social-link" target="_blank">
-                    <div class="social rss">
-                        <i class="fa fa-rss fa-5x"></i>
-                    </div>
-                </a>
-                <a href="{{::parameters[4].valor}}" title="Visite nossa página no Google +." class="social-link" target="_blank">
-                    <div class="social google-pluse">
-                        <i class="fa fa-google-plus fa-5x"></i>
-                    </div>
-                </a>
-                <a href="{{::parameters[1].valor}}" title="Visite nossa página no Facebook." class="social-link" target="_blank">
-                    <div class="social facebook">
-                        <i class="fa fa-facebook fa-5x"></i>
-                    </div>
-                </a>
-                <a href="{{::parameters[3].valor}}" title="Siga-nos no Twitter." class="social-link" target="_blank">
-                    <div class="social twitter">
-                        <i class="fa fa-twitter fa-5x"></i>
-                    </div>
-                </a>
-                <a href="{{::parameters[2].valor}}" title="Visite nosso canal no Youtube." class="social-link" target="_blank">
-                    <div class="social youtube">
-                        <i class="fa fa-youtube fa-5x"></i>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-12 text-center">
-                <img src="img/logo.png" style="margin-top: 30px;" />
-            </div>
-            <div class="col-lg-12">
-                <blockquote>"Fundada em 1970, a Florença Negócios Imobiliários é uma das primeiras empresas a atuar no mercado imobiliário de Canoas e Região. Atuando fortemente no mercado de locação comercial e residencial, tem sua trajetória marcada pelo atendimento personalizado de seus clientes.”</blockquote>
-            </div>
-
-        </div>
-        <!-- /.row -->
-        <div class="row">
-            <div class="col-lg-12 text-center"></div>
-        </div>
-        <!-- Portfolio Section -->
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <button type="button" class="btn btn-danger btn-lg" ng-if="total_imoveis > 1">{{::total_imoveis}} imóveis cadastrados em nosso site !</button>
-                <button type="button" class="btn btn-danger btn-lg" ng-if="total_imoveis == 1">{{::total_imoveis}} imóvel cadastrado em nosso site !</button>
-            </div>
-            <div class="col-lg-12">
-                <h2 class="page-header">Em Destaque</h2>
-                <p>Aqui estão os nossos principais imóveis em destaque !</p>
-            </div>
-
-            <div class="col-md-4 col-sm-6" ng-repeat="destaque in destaques track by destaque.imovel.id">
-                <a href="#/detalhe-imovel/{{::destaque.imovel.slug}}" title="Cod.: {{::destaque.imovel.codigo}}" ng-if="destaque.tipo_recurso == 'Foto'">
-                    <img class="img-responsive img-portfolio img-hover"
-                         ng-src="{{::destaque.resource_path}}"
-                         style="width: 360px; height: 231px;"
-                         alt="Foto do Imóvel: Cod.: {{::destaque.imovel.codigo}}"
-                         title="Foto de Destaque do Imóvel {{::destaque.imovel.codigo}}" />
-                </a>
-                <div class="video_painel" ng-if="destaque.tipo_recurso == 'Video'">
-                    <div ng-bind-html="destaque.resource_path | escapeHtml" ng-show="!destaque.uploaded"></div>
-                    <video controls width="65%" height="60%" ng-show="destaque.uploaded">
-                        <source src="{{::destaque.resource_path}}"  type="video/mp4; codecs='avc1.42E01E, mp4a.40.2'"
-                    </video>
+            </a>
+            <a href="{{::facebook_link}}" title="Visite nossa página no Facebook." class="social-link" target="_blank">
+                <div class="social facebook">
+                    <i class="fa fa-facebook fa-5x"></i>
                 </div>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <!-- Features Section -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h2 class="page-header">Facilidades para você:</h2>
-            </div>
-            <div class="col-md-6">
-                <p>Processo simplificado:</p>
-                <ul>
-                    <li><strong>Envie a documentação online</strong></li>
-                    <li>Faça a reserva pelo site</li>
-                    <li>Agende a visita online</li>
-                    <li>Tire suas dúvidas pelo nosso Chat</li>
-                    <li>Ou venha tomar um café consco</li>
-                    <li>Ambiente climatizado</li>
-                </ul>
-                <p>{{facilidades_message}}</p>
-            </div>
-            <div class="col-md-6">
-                <img class="img-responsive" src="img/foto_01_700x450.jpg" alt="Foto das Facilidades." title="Conheça as nossas Facilidades." />
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <hr>
-
-        <!-- Call to Action Section -->
-        <div class="well">
-            <div class="row">
-                <div class="col-md-8">
-                    <p class="default">{{::ligue_para_nos_message}}<i class="fa fa-phone-square" style="display:inline;margin-left:05px;color:green"></i> <span style="color:blue">(51) 9993-7292</span></p>
+            </a>
+            <a href="{{::twitter_link}}" title="Siga-nos no Twitter." class="social-link" target="_blank">
+                <div class="social twitter">
+                    <i class="fa fa-twitter fa-5x"></i>
                 </div>
-                <div class="col-md-4">
-                    <button type="button" class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#exampleModal">Entramos em contato com você</button>
+            </a>
+            <a href="{{::youtube_link}}" title="Visite nosso canal no Youtube." class="social-link" target="_blank">
+                <div class="social youtube">
+                    <i class="fa fa-youtube fa-5x"></i>
                 </div>
-            </div>
+            </a>
         </div>
-
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="exampleModalLabel"><i class="fa fa-phone"></i> Nós entramos em contato com você</h4>
-              </div>
-              <div class="modal-body">
-                <form role="form">
-                  <div class="form-group">
-                       <p>Descreva a sua necessidade e deixe os dados de contato que nós entramos em contato com você !</p>
-                  </div>
-                  <div class="form-group">
-                    <label for="recipient-name" class="control-label">Nome:</label>
-                    <input type="text" class="form-control" id="recipient-name" required placeholder="Informe o seu nome (Obrigatório)." />
-                  </div>
-                  <div class="form-group">
-                    <label for="recipient-name" class="control-label">E-mail:</label>
-                    <input type="text" class="form-control" id="recipient-name" placeholder="Informe o seu E-mail." />
-                  </div>
-                  <div class="form-group">
-                    <label for="recipient-name" class="control-label">Telefone:</label>
-                    <input type="text" class="form-control" id="recipient-name" required placeholder="Informe o seu Telefone/Whatsapp (Obrigatório)." />
-                  </div>
-                  <div class="form-group">
-                    <label for="recipient-name" class="control-label">Desejo ser contatado:</label>
-                    <div class="input-group">
-                        <span class="input-group-addon">
-                            <i class="fa fa-phone"></i> Telefone <input type="checkbox" id="recipient-name" />
-                        </span>
-                        <span class="input-group-addon">
-                           <i class="fa fa-phone-square"></i> Whatsapp <input type="checkbox" id="recipient-name" />
-                        </span>
-                        <span class="input-group-addon">
-                            <i class="fa fa-envelope-o"></i> E-mail <input type="checkbox" id="recipient-name" />
-                        </span>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="message-text" class="control-label">Mensagem:</label>
-                    <textarea class="form-control" id="message-text" placeholder="Deixa sua mensagem descrevendo a sua necessidade."></textarea>
-                  </div>
-                  <div class="form-group">
-                       <p>Ao enviar, você concorda com os Termos de Uso, Política de Privacidade e recebimento de sugestões de imóveis.</p>
-                  </div>
-                </form>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-                <button type="submit" class="btn btn-primary">Enviar</button>
-              </div>
-            </div>
-          </div>
+        <div class="col-lg-12 text-center">
+            <img src="img/logo.png" style="margin-top: 30px;margin-bottom:20px;" />
         </div>
-
-        <hr>
-
-        <!-- Footer -->
-        <footer ng-include="'view/footer.html'"></footer>
+        <div class="col-lg-12">
+            <blockquote>"Imobiliária Florença atuando no ramo de locação e vendas de imóveis residenciais e comerciais em Canoas há mais de 30 anos”</blockquote>
+        </div>
 
     </div>
-    <!-- /.container -->
+    <!-- /.row -->
+    <div class="row">
+        <div class="col-lg-12 text-center"></div>
+    </div>
+    <!-- Portfolio Section -->
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <button type="button" class="btn btn-danger btn-lg" ng-if="total_imoveis > 1">{{::total_imoveis}} imóveis cadastrados em nosso site !</button>
+            <button type="button" class="btn btn-danger btn-lg" ng-if="total_imoveis == 1">{{::total_imoveis}} imóvel cadastrado em nosso site !</button>
+            <p ng-class="result" style="margin: 0; margin-bottom: 10px; margin-top: 10px;">{{ resultMessage }}</p>
+        </div>
+        <div class="col-lg-12">
+            <h2 class="page-header">Em Destaque</h2>
+            <p>Aqui estão os nossos principais imóveis em destaque !</p>
+        </div>
+
+        <div class="col-md-4 col-sm-6" ng-repeat="destaque in destaques track by destaque.imovel.id">
+            <a href="#/detalhe-imovel/{{::destaque.imovel.slug}}" title="Cod.: {{::destaque.imovel.codigo}}" ng-if="destaque.tipo_recurso == 'Foto'">
+                <img class="img-responsive img-portfolio img-hover"
+                ng-src="{{::destaque.resource_path}}"
+                style="width: 360px; height: 231px;"
+                alt="Foto do Imóvel: Cod.: {{::destaque.imovel.codigo}}"
+                title="Foto de Destaque do Imóvel {{::destaque.imovel.codigo}}" />
+            </a>
+            <div class="video_painel" ng-if="destaque.tipo_recurso == 'Video'">
+                <div ng-bind-html="destaque.resource_path | escapeHtml" ng-show="!destaque.uploaded"></div>
+                <video controls width="65%" height="60%" ng-show="destaque.uploaded">
+                    <source src="{{::destaque.resource_path}}"  type="video/mp4; codecs='avc1.42E01E, mp4a.40.2'"
+                </video>
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <!-- Features Section -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="page-header">Facilidades para você:</h2>
+        </div>
+        <div class="col-md-6">
+            <p>Processo simplificado:</p>
+            <ul>
+                <li><strong>Envie a documentação online</strong></li>
+                <li>Faça a reserva pelo site</li>
+                <li>Agende a visita online</li>
+                <li>Tire suas dúvidas pelo nosso Chat</li>
+                <li>Ou venha tomar um café consco</li>
+                <li>Ambiente climatizado</li>
+            </ul>
+            <p>{{facilidades_message}}</p>
+        </div>
+        <div class="col-md-6">
+            <img class="img-responsive" src="img/foto_01_700x450.jpg" alt="Foto das Facilidades." title="Conheça as nossas Facilidades." />
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    <!-- Call to Action Section -->
+    <div class="well">
+        <div class="row">
+            <div class="col-md-8">
+                <p class="default">{{::ligue_para_nos_message}}<i class="fa fa-phone-square" style="display:inline;margin-left:05px;color:green"></i> <span style="color:blue">(51) 9993-7292</span></p>
+            </div>
+            <div class="col-md-4">
+                <button type="button" class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#exampleModal">Entramos em contato com você</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+        <form name="callForm" id="callForm" ng-submit="submit(callForm)" accept-charset="UTF-8" method="post" role="form">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel"><i class="fa fa-phone"></i> Nós entramos em contato com você</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <p>Descreva a sua necessidade e deixe os dados de contato que nós entramos em contato com você !</p>
+                        </div>
+                        <div class="control-group form-group" ng-class="{ 'has-error': callForm.inputName.$invalid && submitted }">
+                            <div class="controls">
+                                <label for="name" class="control-label">Nome:</label>
+                                <input type="text" class="form-control" ng-model="formData.inputName" id="name" name="name" required placeholder="Informe o seu nome (Obrigatório)." />
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+                        <div class="control-group form-group" ng-class="{ 'has-error': callForm.inputEmail.$invalid && submitted }">
+                            <div class="controls">
+                                <label for="email" class="control-label">E-mail:</label>
+                                <input type="email" class="form-control" ng-model="formData.inputEmail" id="email" name="email" required placeholder="Informe o seu e-mail.">
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+                        <div class="control-group form-group" ng-class="{ 'has-error': callForm.inputPhone.$invalid && submitted }">
+                            <div class="controls">
+                                <label for="phone" class="control-label">Telefone:</label>
+                                <input type="tel" class="form-control" ng-model="formData.inputPhone" id="phone" name="phone" required placeholder="Informe o seu Telefone/Whatsapp (Obrigatório).">
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+                        <div class="control-group form-group">
+                            <label for="recipient-name" class="control-label">Desejo ser contatado:</label>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-phone"></i> Telefone <input type="checkbox" ng-model="formData.byPhone" id="byPhone" name="byPhone" />
+                                </span>
+                                <span class="input-group-addon">
+                                    <i class="fa fa-phone-square"></i> Whatsapp <input type="checkbox" ng-model="formData.byWhatsapp" id="byWhatsapp" name="byWhatsapp" />
+                                </span>
+                                <span class="input-group-addon">
+                                    <i class="fa fa-envelope-o"></i> E-mail <input type="checkbox" ng-model="formData.byEmail" id="byEmail" name="byEmail"  />
+                                </span>
+                            </div>
+                        </div>
+                        <div class="control-group form-group" ng-class="{ 'has-error': callForm.inputMessage.$invalid && submitted }">
+                            <div class="controls">
+                                <label for="message" class="control-label">Mensagem:</label>
+                                <textarea rows="10" cols="100" class="form-control" ng-model="formData.inputMessage" id="message" name="message" required maxlength="999" style="resize:none"  placeholder="Deixa sua mensagem descrevendo a sua necessidade."></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <p>Ao enviar, você concorda com os Termos de Uso, Política de Privacidade e recebimento de sugestões de imóveis.</p>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                        <button type="submit" class="btn btn-primary" ng-disabled="submitButtonDisabled">Enviar</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <hr>
+    <!-- Footer -->
+    <footer ng-include="'view/footer.html'"></footer>
+</div>
+<!-- /.container -->
