@@ -70,14 +70,14 @@
                 <div class="control-group form-group row">
                     <div class="controls col-sm-3">
                         <label>Telefone:<span class="text-danger" ng-if="empresaForm.phone.$error.required || empresaForm.phone.$invalid"> (requerido)</span></label>
-                        <input type="tel" class="form-control" id="phone" name="phone" ng-model="formData.inputPhone" required placeholder="Informe o seu telefone.">
+                        <input type="tel" class="form-control" id="phone" name="phone" ng-model="formData.inputPhone" required placeholder="Informe o seu telefone." ui-br-phone-number>
                         <div ng-if="(empresaForm.phone.$touched || empresaForm.$submitted) && empresaForm.phone.$invalid" class="has-error">
                             <p class="help-block" ng-if="empresaForm.phone.$error.required">Por favor, informe o seu telefone.</p>
                         </div>
                     </div>
                     <div class="controls col-sm-3">
                         <label>Celular:<span class="text-danger" ng-if="empresaForm.celular.$error.required || empresaForm.celular.$invalid"> (requerido)</span></label>
-                        <input type="tel" class="form-control" id="celular" name="celular" ng-model="formData.inputCelular" required placeholder="Informe o seu celular.">
+                        <input type="tel" class="form-control" id="celular" name="celular" ng-model="formData.inputCelular" required placeholder="Informe o seu celular." ui-br-phone-number>
                         <div ng-if="(empresaForm.celular.$touched || empresaForm.$submitted) && empresaForm.celular.$invalid" class="has-error">
                             <p class="help-block" ng-if="empresaForm.celular.$error.required">Por favor, informe o seu celular.</p>
                         </div>

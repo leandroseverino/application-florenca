@@ -70,7 +70,7 @@
                 <div class="control-group form-group" ng-class="{ 'has-error': contactform.inputPhone.$invalid && submitted }">
                     <div class="controls">
                         <label>Telefone:</label>
-                        <input type="tel" class="form-control" ng-model="formData.inputPhone" id="phone" name="phone" required placeholder="Informe o seu telefone.">
+                        <input type="tel" class="form-control" ng-model="formData.inputPhone" id="phone" name="phone" required placeholder="Informe o seu telefone." ui-br-phone-number>
                     </div>
                 </div>
                 <div class="control-group form-group" ng-class="{ 'has-error': contactform.inputEmail.$invalid && submitted }">
