@@ -34,7 +34,7 @@ angular.module("appSite").controller("empresaCtrl", ["$scope", "$http", "$locati
             });
         }
     }
-    $scope.submit = function(empresaform) {
+    $scope.submit = function(empresaForm) {
         $scope.submitted = true;
         $scope.submitButtonDisabled = true;
         if (empresaform.$valid) {
@@ -48,8 +48,9 @@ angular.module("appSite").controller("empresaCtrl", ["$scope", "$http", "$locati
                     $scope.submitButtonDisabled = false;
                     $scope.resultMessage = 'Muito obrigado, dados enviados com sucesso !, aguarde nosso contato.';
                     $scope.result='bg-success';
+                    delete $scope.formData;
                     $scope.formData = {};
-                    $scope.empresaform.$setPristine();
+                    $scope.empresaForm.$setPristine();
 			        $location.path("/empresa");
                 } else {
                     $scope.submitButtonDisabled = false;
@@ -58,7 +59,7 @@ angular.module("appSite").controller("empresaCtrl", ["$scope", "$http", "$locati
                 }
             });
         } else {
-            $scope.submitButtonDisabled = empresaform.$invalid;
+            $scope.submitButtonDisabled = empresaForm.$invalid;
             $scope.resultMessage = 'Por favor !, verifique os campos do formulário e tente novamente !.';
             $scope.result='bg-danger';
         }
