@@ -35,11 +35,12 @@ $message = $_POST['inputMessage'];
 // create email body and send it
 $to = 'contato@imobiliariaflorenca.com.br'; // PUT YOUR EMAIL ADDRESS HERE
 $email_subject = "Mensagem enviada pelo site por:  $name"; // EDIT THE EMAIL SUBJECT LINE HERE
-$part1 = "Olá, <br />Você recebeu uma nova mensagem do formulário: TRABALHE CONOSCO do website da Imobiliaria Florença !.<br /><br />";
-$part2 = "Aqui estão os Detalhes:<br /><br />Remetente: $name<br />Telefone: $phone<br />Celular: $celular<br />E-mail: $email_address<br /><br />";
+$part1 = "Olá, <br />Você recebeu uma nova mensagem do formulário: TRABALHE CONOSCO do website da Imobiliaria Florença.<br /><br />";
+$part2 = "Aqui estão os Detalhes do Remente:<br /><br />Nome: $name<br />Telefone: $phone<br />Celular: $celular<br />E-mail: $email_address<br /><br />";
 $part3 = "Endereço: $endereco , Número: $numero, Complemento: $complemento - Bairro: $bairro - Cidade: $cidade - UF: $uf<br /><br />";
-$part4 = "<h4>Dados do Currículo:</h4><br /><br />$message";
-$email_body = $part1 . $part2 . $part3 . $part4;
+$part4 = "<span style='color: blue;'>CARGO PRETENDIDO: $cargo</span></br></br>";
+$part5 = "<h2>Dados do Currículo:</h2><br />$message";
+$email_body = $part1 . $part2 . $part3 . $part4. $part5;
 $headers = "From: contato@imobiliariaflorenca.com.br\n";
 $headers .= "Reply-To: $email_address";
 $headers .= "MIME-Version: 1.0\n";
