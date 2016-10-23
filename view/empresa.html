@@ -166,28 +166,13 @@
                 </div>
                 <div class="control-group form-group row">
                     <div class="controls col-sm-12">
-                        <!--
                         <label>Currículo:</label>
-                        <div class="controls col-sm-4">
-                             <button type="file"
-                                     ngf-select="uploadFiles($file, $invalidFiles)"
-                                     accept="application/msword, application/pdf"
-                                     ngf-max-height="1000"
-                                     ngf-max-size="20MB"
-                                     class="btn btn-default">Selecionar arquivo</button>
-                        </div>
-                        <div class="controls col-sm-8">
-                              <label>Arquivo Selecionado:</label>
-                              <div style="font:smaller">
-                                  {{f.name}} {{errFile.name}} {{errFile.$error}} {{errFile.$errorParam}}
-                                  <span class="progress" ng-show="f.progress >= 0">
-                                      <div style="width:{{f.progress}}%" ng-bind="f.progress + '%' + ' enviado !'"></div>
-                                  </span>
-                              </div>
-                             {{errorMsg}}
-                        </div>
-                        -->
-                        
+                        <p class="text-nowrap">Por medidas de segurança, não aceitamos anexos.</p>
+                        <p class="text-justify"><strong>Abra o documento do WORD</strong> copie todo o conteúdo, <strong>pressione o botão com a letra W</strong> na barra de ferramenta abaixo e cole o conteúdo no campo sugerido.</p>
+                        <p class="text-justify">Após, pressione o botão verde OK e todo o conteúdo do seu currículo estará formatado corretamente no campo abaixo.</p>
+                        <div ng-cloak ng-show="isReady">
+                           <textarea ckeditor="editorOptions" name="editor" class="form-control" ng-model="formData.inputMessage" placeholder="Deixe a sua mensagem que entraremos em contato." required></textarea>
+                       </div>
                     </div>
                 </div>
                 <div id="success"></div>

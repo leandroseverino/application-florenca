@@ -1,4 +1,12 @@
 angular.module("appSite").controller("empresaCtrl", ["$scope", "$http", "$location", "Upload", "$timeout", function ($scope, $http, $location, Upload, $timeout) {
+    // setup editor options
+    $scope.editorOptions = {
+        language: 'en',
+        uiColor: '#ffffff'
+    };
+    $scope.$on("ckeditor.ready", function( event ) {
+        $scope.isReady = true;
+    });
     $scope.result = 'hidden'
     $scope.resultMessage;
     $scope.formData; //formData is an object holding the name, email, subject, and message
@@ -28,32 +36,18 @@ angular.module("appSite").controller("empresaCtrl", ["$scope", "$http", "$locati
     }
     $scope.submit = function(empresaform) {
         $scope.submitted = true;
-        console.log($scope.formData);
-        console.log($scope.f);
-
-        var fdata = new FormData();
-        fdata.append("file", $scope.f);
-        console.log('fdata');
-        console.log(fdata);
-
-        Object.keys($scope.formData).forEach(function(key) {
-            console.log('dentro');
-            console.log($scope.formData[key]);
-            fdata.append(key, $scope.formData[key]);
-        });
-
+        $scope.submitButtonDisabled = true;
         if (empresaform.$valid) {
             $http({
                 method  : 'POST',
-                url     : 'bin/contact_me.php',
-                data    : $.param(fdata),  // $scope.formData param method from jQuery
-                headers : { 'Content-Type': 'undefined' }  //set the headers so angular passing info as form data (not request payload)
+                url     : 'bin/work_with_us.php',
+                data    : $.param($scope.formData),
+                headers : { 'Content-Type': 'application/x-www-form-urlencoded' }
             }).success(function(data){
-                if (data.success) { //success comes from the return json object
+                if (data.success) {
                     $scope.submitButtonDisabled = false;
                     $scope.resultMessage = 'Muito obrigado, dados enviados com sucesso !, aguarde nosso contato.';
                     $scope.result='bg-success';
-                    delete $scope.formData;
                     $scope.formData = {};
                     $scope.empresaform.$setPristine();
 			        $location.path("/empresa");
@@ -67,7 +61,6 @@ angular.module("appSite").controller("empresaCtrl", ["$scope", "$http", "$locati
             $scope.submitButtonDisabled = empresaform.$invalid;
             $scope.resultMessage = 'Por favor !, verifique os campos do formulário e tente novamente !.';
             $scope.result='bg-danger';
-
         }
     }
 }]);
