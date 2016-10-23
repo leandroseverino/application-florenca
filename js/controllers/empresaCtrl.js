@@ -37,7 +37,7 @@ angular.module("appSite").controller("empresaCtrl", ["$scope", "$http", "$locati
     $scope.submit = function(empresaForm) {
         $scope.submitted = true;
         $scope.submitButtonDisabled = true;
-        if (empresaform.$valid) {
+        if (empresaForm.$valid) {
             $http({
                 method  : 'POST',
                 url     : 'bin/work_with_us.php',
