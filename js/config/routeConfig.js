@@ -221,6 +221,9 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
         templateUrl: "view/detalhe-imovel.html",
         controller: "detalhesImovelCtrl",
         resolve: {
+            loaded_parameters: ["parametroAPI", function (parametroAPI) {
+                return parametroAPI.getParametros();
+            }],
             imovel: ["detalhesImovelAPI", "$route", function (detalhesImovelAPI, $route) {
                 return detalhesImovelAPI.getImovel($route.current.params.slug);
             }],

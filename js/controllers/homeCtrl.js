@@ -17,6 +17,8 @@ angular.module("appSite").controller("homeCtrl", ["$scope",
         $scope.google_plus_link;
         $scope.rss_link;
 
+        $scope.root_url;
+
         var _data = loaded_parameters.data;
         $scope.extrai_valores_redes_sociais = function(_data) {
             for (var i = 0; i < loaded_parameters.data.length; i++) {
@@ -30,6 +32,8 @@ angular.module("appSite").controller("homeCtrl", ["$scope",
                     $scope.facebook_link = loaded_parameters.data[i].valor;
                 } else if (loaded_parameters.data[i].nome == 'endereco_feed_rss') {
                     $scope.rss_link = loaded_parameters.data[i].valor;
+                } else if (loaded_parameters.data[i].nome == 'root_url') {
+                    $scope.root_url = loaded_parameters.data[i].valor;
                 }
             };
         };
