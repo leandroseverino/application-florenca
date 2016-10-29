@@ -70,28 +70,20 @@
                 <h3 class="page-header">Veja também</h3>
             </div>
 
-            <div class="col-sm-3 col-xs-6">
-                <a href="#">
-                    <img class="img-responsive img-hover img-related" src="http://placehold.it/500x300" alt="">
+            <div class="col-sm-3 col-xs-6" ng-repeat="relacionado in imoveisRelacionados">
+                <a href="#/detalhe-imovel/{{::relacionado.imovel.slug}}" title="Cod.: {{::relacionado.imovel.codigo}}" ng-if="relacionado.tipo_recurso == 'Foto'">
+                    <img class="img-responsive img-hover img-related"
+                    ng-src="{{::relacionado.resource_path}}"
+                    style="width: 500px;"
+                    alt="Foto do Imóvel: Cod.: {{::relacionado.imovel.codigo}}"
+                    title="Foto de Destaque do Imóvel {{::relacionado.imovel.codigo}}" />
                 </a>
-            </div>
-
-            <div class="col-sm-3 col-xs-6">
-                <a href="#">
-                    <img class="img-responsive img-hover img-related" src="http://placehold.it/500x300" alt="">
-                </a>
-            </div>
-
-            <div class="col-sm-3 col-xs-6">
-                <a href="#">
-                    <img class="img-responsive img-hover img-related" src="http://placehold.it/500x300" alt="">
-                </a>
-            </div>
-
-            <div class="col-sm-3 col-xs-6">
-                <a href="#">
-                    <img class="img-responsive img-hover img-related" src="http://placehold.it/500x300" alt="">
-                </a>
+                <div class="video_painel" ng-if="relacionado.tipo_recurso == 'Video'">
+                    <div ng-bind-html="relacionado.resource_path | escapeHtml" ng-show="!relacionado.uploaded"></div>
+                    <video controls width="65%" height="60%" ng-show="relacionado.uploaded">
+                        <source src="{{::relacionado.resource_path}}"  type="video/mp4; codecs='avc1.42E01E, mp4a.40.2'"
+                    </video>
+                </div>
             </div>
 
         </div>
