@@ -8,7 +8,7 @@
                     <small>{{::imovel.codigo}}</small>
                 </h1>
                 <ol class="breadcrumb">
-                    <li><a href="index.html">Inicio</a></li>
+                    <li><i class="fa fa-home fa-1x"></i> <a href="index.html">Inicio</a></li>
                     <li>Detalhes do Imóvel</li>
                     <li>{{::imovel.tipo_imovel_nome}}</li>
                     <li class="active">{{::imovel.codigo}}</li>
@@ -50,9 +50,9 @@
             </div>
 
             <div class="col-md-4">
-                <h4 style="color:navy;font-weight:bold;">Código: {{::imovel.codigo}}</h4>
-                <p ng-bind-html="imovel.descricao | escapeHtml" style="font-size: 13px;"></p>
-                <h5 style="font-weight:bold;">Dados Gerais:</h5>
+                <h4 style="color:navy;font-weight:bold;"><i class="fa fa-barcode fa-1x"></i> Código: {{::imovel.codigo}}</h4>
+                <p ng-bind-html="imovel.descricao | escapeHtml" style="font-size: 13px;text-align: justify;text-indent: 30px;margin-top: 20px;margin-bottom: 20p"></p>
+                <h5 style="font-weight:bold;"><i class="fa fa-book fa-1x"></i> Dados Gerais:</h5>
                 <ul style="font-size: 13px;">
                     <li>Tipo: <strong>{{::imovel.tipo_imovel_nome}}</strong></li>
                     <li>Disponível: <strong><span ng-if="imovel.disponivel == 'S'">Sim</span><span ng-if="imovel.disponivel == 'N'">Não</span></strong></li>
@@ -62,12 +62,12 @@
                     <li>Para uso Comercial: <strong><span ng-if="imovel.utilidade_comercial == 'S'">Sim</span><span ng-if="imovel.utilidade_comercial == 'N'">Não</span></strong></li>
                     <li>Para uso Residêncial: <strong><span ng-if="imovel.utilidade_residencial == 'S'">Sim</span><span ng-if="imovel.utilidade_residencial == 'N'">Não</span></strong></li>
                 </ul>
-                <h5 style="color:blue;font-weight:bold;">Localização:</h5>
+                <h5 style="color:blue;font-weight:bold;"><i class="fa fa-map-marker fa-1x"></i> Localização:</h5>
                 <ul style="font-size: 13px;">
                     <li>Localização: {{::imovel.uf}} - {{::imovel.cidade}} - {{::imovel.bairro}}.</li>
                     <li>Ponto de referência: {{::imovel.ponto_referencia}}</li>
                 </ul>
-                <h5 style="color:green;font-weight:bold;">Finânceiro:</h5>
+                <h5 style="color:green;font-weight:bold;"><i class="fa fa-money fa-1x"></i> Finânceiro:</h5>
                 <ul style="font-size: 13px;">
                     <li>Valor Locação: <strong>{{::imovel.valor|currency:"R$ ":2}}</strong></li>
                     <li>Valor Venda: <strong>{{::imovel.valor_venda|currency:"R$ ":2}}</strong></li>
@@ -84,7 +84,7 @@
         <div class="row">
 
             <div class="col-lg-12">
-                <h3 class="page-header">Veja também:</h3>
+                <h3 class="page-header"><i class="fa fa-search fa-1x"></i> Veja também:</h3>
             </div>
 
             <div class="col-sm-3 col-xs-6" ng-repeat="relacionado in imoveisRelacionados">
