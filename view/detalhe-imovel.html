@@ -51,9 +51,9 @@
 
             <div class="col-md-4">
                 <h4 style="color:navy;font-weight:bold;">Código: {{::imovel.codigo}}</h4>
-                <p ng-bind-html="imovel.descricao | escapeHtml"></p>
+                <p ng-bind-html="imovel.descricao | escapeHtml" style="font-size: 13px;"></p>
                 <h5 style="font-weight:bold;">Dados Gerais:</h5>
-                <ul>
+                <ul style="font-size: 13px;">
                     <li>Tipo: <strong>{{::imovel.tipo_imovel_nome}}</strong></li>
                     <li>Disponível: <strong><span ng-if="imovel.disponivel == 'S'">Sim</span><span ng-if="imovel.disponivel == 'N'">Não</span></strong></li>
                     <li>Destaque: <strong><span ng-if="imovel.destaque == 'S'">Sim</span><span ng-if="imovel.destaque == 'N'">Não</span></strong></li>
@@ -63,12 +63,12 @@
                     <li>Para uso Residêncial: <strong><span ng-if="imovel.utilidade_residencial == 'S'">Sim</span><span ng-if="imovel.utilidade_residencial == 'N'">Não</span></strong></li>
                 </ul>
                 <h5 style="color:blue;font-weight:bold;">Localização:</h5>
-                <ul>
+                <ul style="font-size: 13px;">
                     <li>Localização: {{::imovel.uf}} - {{::imovel.cidade}} - {{::imovel.bairro}}.</li>
                     <li>Ponto de referência: {{::imovel.ponto_referencia}}</li>
                 </ul>
                 <h5 style="color:green;font-weight:bold;">Finânceiro:</h5>
-                <ul>
+                <ul style="font-size: 13px;">
                     <li>Valor Locação: <strong>{{::imovel.valor|currency:"R$ ":2}}</strong></li>
                     <li>Valor Venda: <strong>{{::imovel.valor_venda|currency:"R$ ":2}}</strong></li>
                     <li>Condomínio: <strong>{{::imovel.valor_condominio|currency:"R$ ":2}}</strong></li>
