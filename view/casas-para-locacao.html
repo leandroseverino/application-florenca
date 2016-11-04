@@ -38,7 +38,6 @@
                             <th>Modalidade:</th>
                             <th>Cidade:</th>
                             <th>Bairro:</th>
-                            <th>Rua:</th>
                             <th>Nº Dorm.:</th>
                             <th>Valores Entre:</th>
                             <th></th>
@@ -64,10 +63,7 @@
                                  </select>
                             </td>
                             <td align="left">
-                                <input id="bairro" name="bairro" type="text" class="form_int form-control" size="10">
-                            </td>
-                            <td align="left">
-                                <input id="rua" name="rua" type="text" class="form_int form-control" size="10">
+                                <input id="bairro" name="bairro" type="text" class="form_int form-control" size="15">
                             </td>
                             <td align="left">
                                 <select id="dormitorios" name="dormitorios" class="form_int form-control" style="float: none;">
@@ -133,7 +129,7 @@
 
     <div class="row" ng-repeat="item in imoveis" ng-if="imoveis">
         <div class="col-md-7">
-            <a href="/#imovel/{{::item.imovel.slug}}">
+            <a href="/#/detalhe-imovel/{{::item.imovel.slug}}">
                 <img class="img-responsive img-hover" src="{{::item.resource_path}}" alt="">
             </a>
         </div>
