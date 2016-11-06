@@ -185,10 +185,17 @@
         <div class="col-md-4 col-sm-6" ng-repeat="destaque in destaques track by destaque.imovel.id">
             <a href="#/detalhe-imovel/{{::destaque.imovel.slug}}" title="Cod.: {{::destaque.imovel.codigo}}" ng-if="destaque.tipo_recurso == 'Foto'">
                 <img class="img-responsive img-portfolio img-hover"
-                ng-src="{{::destaque.resource_path}}"
-                style="width: 360px; height: 231px;"
-                alt="Foto do Imóvel: Cod.: {{::destaque.imovel.codigo}}"
-                title="Foto de Destaque do Imóvel {{::destaque.imovel.codigo}}" />
+                     style="width: 360px; height: 231px;"
+                     ng-src="{{root_url}}/media/{{::destaque.resource_path}}"
+                     alt="Foto do Imóvel: Cod.: {{::destaque.imovel.codigo}}"
+                     title="Foto de Destaque do Imóvel {{::destaque.imovel.codigo}}"
+                     ng-if="destaque.tipo_recurso == 'Foto' && destaque.uploaded" />
+                <img class="img-responsive img-portfolio img-hover"
+                     style="width: 360px; height: 231px;"
+                     ng-src="{{::destaque.resource_path}}"
+                     alt="Foto do Imóvel: Cod.: {{::destaque.imovel.codigo}}"
+                     title="Foto de Destaque do Imóvel {{::destaque.imovel.codigo}}"
+                     ng-if="destaque.tipo_recurso == 'Foto' && ! destaque.uploaded" />
             </a>
             <div class="video_painel" ng-if="destaque.tipo_recurso == 'Video'">
                 <div ng-bind-html="destaque.resource_path | escapeHtml" ng-show="!destaque.uploaded"></div>
