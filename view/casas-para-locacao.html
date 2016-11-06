@@ -130,7 +130,16 @@
     <div class="row" ng-repeat="item in imoveis" ng-if="imoveis">
         <div class="col-md-7">
             <a href="/#/detalhe-imovel/{{::item.imovel.slug}}">
-                <img class="img-responsive img-hover" src="{{::item.resource_path}}" alt="">
+                <img class="img-responsive img-hover"
+                     ng-src="{{root_url}}/media/{{::item.resource_path}}"
+                     alt="Foto do Imóvel: Cod.: {{::item.imovel.codigo}}"
+                     title="Foto de Destaque do Imóvel {{::item.imovel.codigo}}"
+                     ng-if="item.tipo_recurso == 'Foto' && item.uploaded" />
+                <img class="img-responsive img-hover"
+                     ng-src="{{::item.resource_path}}"
+                     alt="Foto do Imóvel: Cod.: {{::item.imovel.codigo}}"
+                     title="Foto de Destaque do Imóvel {{::item.imovel.codigo}}"
+                     ng-if="item.tipo_recurso == 'Foto' && ! item.uploaded" />
             </a>
         </div>
         <div class="col-md-5">

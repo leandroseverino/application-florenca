@@ -26,6 +26,9 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
         templateUrl: "view/casas-para-venda.html",
         controller: "imoveisCtrl",
         resolve: {
+            loaded_parameters: ["parametroAPI", function (parametroAPI) {
+                return parametroAPI.getParametros();
+            }],
             finalidade: ["parametroAPI", function (parametroAPI) {
                 return "Vendas";
             }],
@@ -41,6 +44,9 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
         templateUrl: "view/casas-para-venda.html",
         controller: "imoveisCtrl",
         resolve: {
+            loaded_parameters: ["parametroAPI", function (parametroAPI) {
+                return parametroAPI.getParametros();
+            }],
             finalidade: ["parametroAPI", function (parametroAPI) {
                 return "Vendas";
             }],
@@ -56,6 +62,9 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
         templateUrl: "view/casas-para-venda.html",
         controller: "imoveisCtrl",
         resolve: {
+            loaded_parameters: ["parametroAPI", function (parametroAPI) {
+                return parametroAPI.getParametros();
+            }],
             finalidade: ["parametroAPI", function (parametroAPI) {
                 return "Vendas";
             }],
@@ -71,6 +80,9 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
         templateUrl: "view/casas-para-venda.html",
         controller: "imoveisCtrl",
         resolve: {
+            loaded_parameters: ["parametroAPI", function (parametroAPI) {
+                return parametroAPI.getParametros();
+            }],
             finalidade: ["parametroAPI", function (parametroAPI) {
                 return "Vendas";
             }],
@@ -86,6 +98,9 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
         templateUrl: "view/casas-para-venda.html",
         controller: "imoveisCtrl",
         resolve: {
+            loaded_parameters: ["parametroAPI", function (parametroAPI) {
+                return parametroAPI.getParametros();
+            }],
             finalidade: ["parametroAPI", function (parametroAPI) {
                 return "Vendas";
             }],
@@ -101,6 +116,9 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
         templateUrl: "view/casas-para-venda.html",
         controller: "imoveisCtrl",
         resolve: {
+            loaded_parameters: ["parametroAPI", function (parametroAPI) {
+                return parametroAPI.getParametros();
+            }],
             finalidade: ["parametroAPI", function (parametroAPI) {
                 return "Vendas";
             }],
@@ -117,6 +135,9 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
         templateUrl: "view/casas-para-locacao.html",
         controller: "imoveisCtrl",
         resolve: {
+            loaded_parameters: ["parametroAPI", function (parametroAPI) {
+                return parametroAPI.getParametros();
+            }],
             finalidade: ["parametroAPI", function (parametroAPI) {
                 return "Locações";
             }],
@@ -132,6 +153,9 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
         templateUrl: "view/casas-para-locacao.html",
         controller: "imoveisCtrl",
         resolve: {
+            loaded_parameters: ["parametroAPI", function (parametroAPI) {
+                return parametroAPI.getParametros();
+            }],
             finalidade: ["parametroAPI", function (parametroAPI) {
                 return "Locações";
             }],
@@ -147,6 +171,9 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
         templateUrl: "view/casas-para-locacao.html",
         controller: "imoveisCtrl",
         resolve: {
+            loaded_parameters: ["parametroAPI", function (parametroAPI) {
+                return parametroAPI.getParametros();
+            }],
             finalidade: ["parametroAPI", function (parametroAPI) {
                 return "Locações";
             }],
@@ -162,6 +189,9 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
         templateUrl: "view/casas-para-locacao.html",
         controller: "imoveisCtrl",
         resolve: {
+            loaded_parameters: ["parametroAPI", function (parametroAPI) {
+                return parametroAPI.getParametros();
+            }],
             finalidade: ["parametroAPI", function (parametroAPI) {
                 return "Locações";
             }],
@@ -177,6 +207,9 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
         templateUrl: "view/casas-para-locacao.html",
         controller: "imoveisCtrl",
         resolve: {
+            loaded_parameters: ["parametroAPI", function (parametroAPI) {
+                return parametroAPI.getParametros();
+            }],
             finalidade: ["parametroAPI", function (parametroAPI) {
                 return "Locações";
             }],
@@ -192,6 +225,9 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
         templateUrl: "view/casas-para-locacao.html",
         controller: "imoveisCtrl",
         resolve: {
+            loaded_parameters: ["parametroAPI", function (parametroAPI) {
+                return parametroAPI.getParametros();
+            }],
             finalidade: ["parametroAPI", function (parametroAPI) {
                 return "Locações";
             }],
