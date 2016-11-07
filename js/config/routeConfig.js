@@ -36,7 +36,7 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
                 return "Casas";
             }],
             imoveis: ["imovelVendaAPI", function(imovelVendaAPI) {
-                return imovelVendaAPI.getImoveis();
+                return imovelVendaAPI.getImoveis('casa');
             }]
         }
     });
@@ -54,7 +54,7 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
                 return "Apartamentos";
             }],
             imoveis: ["imovelVendaAPI", function(imovelVendaAPI) {
-                return imovelVendaAPI.getImoveis();
+                return imovelVendaAPI.getImoveis('apartamento');
             }]
         }
     });
@@ -72,7 +72,7 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
                 return "Terrenos";
             }],
             imoveis: ["imovelVendaAPI", function(imovelVendaAPI) {
-                return imovelVendaAPI.getImoveis();
+                return imovelVendaAPI.getImoveis('terreno');
             }]
         }
     });
@@ -90,7 +90,7 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
                 return "Lojas";
             }],
             imoveis: ["imovelVendaAPI", function(imovelVendaAPI) {
-                return imovelVendaAPI.getImoveis();
+                return imovelVendaAPI.getImoveis('loja');
             }]
         }
     });
@@ -108,7 +108,7 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
                 return "Pavilhoes";
             }],
             imoveis: ["imovelVendaAPI", function(imovelVendaAPI) {
-                return imovelVendaAPI.getImoveis();
+                return imovelVendaAPI.getImoveis('pavilhao');
             }]
         }
     });
@@ -126,7 +126,7 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
                 return "Salas Comerciais";
             }],
             imoveis: ["imovelVendaAPI", function(imovelVendaAPI) {
-                return imovelVendaAPI.getImoveis();
+                return imovelVendaAPI.getImoveis('sala-comercial');
             }]
         }
     });
@@ -145,7 +145,7 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
                 return "Casas";
             }],
             imoveis: ["imovelLocacaoAPI", function(imovelLocacaoAPI) {
-                return imovelLocacaoAPI.getImoveis();
+                return imovelLocacaoAPI.getImoveis('casa');
             }]
         }
     });
@@ -163,7 +163,7 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
                 return "Apartamentos";
             }],
             imoveis: ["imovelLocacaoAPI", function(imovelLocacaoAPI) {
-                return imovelLocacaoAPI.getImoveis();
+                return imovelLocacaoAPI.getImoveis('apartamento');
             }]
         }
     });
@@ -181,7 +181,7 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
                 return "Terrenos/Áreas";
             }],
             imoveis: ["imovelLocacaoAPI", function(imovelLocacaoAPI) {
-                return imovelLocacaoAPI.getImoveis();
+                return imovelLocacaoAPI.getImoveis('terreno');
             }]
         }
     });
@@ -199,7 +199,7 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
                 return "Salas Comerciais";
             }],
             imoveis: ["imovelLocacaoAPI", function(imovelLocacaoAPI) {
-                return imovelLocacaoAPI.getImoveis();
+                return imovelLocacaoAPI.getImoveis('sala-comercial');
             }]
         }
     });
@@ -217,7 +217,7 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
                 return "Lojas";
             }],
             imoveis: ["imovelLocacaoAPI", function(imovelLocacaoAPI) {
-                return imovelLocacaoAPI.getImoveis();
+                return imovelLocacaoAPI.getImoveis('loja');
             }]
         }
     });
@@ -235,7 +235,7 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
                 return "Pavilhões";
             }],
             imoveis: ["imovelLocacaoAPI", function(imovelLocacaoAPI) {
-                return imovelLocacaoAPI.getImoveis();
+                return imovelLocacaoAPI.getImoveis('pavilhao');
             }]
         }
     });

@@ -147,7 +147,6 @@
         </div>
         <div class="col-md-5">
             <h3>Código: {{::item.imovel.codigo}}</h3>
-            <h4>Casa de 01 Dormitório</h4>
             <p ng-bind-html="item.imovel.descricao | escapeHtml"></p>
             <a class="btn btn-primary" href="/#detalhe-imovel/{{::item.imovel.slug}}">Detalhes</i></a>
         </div>
@@ -155,9 +154,9 @@
 
     <hr>
 
-    <div class="row" ng-if="!imoveis">
+    <div class="row" ng-if="imoveis.length == 0">
         <div class="col-md-12 text-center">
-            <p>Sem registros !</p>
+            <h2 style="color: red; font-weight: bold;">Sem registros !</h2>
         </div>
     </div>
 
