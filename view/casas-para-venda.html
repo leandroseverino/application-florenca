@@ -112,8 +112,8 @@
     <!-- Filters -->
     <div class="row" style="background-color: #fcfcfc;">
         <div class="col-md-12">
-            <h4 class="text-center" ng-if="filtros_aplicados">Filtros aplicados: <span style="color: blue;padding:03px 05px;background-color: #eee;font-size: 16px;font-weight:bold;" ng-bind-html="filtros_aplicados | escapeHtml"></span></h4>
-            <h4 class="text-center" ng-if="!filtros_aplicados">Sem filtros aplicados !</h4>
+            <h4 class="text-center" ng-if="filtros_aplicados">Filtros aplicados ({{total_itens}} imóveis): <span style="color: blue;padding:03px 05px;background-color: #eee;font-size: 16px;font-weight:bold;" ng-bind-html="filtros_aplicados | escapeHtml"></span></h4>
+            <h4 class="text-center" ng-if="!filtros_aplicados">Sem filtros aplicados ! ({{total_itens}} imóveis)</h4>
         </div>
     </div>
 

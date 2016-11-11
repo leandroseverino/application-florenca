@@ -9,6 +9,8 @@ angular.module("appSite").controller("imoveisCtrl", ["$scope",
     $scope.tipoImovel = tipo;
     $scope.imoveis = imoveis.data;
 
+    $scope.total_itens = $scope.imoveis.length;
+
     $scope.root_url;
 
     var _data = loaded_parameters.data;
@@ -57,6 +59,7 @@ angular.module("appSite").controller("imoveisCtrl", ["$scope",
             $scope.imoveis_filtrados = imovelVendaAPI.getImoveisSearch("?tipo=" + $scope.tipoImovel + "&" + $.param($scope.formData));
             $scope.imoveis_filtrados.success(function(data) {
                 $scope.imoveis = data;
+                $scope.total_itens = $scope.imoveis.length;
             }).error(function(err) {
                 $scope.imoveis = [];
             });
