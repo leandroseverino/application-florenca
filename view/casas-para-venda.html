@@ -19,42 +19,27 @@
     <!-- Filters -->
     <div class="row">
         <div class="col-md-12">
-            <h4 class="text-center">Sem filtros aplicados !</h4>
-        </div>
-    </div>
-    <!-- Filters -->
-    <div class="row">
-        <div class="col-md-12">
             <h4>Filtro de Pesquisa:</h4>
         </div>
         <div class="col-md-12">
-            <form action="#/search" method="POST" name="form_search" id="form_search" class="form-inline">
+            <form name="searchForm" id="searchForm" ng-submit="submit(searchForm)" accept-charset="UTF-8" class="form-inline" method="post" role="form">
                 <div class="table-responsive">
                     <table border="0" cellspacing="0" cellpadding="0" class="table">
                         <tbody>
                         <tr>
-                            <th>Cód. Imóvel:</th>
-                            <th>Modalidade:</th>
-                            <th>Cidade:</th>
-                            <th>Bairro:</th>
-                            <th>Nº Dorm.:</th>
-                            <th>Valores Entre:</th>
-                            <th></th>
-                        </tr>
-                        <tr>
                             <td align="left">
-                                <input name="codigo" id="codigo" type="text" class="form_int form-control" size="10">
+                                <input name="cod_imovel" id="cod_imovel" ng-model="formData.cod_imovel" type="text" class="form_int form-control" size="10" placeholder="Código" />
                             </td>
                             <td align="left">
-                                <select id="finalidade" name="finalidade" class="form_int form-control" style="float: none;">
-                                    <option>[Selecione]</option>
-                                    <option value="Residêncial">Residêncial</option>
+                                <select id="modalidade" name="modalidade" ng-model="formData.modalidade" class="form_int form-control" style="float: none;">
+                                    <option value="">[Modalidade]</option>
+                                    <option value="Residencial">Residêncial</option>
                                     <option value="Comercial">Comercial</option>
                                 </select>
                             </td>
                             <td align="left">
-                                 <select id="cidade_value" name="cidade_value" class="form_int form-control" style="float: none;">
-                                    <option>[Selecione]</option>
+                                 <select id="cidade" name="cidade" class="form_int form-control" ng-model="formData.cidade" style="float: none;">
+                                    <option value="" selected>[Cidade]</option>
                                     <option>Canoas</option>
                                     <option>Porto Alegre</option>
                                     <option>Sapucaia</option>
@@ -62,65 +47,61 @@
                                  </select>
                             </td>
                             <td align="left">
-                                <input id="bairro" name="bairro" type="text" class="form_int form-control" size="15">
+                                <input id="bairro" name="bairro" type="text" class="form_int form-control" ng-model="formData.bairro" size="15" placeholder="Informe o Bairro" />
                             </td>
                             <td align="left">
-                                <select id="dormitorios" name="dormitorios" class="form_int form-control" style="float: none;">
-                                    <option>........</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
+                                <select id="dorm" name="dorm" class="form_int form-control text-right" ng-model="formData.dorm" style="float: none;">
+                                    <option value="" selected>[Nª Dorm.]</option>
+                                    <option value="1">01</option>
+                                    <option value="2">02</option>
+                                    <option value="3">03</option>
+                                    <option value="4">04</option>
+                                    <option value="5">05</option>
+                                    <option value="6">06</option>
+                                    <option value="7">07</option>
                                 </select>
                             </td>
                             <td align="left">
-                                <select id="valor_inicial" name="valor_inicial" class="form_int form-control" style="float: none;width:100px;display:inline;">
-                                    <option>[Selecione]</option>
-                                    <option value="100">100,00</option>
-                                    <option value="500">500,00</option>
-                                    <option value="1000">1.000,00</option>
-                                    <option value="2000">2.000,00</option>
-                                    <option value="3000">3.000,00</option>
-                                    <option value="5000">5.000,00</option>
-                                    <option value="10000">10.000,00</option>
-                                    <option value="50000">50.000,00</option>
-                                    <option value="100000">100.000,00</option>
-                                    <option value="200000">200.000,00</option>
-                                    <option value="300000">300.000,00</option>
-                                    <option value="500000">500.000,00</option>
-                                    <option value="1000000000">1.000.000,00</option>
-                                    <option value="10000000000">10.000.000,00</option>
+                                <select id="vlr_ini" name="vlr_ini" class="form_int form-control" ng-model="formData.vlr_ini" style="float: none;width:120px;display:inline;">
+                                    <option value="" selected>[Valor Mínimo]</option>
+                                    <option value="100">R$ 100,00</option>
+                                    <option value="500">R$ 500,00</option>
+                                    <option value="1000">R$ 1.000,00</option>
+                                    <option value="2000">R$ 2.000,00</option>
+                                    <option value="3000">R$ 3.000,00</option>
+                                    <option value="5000">R$ 5.000,00</option>
+                                    <option value="10000">R$ 10.000,00</option>
+                                    <option value="50000">R$ 50.000,00</option>
+                                    <option value="100000">R$ 100.000,00</option>
+                                    <option value="200000">R$ 200.000,00</option>
+                                    <option value="300000">R$ 300.000,00</option>
+                                    <option value="500000">R$ 500.000,00</option>
+                                    <option value="1000000000">R$ 1.000.000,00</option>
+                                    <option value="10000000000">R$ 10.000.000,00</option>
                                 </select>
                             </td>
                             <td align="left">
-                                <select id="valor_final" name="valor_final" class="form_int form-control" style="float: none;width:100px;display:inline;">
-                                    <option>[Selecione]</option>
-                                    <option value="100">100,00</option>
-                                    <option value="500">500,00</option>
-                                    <option value="1000">1.000,00</option>
-                                    <option value="2000">2.000,00</option>
-                                    <option value="3000">3.000,00</option>
-                                    <option value="5000">5.000,00</option>
-                                    <option value="10000">10.000,00</option>
-                                    <option value="50000">50.000,00</option>
-                                    <option value="100000">100.000,00</option>
-                                    <option value="200000">200.000,00</option>
-                                    <option value="300000">300.000,00</option>
-                                    <option value="500000">500.000,00</option>
-                                    <option value="1000000000">1.000.000,00</option>
-                                    <option value="10000000000">10.000.000,00</option>
+                                <select id="vlr_fim" name="vlr_fim" class="form_int form-control" ng-model="formData.vlr_fim" style="float: none;width:120px;display:inline;">
+                                    <option value="" selected>[Valor Máximo]</option>
+                                    <option value="100">R$ 100,00</option>
+                                    <option value="500">R$ 500,00</option>
+                                    <option value="1000">R$ 1.000,00</option>
+                                    <option value="2000">R$ 2.000,00</option>
+                                    <option value="3000">R$ 3.000,00</option>
+                                    <option value="5000">R$ 5.000,00</option>
+                                    <option value="10000">R$ 10.000,00</option>
+                                    <option value="50000">R$ 50.000,00</option>
+                                    <option value="100000">R$ 100.000,00</option>
+                                    <option value="200000">R$ 200.000,00</option>
+                                    <option value="300000">R$ 300.000,00</option>
+                                    <option value="500000">R$ 500.000,00</option>
+                                    <option value="1000000000">R$ 1.000.000,00</option>
+                                    <option value="10000000000">R$ 10.000.000,00</option>
                                 </select>
                             </td>
-                        </tr>
-                        <tr>
-                            <td colspan="10" align="right">
-                                <input type="button" class="btn btn-default" value="Pesquisar" />
-                                <!--a href="#" onclick="form_search.submit();">
-                                    <img src="http://media.imobiliariaflorenca.com.br/images/bot_busca.png" alt="pesquisar" title="pesquisar" width="50" height="30">
-                                </a-->
+                            <td>
+                                <button type="submit" class="btn btn-primary fa fa-search fa-1x"></button>
+                                <button type="button" class="btn btn-primary fa fa-refresh fa-1x" ng-click="reset()" ></button>
                             </td>
                         </tr>
                     </tbody></table>
@@ -128,9 +109,16 @@
             </form>
         </div>
     </div>
+    <!-- Filters -->
+    <div class="row" style="background-color: #fcfcfc;">
+        <div class="col-md-12">
+            <h4 class="text-center" ng-if="filtros_aplicados">Filtros aplicados: <span style="color: blue;padding:03px 05px;background-color: #eee;font-size: 16px;font-weight:bold;" ng-bind-html="filtros_aplicados | escapeHtml"></span></h4>
+            <h4 class="text-center" ng-if="!filtros_aplicados">Sem filtros aplicados !</h4>
+        </div>
+    </div>
 
     <!-- Project One -->
-    <div class="row" ng-repeat="item in imoveis" ng-if="imoveis" style="margin-bottom: 20px;">
+    <div class="row" ng-repeat="item in imoveis" ng-if="imoveis" style="margin-top: 20px;margin-bottom: 20px;border: 01px dotted #ccc;padding: 15px 5px;">
         <div class="col-md-7">
             <a href="/#/detalhe-imovel/{{::item.imovel.slug}}">
                 <img class="img-responsive img-hover"
