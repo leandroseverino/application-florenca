@@ -3,9 +3,16 @@ angular.module("appSite").controller("imoveisCtrl", ["$scope",
                                                      "finalidade",
                                                      "tipo",
                                                      "imoveis",
-                                                     "loaded_parameters", function ($scope, imovelVendaAPI, finalidade, tipo, imoveis, loaded_parameters) {
-    // Generic home page of website messages:
+                                                     "loaded_parameters", function ($scope,
+                                                                                    imovelVendaAPI,
+                                                                                    finalidade,
+                                                                                    tipo,
+                                                                                    imoveis,
+                                                                                    loaded_parameters) {
     $scope.finalidadeImovel = finalidade;
+
+    $scope.finalidadeImovelDesc = finalidade == 'Vendas' ? 'venda' : 'locação';
+
     $scope.tipoImovel = tipo;
     $scope.imoveis = imoveis.data;
 

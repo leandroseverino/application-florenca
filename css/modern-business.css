@@ -186,3 +186,76 @@ footer {
     }
 }
 h1 { font-size: 28px; }
+
+h4.detail_title {
+    font-weight: bold;color:#000;
+    text-align:center;
+    text-shadow: 02px 02px #eee;
+    font-size: 16px;
+}
+
+span.filter_result {
+    color: blue;
+    padding:03px 05px;
+    background-color: #eee;
+    font-size: 16px;
+    font-weight:bold;
+}
+
+h2.no_results {
+    color: red;
+    font-weight: bold;
+}
+
+select.default {
+    float: none;
+}
+
+select.money_filter_field {
+    float: none;
+    max-width:120px;
+    display:inline;
+}
+
+div.results_search {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 01px dotted #ccc;
+    padding: 15px 5px;
+}
+
+p.result_description {
+    text-align: justify;
+    text-indent: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+p.imovel_detail {
+    font-size: 13px;
+    text-align: justify;
+    text-indent: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+ul.imovel_detail {
+    font-size: 13px;
+}
+
+h5.imovel_detail {
+    color:blue;
+    font-weight:bold;
+}
+
+h5.imovel_detail_green {
+    color:green;
+    font-weight:bold;
+}
+
+div.description_resource {
+    margin:0px auto;
+    text-align:center;
+    margin-top:10px;
+    background-color: #fff;
+}

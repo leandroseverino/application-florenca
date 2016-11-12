@@ -23,7 +23,7 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
     });
     // Imóveis para venda
     $routeProvider.when("/casas-para-venda", {
-        templateUrl: "view/casas-para-venda.html",
+        templateUrl: "view/lista.html",
         controller: "imoveisCtrl",
         resolve: {
             loaded_parameters: ["parametroAPI", function (parametroAPI) {
@@ -41,7 +41,7 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
         }
     });
     $routeProvider.when("/apartamentos-para-venda", {
-        templateUrl: "view/casas-para-venda.html",
+        templateUrl: "view/lista.html",
         controller: "imoveisCtrl",
         resolve: {
             loaded_parameters: ["parametroAPI", function (parametroAPI) {
@@ -59,7 +59,7 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
         }
     });
     $routeProvider.when("/terrenos-para-venda", {
-        templateUrl: "view/casas-para-venda.html",
+        templateUrl: "view/lista.html",
         controller: "imoveisCtrl",
         resolve: {
             loaded_parameters: ["parametroAPI", function (parametroAPI) {
@@ -77,7 +77,7 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
         }
     });
     $routeProvider.when("/lojas-para-venda", {
-        templateUrl: "view/casas-para-venda.html",
+        templateUrl: "view/lista.html",
         controller: "imoveisCtrl",
         resolve: {
             loaded_parameters: ["parametroAPI", function (parametroAPI) {
@@ -95,7 +95,7 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
         }
     });
     $routeProvider.when("/pavilhoes-para-venda", {
-        templateUrl: "view/casas-para-venda.html",
+        templateUrl: "view/lista.html",
         controller: "imoveisCtrl",
         resolve: {
             loaded_parameters: ["parametroAPI", function (parametroAPI) {
@@ -113,7 +113,7 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
         }
     });
     $routeProvider.when("/salas-comerciais-para-venda", {
-        templateUrl: "view/casas-para-venda.html",
+        templateUrl: "view/lista.html",
         controller: "imoveisCtrl",
         resolve: {
             loaded_parameters: ["parametroAPI", function (parametroAPI) {
@@ -132,7 +132,7 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
     });
     // Imóveis para locação
     $routeProvider.when("/casas-para-locacao", {
-        templateUrl: "view/casas-para-locacao.html",
+        templateUrl: "view/lista.html",
         controller: "imoveisCtrl",
         resolve: {
             loaded_parameters: ["parametroAPI", function (parametroAPI) {
@@ -150,7 +150,7 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
         }
     });
     $routeProvider.when("/apartamentos-para-locacao", {
-        templateUrl: "view/casas-para-locacao.html",
+        templateUrl: "view/lista.html",
         controller: "imoveisCtrl",
         resolve: {
             loaded_parameters: ["parametroAPI", function (parametroAPI) {
@@ -168,7 +168,7 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
         }
     });
     $routeProvider.when("/terrenos-areas-para-locacao", {
-        templateUrl: "view/casas-para-locacao.html",
+        templateUrl: "view/lista.html",
         controller: "imoveisCtrl",
         resolve: {
             loaded_parameters: ["parametroAPI", function (parametroAPI) {
@@ -186,7 +186,7 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
         }
     });
     $routeProvider.when("/salas-comerciais-para-locacao", {
-        templateUrl: "view/casas-para-locacao.html",
+        templateUrl: "view/lista.html",
         controller: "imoveisCtrl",
         resolve: {
             loaded_parameters: ["parametroAPI", function (parametroAPI) {
@@ -204,7 +204,7 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
         }
     });
     $routeProvider.when("/lojas-para-locacao", {
-        templateUrl: "view/casas-para-locacao.html",
+        templateUrl: "view/lista.html",
         controller: "imoveisCtrl",
         resolve: {
             loaded_parameters: ["parametroAPI", function (parametroAPI) {
@@ -222,7 +222,7 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
         }
     });
     $routeProvider.when("/pavilhoes-para-locacao", {
-        templateUrl: "view/casas-para-locacao.html",
+        templateUrl: "view/lista.html",
         controller: "imoveisCtrl",
         resolve: {
             loaded_parameters: ["parametroAPI", function (parametroAPI) {

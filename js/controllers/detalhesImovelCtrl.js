@@ -1,4 +1,12 @@
-angular.module("appSite").controller("detalhesImovelCtrl", ["$scope", "$routeParams", "loaded_parameters", "imovel", "imoveisRelacionados", function ($scope, $routeParams, loaded_parameters, imovel, imoveisRelacionados) {
+angular.module("appSite").controller("detalhesImovelCtrl", ["$scope",
+                                                            "$routeParams",
+                                                            "loaded_parameters",
+                                                            "imovel",
+                                                            "imoveisRelacionados", function ($scope,
+                                                                                             $routeParams,
+                                                                                             loaded_parameters,
+                                                                                             imovel,
+                                                                                             imoveisRelacionados) {
     $scope.imovel = imovel.data;
     $scope.root_url;
 

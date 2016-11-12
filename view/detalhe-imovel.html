@@ -1,14 +1,13 @@
     <!-- Page Content -->
     <div class="container">
-
         <!-- Page Heading/Breadcrumbs -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">{{::imovel.tipo_imovel_nome}}
-                    <small>{{::imovel.codigo}}</small>
+                <h1 class="page-header">
+                    Detalhamento: Tipo: {{::imovel.tipo_imovel_nome}} <small>Código: {{::imovel.codigo}}</small>
                 </h1>
                 <ol class="breadcrumb">
-                    <li><i class="fa fa-home fa-1x"></i> <a href="index.html">Inicio</a></li>
+                    <li><i class="fa fa-home fa-1x"></i> <a href="#/home" title="Página inicial do site.">Inicio</a></li>
                     <li>Detalhes do Imóvel</li>
                     <li>{{::imovel.tipo_imovel_nome}}</li>
                     <li class="active">{{::imovel.codigo}}</li>
@@ -16,52 +15,83 @@
             </div>
         </div>
         <!-- /.row -->
-
         <!-- Portfolio Item Row -->
         <div class="row">
             <div class="col-md-8">
                 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                     <!-- Indicators -->
                     <ol class="carousel-indicators">
-                        <li data-target="#myCarousel" ng-repeat="p in imovel.recursos track by p.id" data-slide-to="{{::$index}}" ng-class="{active: $index == 0}"></li>
+                        <li data-target="#myCarousel"
+                            data-slide-to="{{::$index}}"
+                            ng-repeat="p in imovel.recursos track by p.id"
+                            ng-class="{active: $index == 0}"></li>
                     </ol>
-
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner">
-
-                        <div class="item" ng-repeat="recurso in imovel.recursos track by recurso.id" ng-class="{active: $index == 0}">
-                            <img class="img-responsive" src="{{root_url}}/media/{{::recurso.resource_path}}" alt="{{::recurso.descricao}}" title="{{::recurso.descricao}}"  ng-if="recurso.tipo_recurso == 'Foto' && recurso.uploaded" />
-                            <img class="img-responsive" src="{{::recurso.resource_path}}" alt="{{::recurso.descricao}}" title="{{::recurso.descricao}}"  ng-if="recurso.tipo_recurso == 'Foto' && ! recurso.uploaded" />
-                            <div ng-bind-html="recurso.resource_path | escapeHtml" ng-show="!recurso.uploaded" ng-if="recurso.tipo_recurso == 'Video'"></div>
-                            <video controls width="100%" height="100%" ng-show="recurso.uploaded" ng-if="recurso.tipo_recurso == 'Video'">
-                                <source src="{{::recurso.resource_path}}"  type="video/mp4; codecs='avc1.42E01E, mp4a.40.2'" />
+                        <div class="item"
+                             ng-repeat="recurso in imovel.recursos track by recurso.id"
+                             ng-class="{active: $index == 0}">
+                            <img class="img-responsive"
+                                 src="{{root_url}}/media/{{::recurso.resource_path}}"
+                                 alt="{{::recurso.descricao}}"
+                                 title="{{::recurso.descricao}}"
+                                 ng-if="recurso.tipo_recurso == 'Foto' && recurso.uploaded" />
+                            <img class="img-responsive"
+                                 src="{{::recurso.resource_path}}"
+                                 alt="{{::recurso.descricao}}"
+                                 title="{{::recurso.descricao}}"
+                                 ng-if="recurso.tipo_recurso == 'Foto' && ! recurso.uploaded" />
+                            <div ng-bind-html="recurso.resource_path | escapeHtml"
+                                 ng-show="!recurso.uploaded"
+                                 ng-if="recurso.tipo_recurso == 'Video'"></div>
+                            <video controls width="100%"
+                                   height="100%"
+                                   ng-show="recurso.uploaded"
+                                   ng-if="recurso.tipo_recurso == 'Video'">
+                                <source src="{{::recurso.resource_path}}"
+                                        type="video/mp4; codecs='avc1.42E01E, mp4a.40.2'" />
                             </video>
-                            <div style="margin:0px auto;text-align:center;margin-top:10px;background-color: #fff;">Descrição de Teste do Leandro</div>
+                            <div class="description_resource">{{::recurso.descricao}}</div>
                         </div>
                     </div>
-
                     <!-- Controls -->
-                    <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev" onclick="return false;">
+                    <a class="left carousel-control"
+                       href="#carousel-example-generic"
+                       data-slide="prev"
+                       onclick="return false;">
                         <span class="glyphicon glyphicon-chevron-left"></span>
                     </a>
-                    <a class="right carousel-control" href="#carousel-example-generic" data-slide="next" onclick="return false;">
-                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    <a class="right carousel-control"
+                       href="#carousel-example-generic"
+                       data-slide="next"
+                       onclick="return false;">
+                       <span class="glyphicon glyphicon-chevron-right"></span>
                     </a>
                 </div>
             </div>
-
             <div class="col-md-4">
-                <h4 style="color:navy;font-weight:bold;"><i class="fa fa-barcode fa-1x"></i> Código: {{::imovel.codigo}}</h4>
+                <h4 style="color:navy;font-weight:bold;">
+                    <i class="fa fa-barcode fa-1x"></i> Código: {{::imovel.codigo}}
+                </h4>
                 <div class="mail-box" style="text-align:right;">
 					<div class="content">
 						<div class="facebook-like">
-							<div class="fb-like fb_iframe_widget" data-layout="button" data-action="like" data-show-faces="true" data-share="true" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=661166290692096&amp;container_width=210&amp;href=http%3A%2F%2Fwww.segura.com.br%2Fdetalhe%2FLoca%25C3%25A7%25C3%25A3o%2F8501%2Fimovel-Apartamento-em-Centro-Canoas-Cod-18548&amp;layout=button&amp;locale=pt_BR&amp;sdk=joey&amp;share=true&amp;show_faces=true"><span style="vertical-align: bottom; width: 141px; height: 20px;"><iframe name="f11238696dc37c" width="1000px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="fb:like Facebook Social Plugin" src="https://www.facebook.com/v2.5/plugins/like.php?action=like&amp;app_id=661166290692096&amp;channel=http%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter%2Fr%2FfTmIQU3LxvB.js%3Fversion%3D42%23cb%3Df3f8d5e481f97a%26domain%3Dwww.segura.com.br%26origin%3Dhttp%253A%252F%252Fwww.segura.com.br%252Ffafb81b7a1f8d8%26relation%3Dparent.parent&amp;container_width=210&amp;href=http%3A%2F%2Fwww.segura.com.br%2Fdetalhe%2FLoca%25C3%25A7%25C3%25A3o%2F8501%2Fimovel-Apartamento-em-Centro-Canoas-Cod-18548&amp;layout=button&amp;locale=pt_BR&amp;sdk=joey&amp;share=true&amp;show_faces=true" style="border: none; visibility: visible; width: 141px; height: 20px;" class=""></iframe></span></div>
+							<div class="fb-like fb_iframe_widget"
+                                 data-layout="button"
+                                 data-action="like"
+                                 data-show-faces="true"
+                                 data-share="true"
+                                 fb-xfbml-state="rendered"
+                                 fb-iframe-plugin-query="action=like&amp;app_id=661166290692096&amp;container_width=210&amp;href=http%3A%2F%2Fwww.segura.com.br%2Fdetalhe%2FLoca%25C3%25A7%25C3%25A3o%2F8501%2Fimovel-Apartamento-em-Centro-Canoas-Cod-18548&amp;layout=button&amp;locale=pt_BR&amp;sdk=joey&amp;share=true&amp;show_faces=true"><span style="vertical-align: bottom; width: 141px; height: 20px;"><iframe name="f11238696dc37c" width="1000px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="fb:like Facebook Social Plugin" src="https://www.facebook.com/v2.5/plugins/like.php?action=like&amp;app_id=661166290692096&amp;channel=http%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter%2Fr%2FfTmIQU3LxvB.js%3Fversion%3D42%23cb%3Df3f8d5e481f97a%26domain%3Dwww.segura.com.br%26origin%3Dhttp%253A%252F%252Fwww.segura.com.br%252Ffafb81b7a1f8d8%26relation%3Dparent.parent&amp;container_width=210&amp;href=http%3A%2F%2Fwww.segura.com.br%2Fdetalhe%2FLoca%25C3%25A7%25C3%25A3o%2F8501%2Fimovel-Apartamento-em-Centro-Canoas-Cod-18548&amp;layout=button&amp;locale=pt_BR&amp;sdk=joey&amp;share=true&amp;show_faces=true" style="border: none; visibility: visible; width: 141px; height: 20px;" class=""></iframe></span></div>
 						</div>
 					</div>
 				</div>
-                <p ng-bind-html="imovel.descricao | escapeHtml" style="font-size: 13px;text-align: justify;text-indent: 30px;margin-top: 20px;margin-bottom: 20p"></p>
-                <h5 style="font-weight:bold;"><i class="fa fa-book fa-1x"></i> Características:</h5>
-                <ul style="font-size: 13px;">
+                <p ng-bind-html="imovel.descricao | escapeHtml"
+                   class="imovel_detail"></p>
+                <h5 style="font-weight:bold;">
+                    <i class="fa fa-book fa-1x"></i> Características:
+                </h5>
+                <ul class="imovel_detail">
                     <li>Tipo: <strong>{{::imovel.tipo_imovel_nome}}</strong></li>
                     <li>Disponível: <strong><span ng-if="imovel.disponivel == 'S'">Sim</span><span ng-if="imovel.disponivel == 'N'">Não</span></strong></li>
                     <li>Destaque: <strong><span ng-if="imovel.destaque == 'S'">Sim</span><span ng-if="imovel.destaque == 'N'">Não</span></strong></li>
@@ -70,62 +100,61 @@
                     <li>Para uso Comercial: <strong><span ng-if="imovel.utilidade_comercial == 'S'">Sim</span><span ng-if="imovel.utilidade_comercial == 'N'">Não</span></strong></li>
                     <li>Para uso Residêncial: <strong><span ng-if="imovel.utilidade_residencial == 'S'">Sim</span><span ng-if="imovel.utilidade_residencial == 'N'">Não</span></strong></li>
                 </ul>
-                <h5 style="color:blue;font-weight:bold;"><i class="fa fa-map-marker fa-1x"></i> Localização:</h5>
-                <ul style="font-size: 13px;">
+                <h5 class="imovel_detail">
+                    <i class="fa fa-map-marker fa-1x"></i> Localização:
+                </h5>
+                <ul class="imovel_detail">
                     <li>Localização: {{::imovel.uf}} - Cidade: {{::imovel.cidade}} - Bairro: {{::imovel.bairro}}.</li>
                     <li>Ponto de referência: {{::imovel.ponto_referencia}}</li>
                 </ul>
-                <h5 style="color:green;font-weight:bold;"><i class="fa fa-money fa-1x"></i> Valores:</h5>
-                <ul style="font-size: 13px;">
+                <h5 class="imovel_detail_green">
+                    <i class="fa fa-money fa-1x"></i> Valores:
+                </h5>
+                <ul class="imovel_detail">
                     <li>Valor Locação: <strong>{{::imovel.valor|currency:"R$ ":2}}</strong></li>
                     <li>Valor Venda: <strong>{{::imovel.valor_venda|currency:"R$ ":2}}</strong></li>
                     <li>Condomínio: <strong>{{::imovel.valor_condominio|currency:"R$ ":2}}</strong></li>
                     <li>Encargos: <strong><span ng-bind-html="imovel.encargos | escapeHtml"></span></strong></li>
                     <li>IPTU: <strong><span ng-if="imovel.iptu == 'S'">Sim</span><span ng-if="imovel.iptu == 'N'">Não</span></strong></li>
                 </ul>
-
-
             </div>
-
         </div>
         <!-- /.row -->
-
         <!-- Related Projects Row -->
         <div class="row">
-
             <div class="col-lg-12">
-                <h3 class="page-header"><i class="fa fa-search fa-1x"></i> Veja também:</h3>
+                <h3 class="page-header">
+                    <i class="fa fa-search fa-1x"></i> Veja também:
+                </h3>
             </div>
-
             <div class="col-sm-3 col-xs-6" ng-repeat="relacionado in imoveisRelacionados">
-                <a href="#/detalhe-imovel/{{::relacionado.imovel.slug}}" title="Cod.: {{::relacionado.imovel.codigo}}" ng-if="relacionado.tipo_recurso == 'Foto'">
+                <a href="#/detalhe-imovel/{{::relacionado.imovel.slug}}"
+                   title="Cod.: {{::relacionado.imovel.codigo}}"
+                   ng-if="relacionado.tipo_recurso == 'Foto'">
                     <img class="img-responsive img-hover img-related"
                          style="width: 500px;"
-                         ng-src="{{root_url}}/media/{{::relacionado.resource_path}}"
                          alt="Foto do Imóvel: Cod.: {{::relacionado.imovel.codigo}}"
                          title="Foto de Destaque do Imóvel {{::relacionado.imovel.codigo}}"
+                         ng-src="{{root_url}}/media/{{::relacionado.resource_path}}"
                          ng-if="relacionado.tipo_recurso == 'Foto' && relacionado.uploaded" />
                     <img class="img-responsive img-hover img-related"
-                         ng-src="{{::relacionado.resource_path}}"
                          alt="Foto do Imóvel: Cod.: {{::relacionado.imovel.codigo}}"
                          title="Foto de Destaque do Imóvel {{::relacionado.imovel.codigo}}"
+                         ng-src="{{::relacionado.resource_path}}"
                          ng-if="relacionado.tipo_recurso == 'Foto' && ! relacionado.uploaded" />
                 </a>
                 <div class="video_painel" ng-if="relacionado.tipo_recurso == 'Video'">
                     <div ng-bind-html="relacionado.resource_path | escapeHtml" ng-show="!relacionado.uploaded"></div>
                     <video controls width="65%" height="60%" ng-show="relacionado.uploaded">
-                        <source src="{{::relacionado.resource_path}}"  type="video/mp4; codecs='avc1.42E01E, mp4a.40.2'"
+                        <source src="{{::relacionado.resource_path}}"
+                                type="video/mp4; codecs='avc1.42E01E, mp4a.40.2'"
                     </video>
                 </div>
             </div>
-
         </div>
         <!-- /.row -->
-
         <hr>
-
         <!-- Footer -->
         <footer ng-include="'view/footer.html'"></footer>
-
     </div>
     <!-- /.container -->
