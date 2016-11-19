@@ -23,6 +23,48 @@
     </div>
     <!-- /.row -->
 
+    <div class="row" ng-controller="contatoCtrl">
+        <div class="col-md-8">
+            <h3><i class="fa fa-envelope-o"></i> Deixe sua mensagem</h3>
+            <p>Deixe aqui a sua mensagem que com certeza entraremos em contato com você.</p>
+            </br>
+            <p ng-class="result" style="padding: 15px; margin: 0; margin-bottom: 10px;">{{ resultMessage }}</p>
+            <form name="contactForm" id="contactForm" ng-submit="submit(contactForm)" accept-charset="UTF-8" method="post" role="form">
+                <div class="control-group form-group" ng-class="{ 'has-error': contactform.inputName.$invalid && submitted }">
+                    <div class="controls">
+                        <label>Nome Completo:</label>
+                        <input type="text" class="form-control" ng-model="formData.inputName" id="name" name="name" required placeholder="Informe o seu nome.">
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <div class="control-group form-group" ng-class="{ 'has-error': contactform.inputPhone.$invalid && submitted }">
+                    <div class="controls">
+                        <label>Telefone:</label>
+                        <input type="tel" class="form-control" ng-model="formData.inputPhone" id="phone" name="phone" required placeholder="Informe o seu telefone." ui-br-phone-number>
+                    </div>
+                </div>
+                <div class="control-group form-group" ng-class="{ 'has-error': contactform.inputEmail.$invalid && submitted }">
+                    <div class="controls">
+                        <label>E-mail:</label>
+                        <input type="email" class="form-control" ng-model="formData.inputEmail" id="email" name="email" required placeholder="Informe o seu e-mail.">
+                    </div>
+                </div>
+                <div class="control-group form-group" ng-class="{ 'has-error': contactform.inputMessage.$invalid && submitted }">
+                    <div class="controls">
+                        <label>Mensagem:</label>
+                        <div ng-cloak ng-show="isReady">
+                           <textarea ckeditor="editorOptions" name="editor" class="form-control" ng-model="formData.inputMessage" placeholder="Deixe a sua mensagem que entraremos em contato." required></textarea>
+                       </div>
+                    </div>
+                </div>
+                <div id="success"></div>
+                <!-- For success/fail messages -->
+                <button type="submit" class="btn btn-primary btn-lg" ng-disabled="submitButtonDisabled">Enviar</button>
+            </form>
+
+        </div>
+
+    </div>
     <hr>
 
     <!-- Footer -->

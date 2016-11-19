@@ -111,9 +111,9 @@
 <!-- Wrapper for slides -->
 <div class="carousel-inner">
     <div class="item" ng-repeat="banner in active_banners track by banner.id" ng-class="{active: $index == 0}">
-        <div class="fill" style="background-image:url('{{::banner.resource_path}}');"></div>
+        <div class="fill img-responsive" style="background-image:url('{{::banner.resource_path}}');"></div>
         <div class="carousel-caption">
-            <h2>{{::banner.descricao}}</h2>
+            <h2 class="text-md-center">{{::banner.descricao}}</h2>
         </div>
     </div>
 </div>
@@ -132,35 +132,35 @@
 
     <!-- Marketing Icons Section -->
     <div class="row">
-        <div class="col-lg-12 text-right" style="padding-top: 20px;">
+        <div class="col-lg-12 col-xs-12 text-right social-bar" style="padding-top: 20px;margin-top:20px">
             <a href="{{::rss_link}}" title="Assine nossos feeds e receba as novidades por e-mail." class="social-link" target="_blank">
                 <div class="social rss">
-                    <i class="fa fa-rss fa-5x"></i>
+                    <i class="fa fa-rss fa-5x img-responsive"></i>
                 </div>
             </a>
             <a href="{{::google_plus_link}}" title="Visite nossa página no Google +." class="social-link" target="_blank">
                 <div class="social google-pluse">
-                    <i class="fa fa-google-plus fa-5x"></i>
+                    <i class="fa fa-google-plus fa-5x img-responsive"></i>
                 </div>
             </a>
             <a href="{{::facebook_link}}" title="Visite nossa página no Facebook." class="social-link" target="_blank">
                 <div class="social facebook">
-                    <i class="fa fa-facebook fa-5x"></i>
+                    <i class="fa fa-facebook fa-5x img-responsive"></i>
                 </div>
             </a>
             <a href="{{::twitter_link}}" title="Siga-nos no Twitter." class="social-link" target="_blank">
                 <div class="social twitter">
-                    <i class="fa fa-twitter fa-5x"></i>
+                    <i class="fa fa-twitter fa-5x img-responsive"></i>
                 </div>
             </a>
             <a href="{{::youtube_link}}" title="Visite nosso canal no Youtube." class="social-link" target="_blank">
                 <div class="social youtube">
-                    <i class="fa fa-youtube fa-5x"></i>
+                    <i class="fa fa-youtube fa-5x img-responsive"></i>
                 </div>
             </a>
         </div>
-        <div class="col-lg-12 text-center">
-            <img src="img/logo.png" style="margin-top: 30px;margin-bottom:20px;" />
+        <div class="col-lg-12 text-center" style="margin-top: 20px;margin-bottom:10px">
+            <img src="img/logo.png" class="img-responsive" style="margin-top: 30px;margin-bottom:20px;margin:auto;" />
         </div>
         <div class="col-lg-12">
             <blockquote>"Imobiliária Florença atuando no ramo de locação e vendas de imóveis residenciais e comerciais em Canoas há mais de 30 anos”</blockquote>
@@ -198,10 +198,12 @@
                      ng-if="destaque.tipo_recurso == 'Foto' && ! destaque.uploaded" />
             </a>
             <div class="video_painel" ng-if="destaque.tipo_recurso == 'Video'">
-                <div ng-bind-html="destaque.resource_path | escapeHtml" ng-show="!destaque.uploaded"></div>
-                <video controls width="65%" height="60%" ng-show="destaque.uploaded">
-                    <source src="{{::destaque.resource_path}}"  type="video/mp4; codecs='avc1.42E01E, mp4a.40.2'"
-                </video>
+                <div ng-bind-html="destaque.resource_path | escapeHtml" ng-show="!destaque.uploaded" class="embed-responsive embed-reponsive-16by9 video-container" ></div>
+                <div class="embed-responsive embed-reponsive-16by9" ng-show="destaque.uploaded">
+                    <video controls width="65%" height="60%" ng-show="destaque.uploaded" class="embed-responsive-item">
+                        <source src="{{::destaque.resource_path}}"  type="video/mp4; codecs='avc1.42E01E, mp4a.40.2'"
+                    </video>
+                </div>
             </div>
         </div>
     </div>

@@ -39,9 +39,7 @@ angular.module("appSite").controller("imoveisCtrl", ["$scope",
     $scope.imoveis_filtrados;
 
     $scope.submit = function(searchForm) {
-
         $scope.submitted = true;
-
         if ($scope.formData) {
             var filtros = "";
             for (var obj in $scope.formData) {
@@ -61,7 +59,6 @@ angular.module("appSite").controller("imoveisCtrl", ["$scope",
             }
             $scope.filtros_aplicados = filtros
         }
-
         if (searchForm.$valid && $scope.formData) {
             $scope.imoveis_filtrados = imovelVendaAPI.getImoveisSearch("?tipo=" + $scope.tipoImovel + "&" + $.param($scope.formData));
             $scope.imoveis_filtrados.success(function(data) {
@@ -72,11 +69,9 @@ angular.module("appSite").controller("imoveisCtrl", ["$scope",
             });
         }
     }
-
     $scope.reset = function() {
         $scope.formData = {};
         $scope.filtros_aplicados = null;
         $scope.searchForm.$setPristine();
     };
-
 }]);

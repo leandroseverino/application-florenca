@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">
-                    Detalhamento: Tipo: {{::imovel.tipo_imovel_nome}} <small>Código: {{::imovel.codigo}}</small>
+                    Código: {{::imovel.codigo}}
                 </h1>
                 <ol class="breadcrumb">
                     <li><i class="fa fa-home fa-1x"></i> <a href="#/home" title="Página inicial do site.">Inicio</a></li>
@@ -43,14 +43,19 @@
                                  ng-if="recurso.tipo_recurso == 'Foto' && ! recurso.uploaded" />
                             <div ng-bind-html="recurso.resource_path | escapeHtml"
                                  ng-show="!recurso.uploaded"
-                                 ng-if="recurso.tipo_recurso == 'Video'"></div>
-                            <video controls width="100%"
-                                   height="100%"
+                                 ng-if="recurso.tipo_recurso == 'Video'"
+                                 class="embed-responsive embed-reponsive-16by9 video-container"></div>
+                            <div class="embed-responsive embed-reponsive-16by9 video-container"
+                                 ng-show="recurso.uploaded"
+                                 ng-if="recurso.tipo_recurso == 'Video'">
+                            <video controls
                                    ng-show="recurso.uploaded"
-                                   ng-if="recurso.tipo_recurso == 'Video'">
+                                   ng-if="recurso.tipo_recurso == 'Video'"
+                                   class="embed-responsive-item">
                                 <source src="{{::recurso.resource_path}}"
                                         type="video/mp4; codecs='avc1.42E01E, mp4a.40.2'" />
                             </video>
+                            </div>
                             <div class="description_resource">{{::recurso.descricao}}</div>
                         </div>
                     </div>
@@ -120,6 +125,14 @@
             </div>
         </div>
         <!-- /.row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="page-header">
+                    <i class="fa fa-search fa-1x"></i> Entre em contato:
+                </h3>
+            </div>
+        </div>
+
         <!-- Related Projects Row -->
         <div class="row">
             <div class="col-lg-12">
