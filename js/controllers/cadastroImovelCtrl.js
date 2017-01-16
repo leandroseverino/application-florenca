@@ -28,7 +28,7 @@ angular.module("appSite").controller("cadastroImovelCtrl", ["$scope", "$http", "
                     $scope.result='bg-success';
                     delete $scope.formData;
                     $scope.formData = {};
-                    $scope.empresaForm.$setPristine();
+                    $scope.cadastroImovelForm.$setPristine();
 			        $location.path("/cadastro-imovel");
                 } else {
                     $scope.submitButtonDisabled = false;
