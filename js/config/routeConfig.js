@@ -246,7 +246,8 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
         templateUrl: "view/como-alugar.html"
     });
     $routeProvider.when("/cadastro-imovel", {
-        templateUrl: "view/cadastro-imovel.html"
+        templateUrl: "view/cadastro-imovel.html",
+        controller: "cadastroImovelCtrl"
     });
     $routeProvider.when("/contato", {
         templateUrl: "view/contato.html",

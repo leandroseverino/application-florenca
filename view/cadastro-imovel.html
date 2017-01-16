@@ -18,57 +18,249 @@
     <!-- Content Row -->
     <div class="row">
         <div class="col-lg-12">
-            <p class="default">Se você deseja vender ou comprar um imóvel, assessoramos você neste processo, desde o momento da assinatura da autorização até a conclusão da venda. Para você cliente, disponibilizamos toda assessoria necessária para suas transações.</p>
+            <p class="default">Obrigada por escolher a Imobiliária Florença! Para agilizar seu atendimento disponibilizamos o formulário abaixo. Basta preencher as principais informações que em breve nossa equipe entrará em contato.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <p class="default">Preencha os campos com asterisco para que possamos dar continuidade no seu atendimento.</p>
         </div>
     </div>
     <!-- /.row -->
 
-    <div class="row" ng-controller="contatoCtrl">
+    <div class="row" ng-controller="cadastroImovelCtrl">
         <div class="col-md-8">
-            <h3><i class="fa fa-envelope-o"></i> Deixe sua mensagem</h3>
-            <p>Deixe aqui a sua mensagem que com certeza entraremos em contato com você.</p>
-            </br>
             <p ng-class="result" style="padding: 15px; margin: 0; margin-bottom: 10px;">{{ resultMessage }}</p>
-            <form name="contactForm" id="contactForm" ng-submit="submit(contactForm)" accept-charset="UTF-8" method="post" role="form">
-                <div class="control-group form-group" ng-class="{ 'has-error': contactform.inputName.$invalid && submitted }">
+            <form name="cadastroImovelForm" id="cadastroImovelForm" ng-submit="submit(cadastroImovelForm)" accept-charset="UTF-8" method="post" role="form" novalidate>
+                <fieldset><legend>Dados Gerais</legend>
+                <div class="control-group form-group" ng-class="{ 'has-error': cadastroImovelForm.inputName.$invalid && submitted }">
                     <div class="controls">
-                        <label>Nome Completo:</label>
-                        <input type="text" class="form-control" ng-model="formData.inputName" id="name" name="name" required placeholder="Informe o seu nome.">
+                        <label>Nome Completo*:</label>
+                        <input type="text" class="form-control" ng-model="formData.inputName" id="nomeCompleto" name="nomeCompleto" required placeholder="Informe o seu nome.">
+                        <div ng-if="(cadastroImovelForm.nomeCompleto.$touched || cadastroImovelForm.$submitted) && cadastroImovelForm.nomeCompleto.$invalid" class="has-error">
+                            <p class="help-block" ng-if="cadastroImovelForm.nomeCompleto.$error.required">Por favor, informe o seu Nome Completo.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="control-group form-group" ng-class="{ 'has-error': cadastroImovelForm.inputPhone.$invalid && submitted }">
+                    <div class="controls">
+                        <label>Telefone*:</label>
+                        <input type="tel" class="form-control" ng-model="formData.inputPhone" id="phone" name="phone" required placeholder="Informe o seu telefone." ui-br-phone-number>
+                        <div ng-if="(cadastroImovelForm.phone.$touched || cadastroImovelForm.$submitted) && cadastroImovelForm.phone.$invalid" class="has-error">
+                            <p class="help-block" ng-if="cadastroImovelForm.phone.$error.required">Por favor, informe o seu Telefone.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="control-group form-group" ng-class="{ 'has-error': cadastroImovelForm.inputEmail.$invalid && submitted }">
+                    <div class="controls">
+                        <label>E-mail*:</label>
+                        <input type="email" class="form-control" ng-model="formData.inputEmail" id="email" name="email" required placeholder="Informe o seu e-mail.">
+                        <div ng-if="(cadastroImovelForm.email.$touched || cadastroImovelForm.$submitted) && cadastroImovelForm.email.$invalid" class="has-error">
+                            <p class="help-block" ng-if="cadastroImovelForm.email.$error.required">Por favor, informe o seu E-mail.</p>
+                        </div>
+                    </div>
+                </div>
+                </fieldset>
+                <fieldset><legend>Dados do Imóvel</legend>
+                <div class="control-group form-group" ng-class="{ 'has-error': cadastroImovelForm.inputFinalidade.$invalid && submitted }">
+                    <div class="controls">
+                        <label>Finalidade do imóvel*:</label>
+                        <select name="finalidade" id="finalidade" class="form-control" ng-model="formData.inputFinalidade" required>
+                            <option value="">Selecione</option>
+                            <option value="Comercial">Comercial</option>
+                            <option value="Residencial">Residencial</option>
+                        </select>
+                        <div ng-if="(cadastroImovelForm.finalidade.$touched || cadastroImovelForm.$submitted) && cadastroImovelForm.finalidade.$invalid" class="has-error">
+                            <p class="help-block" ng-if="cadastroImovelForm.finalidade.$error.required">Por favor, informe a utilização do imóvel.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="control-group form-group" ng-class="{ 'has-error': cadastroImovelForm.inputImovelPara.$invalid && submitted }">
+                    <div class="controls">
+                        <label>Imóvel para*:</label>
+                        <select name="imovelPara" id="imovelPara" class="form-control" ng-model="formData.inputImovelPara" required>
+                            <option value="">Selecione</option>
+                            <option value="Venda">Venda</option>
+                            <option value="Locação">Locação</option>
+                            <option value="Venda e Locação">Venda e Locação</option>
+                        </select>
+                        <div ng-if="(cadastroImovelForm.imovelPara.$touched || cadastroImovelForm.$submitted) && cadastroImovelForm.imovelPara.$invalid" class="has-error">
+                            <p class="help-block" ng-if="cadastroImovelForm.imovelPara.$error.required">Por favor, informe a finalidade do imóvel.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="control-group form-group" ng-class="{ 'has-error': cadastroImovelForm.inputTipo.$invalid && submitted }">
+                    <div class="controls">
+                        <label>Tipo de imóvel*:</label>
+                        <select name="tipo" id="tipo" class="form-control" ng-model="formData.inputTipo" required>
+                            <option value="">Selecione</option>
+                            <option value="Casa">Casa</option>
+                            <option value="Apartamento">Apartamento</option>
+                            <option value="Cobertura">Cobertura</option>
+                            <option value="Box">Box</option>
+                            <option value="Loja">Loja</option>
+                            <option value="Pavilhão">Pavilhão</option>
+                            <option value="Prédio">Prédio</option>
+                            <option value="Sala/Conjunto">Sala/Conjunto</option>
+                            <option value="Terreno">Terreno</option>
+                            <option value="Área">Área</option>
+                            <option value="Outros">Outros</option>
+                        </select>
+                        <div ng-if="(cadastroImovelForm.tipo.$touched || cadastroImovelForm.$submitted) && cadastroImovelForm.tipo.$invalid" class="has-error">
+                            <p class="help-block" ng-if="cadastroImovelForm.tipo.$error.required">Por favor, informe o Tipo de imóvel.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="control-group form-group" ng-class="{ 'has-error': cadastroImovelForm.inputEndereco.$invalid && submitted }">
+                    <div class="controls">
+                        <label>Endereço Completo*:</label>
+                        <input type="text" class="form-control" ng-model="formData.inputEndereco" id="endereco" name="endereco" required placeholder="Informe o endereço completo do imóvel.">
                         <p class="help-block"></p>
                     </div>
                 </div>
-                <div class="control-group form-group" ng-class="{ 'has-error': contactform.inputPhone.$invalid && submitted }">
+                <div class="control-group form-group" ng-class="{ 'has-error': cadastroImovelForm.inputAreaTotal.$invalid && submitted }">
                     <div class="controls">
-                        <label>Telefone:</label>
-                        <input type="tel" class="form-control" ng-model="formData.inputPhone" id="phone" name="phone" required placeholder="Informe o seu telefone." ui-br-phone-number>
+                        <label>Área Total (M²):</label>
+                        <input type="number" class="form-control" ng-model="formData.inputAreaTotal" id="area_total" name="area_total" placeholder="Informe a Área Total em M² do imóvel.">
+                        <p class="help-block"></p>
                     </div>
                 </div>
-                <div class="control-group form-group" ng-class="{ 'has-error': contactform.inputEmail.$invalid && submitted }">
+                <div class="control-group form-group" ng-class="{ 'has-error': cadastroImovelForm.inputAreaPrivativa.$invalid && submitted }">
                     <div class="controls">
-                        <label>E-mail:</label>
-                        <input type="email" class="form-control" ng-model="formData.inputEmail" id="email" name="email" required placeholder="Informe o seu e-mail.">
+                        <label>Área Privativa (M²):</label>
+                        <input type="number" class="form-control" ng-model="formData.inputAreaPrivativa" id="area_privativa" name="area_privativa" placeholder="Informe a Área Privativa em M² do imóvel.">
+                        <p class="help-block"></p>
                     </div>
                 </div>
-                <div class="control-group form-group" ng-class="{ 'has-error': contactform.inputMessage.$invalid && submitted }">
+                <div class="control-group form-group" ng-class="{ 'has-error': cadastroImovelForm.inputAreaConstruida.$invalid && submitted }">
                     <div class="controls">
-                        <label>Mensagem:</label>
+                        <label>Área Construída (M²):</label>
+                        <input type="number" class="form-control" ng-model="formData.inputAreaConstruida" id="area_construida" name="area_construida" placeholder="Informe a Área Construiída em M² do imóvel.">
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <div class="control-group form-group" ng-class="{ 'has-error': cadastroImovelForm.inputNumeroDormitorios.$invalid && submitted }">
+                    <div class="controls">
+                        <label>Número de Dormitórios:<span class="text-danger" ng-if="cadastroImovelForm.numeroDormitorios.$error.required || cadastroImovelForm.numeroDormitorios.$invalid"> (requerido)</span></label>
+                        <select name="numeroDormitorios" id="numeroDormitorios" class="form-control" ng-model="formData.inputNumeroDormitorios">
+                            <option value="">Selecione</option>
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                            <option value="06">06</option>
+                            <option value="07">07</option>
+                            <option value="08">08</option>
+                            <option value="09">09</option>
+                            <option value="10">10</option>
+                            <option value="Mais de 10">Mais de 10</option>
+                        </select>
+                        <div ng-if="(cadastroImovelForm.numeroDormitorios.$touched || cadastroImovelForm.$submitted) && cadastroImovelForm.numeroDormitorios.$invalid" class="has-error">
+                            <p class="help-block" ng-if="cadastroImovelForm.numeroDormitorios.$error.required">Por favor, informe o Número de Dormitórios.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="control-group form-group" ng-class="{ 'has-error': cadastroImovelForm.inputVagasDeGaragem.$invalid && submitted }">
+                    <div class="controls">
+                        <label>Vagas de Garagem:<span class="text-danger" ng-if="cadastroImovelForm.vagasDeGaragem.$error.required || cadastroImovelForm.vagasDeGaragem.$invalid"> (requerido)</span></label>
+                        <select name="vagasDeGaragem" id="vagasDeGaragem" class="form-control" ng-model="formData.inputVagasDeGaragem">
+                            <option value="">Selecione</option>
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                            <option value="06">06</option>
+                            <option value="07">07</option>
+                            <option value="08">08</option>
+                            <option value="09">09</option>
+                            <option value="10">10</option>
+                            <option value="Mais de 10">Mais de 10</option>
+                        </select>
+                        <div ng-if="(cadastroImovelForm.vagasDeGaragem.$touched || cadastroImovelForm.$submitted) && cadastroImovelForm.vagasDeGaragem.$invalid" class="has-error">
+                            <p class="help-block" ng-if="cadastroImovelForm.vagasDeGaragem.$error.required">Por favor, informe o Número de Vagas de Garagem.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="control-group form-group" ng-class="{ 'has-error': cadastroImovelForm.inputNumeroDeBanheiros.$invalid && submitted }">
+                    <div class="controls">
+                        <label>Número de Banheiros:<span class="text-danger" ng-if="cadastroImovelForm.numeroDeBanheiros.$error.required || cadastroImovelForm.numeroDeBanheiros.$invalid"> (requerido)</span></label>
+                        <select name="numeroDeBanheiros" id="numeroDeBanheiros" class="form-control" ng-model="formData.inputNumeroDeBanheiros">
+                            <option value="">Selecione</option>
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                            <option value="06">06</option>
+                            <option value="07">07</option>
+                            <option value="08">08</option>
+                            <option value="09">09</option>
+                            <option value="10">10</option>
+                            <option value="Mais de 10">Mais de 10</option>
+                        </select>
+                        <div ng-if="(cadastroImovelForm.numeroDeBanheiros.$touched || cadastroImovelForm.$submitted) && cadastroImovelForm.numeroDeBanheiros.$invalid" class="has-error">
+                            <p class="help-block" ng-if="cadastroImovelForm.numeroDeBanheiros.$error.required">Por favor, informe o Número de Banheiros.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="control-group form-group" ng-class="{ 'has-error': cadastroImovelForm.inputValorVenda.$invalid && submitted }">
+                    <div class="controls">
+                        <label>Valor de Venda aproximando em R$:</label>
+                        <input type="text" class="form-control" ng-model="formData.inputValorVenda" id="valorVenda" name="valorVenda" placeholder="Informe o Valor de Venda aproximando em R$ do imóvel.">
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <div class="control-group form-group" ng-class="{ 'has-error': cadastroImovelForm.inputValorLocacao.$invalid && submitted }">
+                    <div class="controls">
+                        <label>Valor de Locação aproximando em R$:</label>
+                        <input type="text" class="form-control" ng-model="formData.inputValorLocacao" id="valorLocacao" name="valorLocacao" placeholder="Informe o Valor de Locação aproximando em R$ do imóvel.">
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <div class="control-group form-group" ng-class="{ 'has-error': cadastroImovelForm.inputSituacao.$invalid && submitted }">
+                    <div class="controls">
+                        <label>Situação:<span class="text-danger" ng-if="cadastroImovelForm.situacao.$error.required || cadastroImovelForm.situacao.$invalid"> (requerido)</span></label>
+                        <select name="situacao" id="situacao" class="form-control" ng-model="formData.inputSituacao">
+                            <option value="">Selecione</option>
+                            <option value="Pronto">Pronto</option>
+                            <option value="Em Construção">Em Construção</option>
+                        </select>
+                        <div ng-if="(cadastroImovelForm.situacao.$touched || cadastroImovelForm.$submitted) && cadastroImovelForm.situacao.$invalid" class="has-error">
+                            <p class="help-block" ng-if="cadastroImovelForm.situacao.$error.required">Por favor, informe a situção do imóvel.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="control-group form-group" ng-class="{ 'has-error': cadastroImovelForm.inputMessage.$invalid && submitted }">
+                    <div class="controls">
+                        <label>Observações:</label>
                         <div ng-cloak ng-show="isReady">
-                           <textarea ckeditor="editorOptions" name="editor" class="form-control" ng-model="formData.inputMessage" placeholder="Deixe a sua mensagem que entraremos em contato." required></textarea>
+                           <textarea ckeditor="editorOptions" name="editor" class="form-control" ng-model="formData.inputMessage" placeholder="Deixe aqui alguma observação que julgar necessária."></textarea>
                        </div>
                     </div>
                 </div>
+                </fieldset>
+                <fieldset><legend>Informativo</legend>
+                <div class="control-group form-group" ng-class="{ 'has-error': cadastroImovelForm.inputSituacao.$invalid && submitted }">
+                    <div class="controls">
+                        <label>Receber Informações por E-mail da Florença Negócios Imobiliários:</label>
+                        <select name="informacoes" id="informacoes" class="form-control" ng-model="formData.inputInformacoes">
+                            <option value="">Selecione</option>
+                            <option value="Sim">Sim</option>
+                            <option value="Não">Não</option>
+                        </select>
+                    </div>
+                </div>
+                </fieldset>
                 <div id="success"></div>
                 <!-- For success/fail messages -->
-                <button type="submit" class="btn btn-primary btn-lg" ng-disabled="submitButtonDisabled">Enviar</button>
+                <button type="submit" class="btn btn-primary btn-lg" ng-disabled="submitButtonDisabled || cadastroImovelForm.$invalid">Enviar</button>
             </form>
-
         </div>
-
     </div>
     <hr>
-
     <!-- Footer -->
     <footer ng-include="'view/footer.html'"></footer>
-
 </div>
 <!-- /.container -->
