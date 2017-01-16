@@ -122,6 +122,7 @@
                     <li>Encargos: <strong><span ng-bind-html="imovel.encargos | escapeHtml"></span></strong></li>
                     <li>IPTU: <strong><span ng-if="imovel.iptu == 'S'">Sim</span><span ng-if="imovel.iptu == 'N'">Não</span></strong></li>
                 </ul>
+                <p class="info_destaque"> * Valores de Condomínio e IPTU são valores aproximados.</p> 
                 <button type="button" class="btn btn-danger btn-xs" ng-if="imovel.disponivel == 'R'">Reservado</button>
             </div>
         </div>

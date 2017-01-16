@@ -292,3 +292,4 @@ div.description_resource {
     margin-top:10px;
     background-color: #fff;
 }
+p.info_destaque { font-size: 12px; font-weight: bold; color: red; }
