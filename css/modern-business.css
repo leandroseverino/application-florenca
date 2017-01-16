@@ -13,6 +13,7 @@ body {
 
 body {
     padding-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    background-color: #333;
 }
 
 img {
@@ -113,7 +114,8 @@ p.default {
 
 
 #main {
-    height: 99%;
+    height: 100%;
+    min-height: 100%;
 }
 
 /* Home Page Carousel */
@@ -292,4 +294,12 @@ div.description_resource {
     margin-top:10px;
     background-color: #fff;
 }
-p.info_destaque { font-size: 12px; font-weight: bold; color: red; }
+p.info_destaque {
+    font-size: 12px;
+    font-weight: bold; color: red;
+}
+
+#main div.container {
+    background-color: white !important;
+    width: 80%;
+}
