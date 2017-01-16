@@ -253,6 +253,9 @@ select.money_filter_field {
 }
 
 div.results_search {
+    margin: 0px auto;
+    width: 98%;
+    background-color: #f2f3ff;
     margin-top: 20px;
     margin-bottom: 20px;
     border: 01px dotted #ccc;
@@ -302,4 +305,7 @@ p.info_destaque {
 #main div.container {
     background-color: white !important;
     width: 80%;
+}
+.font-small {
+    font-size: 13px !important;
 }

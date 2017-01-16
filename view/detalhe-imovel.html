@@ -78,7 +78,7 @@
                 <h4 style="color:navy;font-weight:bold;">
                     <i class="fa fa-barcode fa-1x"></i> Código: {{::imovel.codigo}}
                 </h4>
-                <div class="mail-box" style="text-align:right;">
+                <div class="mail-box font-small" style="text-align:right;">
                     <div class="content">
                         <div class="facebook-like">
                             <div class="fb-like fb_iframe_widget"
@@ -92,11 +92,11 @@
                     </div>
                 </div>
                 <p ng-bind-html="imovel.descricao | escapeHtml"
-                   class="imovel_detail"></p>
+                   class="imovel_detail font-small"></p>
                 <h5 style="font-weight:bold;">
                     <i class="fa fa-book fa-1x"></i> Características:
                 </h5>
-                <ul class="imovel_detail">
+                <ul class="imovel_detail font-small">
                     <li>Tipo: <strong>{{::imovel.tipo_imovel_nome}}</strong></li>
                     <li>Disponível: <strong><span ng-if="imovel.disponivel == 'S'">Sim</span><span ng-if="imovel.disponivel == 'N'">Não</span></strong></li>
                     <li>Destaque: <strong><span ng-if="imovel.destaque == 'S'">Sim</span><span ng-if="imovel.destaque == 'N'">Não</span></strong></li>
@@ -108,14 +108,14 @@
                 <h5 class="imovel_detail">
                     <i class="fa fa-map-marker fa-1x"></i> Localização:
                 </h5>
-                <ul class="imovel_detail">
+                <ul class="imovel_detail font-small">
                     <li>Localização: {{::imovel.uf}} - Cidade: {{::imovel.cidade}} - Bairro: {{::imovel.bairro}}.</li>
                     <li>Ponto de referência: {{::imovel.ponto_referencia}}</li>
                 </ul>
-                <h5 class="imovel_detail_green">
+                <h5 class="imovel_detail_green font-small">
                     <i class="fa fa-money fa-1x"></i> Valores:
                 </h5>
-                <ul class="imovel_detail">
+                <ul class="imovel_detail font-small">
                     <li>Valor Locação: <strong>{{::imovel.valor|currency:"R$ ":2}}</strong></li>
                     <li>Valor Venda: <strong>{{::imovel.valor_venda|currency:"R$ ":2}}</strong></li>
                     <li>Condomínio: <strong>{{::imovel.valor_condominio|currency:"R$ ":2}}</strong></li>
