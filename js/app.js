@@ -1,1 +1,3 @@
-angular.module("appSite", ["ngMessages", "ngRoute", "ngCkeditor", "ui.utils.masks", "ngFileUpload"]);
+angular.module("appSite", ["ngMessages", "ngRoute", "ngCkeditor", "ui.utils.masks", "ngFileUpload", "angulike"]);
+
+

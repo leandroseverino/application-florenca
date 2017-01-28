@@ -10,6 +10,12 @@ angular.module("appSite").controller("detalhesImovelCtrl", ["$scope",
     $scope.imovel = imovel.data;
     $scope.root_url;
 
+    $scope.myModel = {
+              Url: 'http://www.imobiliariaflorenca.com.br/#/detalhe-imovel/' + $scope.imovel.slug,
+              Name: "Detalhes do imóvel: " + $scope.imovel.codigo, 
+              ImageUrl: 'http://www.imobiliariaflorenca.com.br/website/media/imovel_recurso/img_default.png'
+    };
+
     var _data = loaded_parameters.data;
     $scope.extract_root_url = function(_data) {
         for (var i = 0; i < loaded_parameters.data.length; i++) {
