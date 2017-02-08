@@ -20,7 +20,13 @@
             <h4>Filtro de Pesquisa:</h4>
         </div>
         <div class="col-md-12">
-            <form name="searchForm" id="searchForm" ng-submit="submit(searchForm)" accept-charset="UTF-8" class="form-inline" method="post" role="form">
+            <form name="searchForm"
+                  id="searchForm"
+                  ng-submit="submit(searchForm)"
+                  accept-charset="UTF-8"
+                  class="form-inline"
+                  method="post"
+                  role="form">
                 <div class="table-responsive">
                     <table border="0" cellspacing="0" cellpadding="0" class="table">
                         <tbody>
@@ -186,6 +192,7 @@
                 <i class="fa fa-barcode fa-1x"></i> Código: {{::item.imovel.codigo}}
             </h4>
             <p ng-bind-html="item.imovel.descricao | escapeHtml" class="result_description"></p>
+            <p class="result_description" ng-if="item.imovel.finalidade_venda == 'S' && item.imovel.valor_venda">Valor Venda: <span style="color:red"><strong>{{::item.imovel.valor_venda|currency:"R$ ":2}}</strong></span></p>
             <button type="button" class="btn btn-danger btn-md" ng-if="item.imovel.disponivel == 'R'">Reservado</button>
             <a class="btn btn-primary pull-right" href="/#detalhe-imovel/{{::item.imovel.slug}}" title="Veja os detalhes do imóvel:">Ver detalhes</i></a>
         </div>
