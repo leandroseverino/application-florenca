@@ -202,7 +202,7 @@
                 <div ng-bind-html="destaque.resource_path | escapeHtml" ng-show="!destaque.uploaded" class="embed-responsive embed-reponsive-16by9 video-container" ></div>
                 <div class="embed-responsive embed-reponsive-16by9" ng-show="destaque.uploaded">
                     <video controls width="65%" height="60%" ng-show="destaque.uploaded" class="embed-responsive-item">
-                        <source src="{{::destaque.resource_path}}"  type="video/mp4; codecs='avc1.42E01E, mp4a.40.2'"
+                        <source src="{{::destaque.resource_path}}"  type="video/mp4; codecs='avc1.42E01E, mp4a.40.2'" />
                     </video>
                 </div>
             </div>

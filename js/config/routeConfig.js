@@ -58,6 +58,24 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
             }]
         }
     });
+    $routeProvider.when("/box-para-venda", {
+        templateUrl: "view/lista.html",
+        controller: "imoveisCtrl",
+        resolve: {
+            loaded_parameters: ["parametroAPI", function (parametroAPI) {
+                return parametroAPI.getParametros();
+            }],
+            finalidade: ["parametroAPI", function (parametroAPI) {
+                return "Vendas";
+            }],
+            tipo: ["parametroAPI", function (parametroAPI) {
+                return "Box";
+            }],
+            imoveis: ["imovelVendaAPI", function(imovelVendaAPI) {
+                return imovelVendaAPI.getImoveis('box');
+            }]
+        }
+    });
     $routeProvider.when("/terrenos-para-venda", {
         templateUrl: "view/lista.html",
         controller: "imoveisCtrl",
@@ -164,6 +182,24 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
             }],
             imoveis: ["imovelLocacaoAPI", function(imovelLocacaoAPI) {
                 return imovelLocacaoAPI.getImoveis('apartamento');
+            }]
+        }
+    });
+    $routeProvider.when("/box-para-locacao", {
+        templateUrl: "view/lista.html",
+        controller: "imoveisCtrl",
+        resolve: {
+            loaded_parameters: ["parametroAPI", function (parametroAPI) {
+                return parametroAPI.getParametros();
+            }],
+            finalidade: ["parametroAPI", function (parametroAPI) {
+                return "Locações";
+            }],
+            tipo: ["parametroAPI", function (parametroAPI) {
+                return "Box";
+            }],
+            imoveis: ["imovelLocacaoAPI", function(imovelLocacaoAPI) {
+                return imovelLocacaoAPI.getImoveis('box');
             }]
         }
     });
