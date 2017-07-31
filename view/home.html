@@ -161,7 +161,7 @@
         </div>
         <div class="col-lg-12 text-center" style="margin-top: 20px;margin-bottom:10px">
             <img src="img/logo.png" class="img-responsive" style="margin-top: 30px;margin-bottom:20px;margin:auto;" />
-            <p style="font-size: 20px; margin-top: 5px; color: #666;font-weight: bold;">Cresci - RS: 22003</p>
+            <p style="font-size: 20px; margin-top: 5px; color: #666;font-weight: bold;">Creci/RS: 22003</p>
         </div>
         <div class="col-lg-12 text-center">
             <blockquote>"Imobiliária Florença atuando no ramo de locação e vendas de imóveis residenciais e comerciais em Canoas há mais de 30 anos”</blockquote>
@@ -184,7 +184,7 @@
         </div>
 
         <div class="col-md-4 col-sm-6" ng-repeat="destaque in destaques track by destaque.imovel.id">
-            <a href="#/detalhe-imovel/{{::destaque.imovel.slug}}" title="Cod.: {{::destaque.imovel.codigo}}" ng-if="destaque.tipo_recurso == 'Foto'">
+            <a href="/detalhe-imovel/{{::destaque.imovel.slug}}" title="Cod.: {{::destaque.imovel.codigo}}" ng-if="destaque.tipo_recurso == 'Foto'">
                 <img class="img-responsive img-portfolio img-hover"
                      style="width: 360px; height: 231px;"
                      ng-src="{{root_url}}/media/{{::destaque.resource_path}}"

@@ -1,20 +1,28 @@
-angular.module("appSite").controller("imoveisCtrl", ["$scope",
-                                                     "imovelVendaAPI",
+ angular.module("appSite").controller("imoveisCtrl", ["$scope",
+                                                     "serviceAPI",
                                                      "finalidade",
+                                                     "tipo_descricao",
+                                                     "operacao",
                                                      "tipo",
-                                                     "imoveis",
                                                      "loaded_parameters", function ($scope,
-                                                                                    imovelVendaAPI,
+                                                                                    serviceAPI,
                                                                                     finalidade,
+                                                                                    tipo_descricao,
+                                                                                    operacao,
                                                                                     tipo,
-                                                                                    imoveis,
                                                                                     loaded_parameters) {
     $scope.finalidadeImovel = finalidade;
 
     $scope.finalidadeImovelDesc = finalidade == 'Vendas' ? 'venda' : 'locação';
 
-    $scope.tipoImovel = tipo;
-    $scope.imoveis = imoveis.data;
+    $scope.tipoImovel = tipo_descricao;
+    serviceAPI.getImoveis(operacao, tipo).success(function(data) {
+        $scope.imoveis = data;
+    }).error(function(err) {
+        $scope.imoveis = [];
+    });
+
+    $scope.imoveis = serviceAPI.getImoveis(operacao, tipo);
 
     $scope.total_itens = $scope.imoveis.length;
 
@@ -60,7 +68,12 @@ angular.module("appSite").controller("imoveisCtrl", ["$scope",
             $scope.filtros_aplicados = filtros
         }
         if (searchForm.$valid && $scope.formData) {
-            $scope.imoveis_filtrados = imovelVendaAPI.getImoveisSearch("?tipo=" + $scope.tipoImovel + "&" + $.param($scope.formData));
+            if (finalidade == 'Vendas') {
+                 $scope.imoveis_filtrados = serviceAPI.getImoveisSearch(operacao, "?tipo=" + $scope.tipoImovel + "&" + $.param($scope.formData));
+            } else {
+                 $scope.imoveis_filtrados = serviceAPI.getImoveisSearch(operacao, "?tipo=" + $scope.tipoImovel + "&" + $.param($scope.formData));
+            }
+           
             $scope.imoveis_filtrados.success(function(data) {
                 $scope.imoveis = data;
                 $scope.total_itens = $scope.imoveis.length;

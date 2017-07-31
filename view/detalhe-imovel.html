@@ -7,7 +7,7 @@
                     Código: {{::imovel.codigo}}
                 </h1>
                 <ol class="breadcrumb">
-                    <li><i class="fa fa-home fa-1x"></i> <a href="#/home" title="Página inicial do site.">Inicio</a></li>
+                    <li><i class="fa fa-home fa-1x"></i> <a href="/home" title="Página inicial do site.">Inicio</a></li>
                     <li>Detalhes do Imóvel</li>
                     <li>{{::imovel.tipo_imovel_nome}}</li>
                     <li class="active">{{::imovel.codigo}}</li>
@@ -137,7 +137,7 @@
                 </h3>
             </div>
             <div class="col-sm-3 col-xs-6" ng-repeat="relacionado in imoveisRelacionados">
-                <a href="#/detalhe-imovel/{{::relacionado.imovel.slug}}"
+                <a href="/detalhe-imovel/{{::relacionado.imovel.slug}}"
                    title="Cod.: {{::relacionado.imovel.codigo}}"
                    ng-if="relacionado.tipo_recurso == 'Foto'">
                     <img class="img-responsive img-hover img-related"

@@ -1,4 +1,4 @@
-angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
+angular.module("appSite").config(["$routeProvider", "$locationProvider", function ($routeProvider, $locationProvider) {
     $routeProvider.when("/home", {
         templateUrl: "view/home.html",
         controller: "homeCtrl",
@@ -32,11 +32,17 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
             finalidade: ["parametroAPI", function (parametroAPI) {
                 return "Vendas";
             }],
-            tipo: ["parametroAPI", function (parametroAPI) {
+            tipo_descricao: ["parametroAPI", function (parametroAPI) {
                 return "Casas";
             }],
-            imoveis: ["imovelVendaAPI", function(imovelVendaAPI) {
-                return imovelVendaAPI.getImoveis('casa');
+            operacao: ["parametroAPI", function (parametroAPI) {
+                return "venda";
+            }],
+            tipo: ["parametroAPI", function (parametroAPI) {
+                return "casa";
+            }],
+            serviceAPI: ["imovelAPI", function(imovelAPI) {
+                return imovelAPI;
             }]
         }
     });
@@ -50,11 +56,17 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
             finalidade: ["parametroAPI", function (parametroAPI) {
                 return "Vendas";
             }],
-            tipo: ["parametroAPI", function (parametroAPI) {
+            tipo_descricao: ["parametroAPI", function (parametroAPI) {
                 return "Apartamentos";
             }],
-            imoveis: ["imovelVendaAPI", function(imovelVendaAPI) {
-                return imovelVendaAPI.getImoveis('apartamento');
+            operacao: ["parametroAPI", function (parametroAPI) {
+                return "venda";
+            }],
+            tipo: ["parametroAPI", function (parametroAPI) {
+                return "apartamento";
+            }],
+            serviceAPI: ["imovelAPI", function(imovelAPI) {
+                return imovelAPI;
             }]
         }
     });
@@ -68,11 +80,17 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
             finalidade: ["parametroAPI", function (parametroAPI) {
                 return "Vendas";
             }],
-            tipo: ["parametroAPI", function (parametroAPI) {
+            tipo_descricao: ["parametroAPI", function (parametroAPI) {
                 return "Box";
             }],
-            imoveis: ["imovelVendaAPI", function(imovelVendaAPI) {
-                return imovelVendaAPI.getImoveis('box');
+            operacao: ["parametroAPI", function (parametroAPI) {
+                return "venda";
+            }],
+            tipo: ["parametroAPI", function (parametroAPI) {
+                return "box";
+            }],
+            serviceAPI: ["imovelAPI", function(imovelAPI) {
+                return imovelAPI;
             }]
         }
     });
@@ -86,11 +104,17 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
             finalidade: ["parametroAPI", function (parametroAPI) {
                 return "Vendas";
             }],
-            tipo: ["parametroAPI", function (parametroAPI) {
+            tipo_descricao: ["parametroAPI", function (parametroAPI) {
                 return "Terrenos";
             }],
-            imoveis: ["imovelVendaAPI", function(imovelVendaAPI) {
-                return imovelVendaAPI.getImoveis('terreno');
+            operacao: ["parametroAPI", function (parametroAPI) {
+                return "venda";
+            }],
+            tipo: ["parametroAPI", function (parametroAPI) {
+                return "terreno";
+            }],
+            serviceAPI: ["imovelAPI", function(imovelAPI) {
+                return imovelAPI;
             }]
         }
     });
@@ -104,11 +128,17 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
             finalidade: ["parametroAPI", function (parametroAPI) {
                 return "Vendas";
             }],
-            tipo: ["parametroAPI", function (parametroAPI) {
+            tipo_descricao: ["parametroAPI", function (parametroAPI) {
                 return "Lojas";
             }],
-            imoveis: ["imovelVendaAPI", function(imovelVendaAPI) {
-                return imovelVendaAPI.getImoveis('loja');
+            operacao: ["parametroAPI", function (parametroAPI) {
+                return "venda";
+            }],
+            tipo: ["parametroAPI", function (parametroAPI) {
+                return "loja";
+            }],
+            serviceAPI: ["imovelAPI", function(imovelAPI) {
+                return imovelAPI;
             }]
         }
     });
@@ -122,11 +152,17 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
             finalidade: ["parametroAPI", function (parametroAPI) {
                 return "Vendas";
             }],
-            tipo: ["parametroAPI", function (parametroAPI) {
+            tipo_descricao: ["parametroAPI", function (parametroAPI) {
                 return "Pavilhoes";
             }],
-            imoveis: ["imovelVendaAPI", function(imovelVendaAPI) {
-                return imovelVendaAPI.getImoveis('pavilhao');
+            operacao: ["parametroAPI", function (parametroAPI) {
+                return "venda";
+            }],
+            tipo: ["parametroAPI", function (parametroAPI) {
+                return "pavilhao";
+            }],
+            serviceAPI: ["imovelAPI", function(imovelAPI) {
+                return imovelAPI;
             }]
         }
     });
@@ -140,11 +176,17 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
             finalidade: ["parametroAPI", function (parametroAPI) {
                 return "Vendas";
             }],
-            tipo: ["parametroAPI", function (parametroAPI) {
+            tipo_descricao: ["parametroAPI", function (parametroAPI) {
                 return "Salas Comerciais";
             }],
-            imoveis: ["imovelVendaAPI", function(imovelVendaAPI) {
-                return imovelVendaAPI.getImoveis('sala-comercial');
+            operacao: ["parametroAPI", function (parametroAPI) {
+                return "venda";
+            }],
+            tipo: ["parametroAPI", function (parametroAPI) {
+                return "sala-comercial";
+            }],
+            serviceAPI: ["imovelAPI", function(imovelAPI) {
+                return imovelAPI;
             }]
         }
     });
@@ -159,11 +201,17 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
             finalidade: ["parametroAPI", function (parametroAPI) {
                 return "Locações";
             }],
-            tipo: ["parametroAPI", function (parametroAPI) {
+            tipo_descricao: ["parametroAPI", function (parametroAPI) {
                 return "Casas";
             }],
-            imoveis: ["imovelLocacaoAPI", function(imovelLocacaoAPI) {
-                return imovelLocacaoAPI.getImoveis('casa');
+            operacao: ["parametroAPI", function (parametroAPI) {
+                return "locacao";
+            }],
+            tipo: ["parametroAPI", function (parametroAPI) {
+                return "casa";
+            }],
+            serviceAPI: ["imovelAPI", function(imovelAPI) {
+                return imovelAPI;
             }]
         }
     });
@@ -177,11 +225,17 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
             finalidade: ["parametroAPI", function (parametroAPI) {
                 return "Locações";
             }],
-            tipo: ["parametroAPI", function (parametroAPI) {
+            tipo_descricao: ["parametroAPI", function (parametroAPI) {
                 return "Apartamentos";
             }],
-            imoveis: ["imovelLocacaoAPI", function(imovelLocacaoAPI) {
-                return imovelLocacaoAPI.getImoveis('apartamento');
+            operacao: ["parametroAPI", function (parametroAPI) {
+                return "locacao";
+            }],
+            tipo: ["parametroAPI", function (parametroAPI) {
+                return "apartamento";
+            }],
+            serviceAPI: ["imovelAPI", function(imovelAPI) {
+                return imovelAPI;
             }]
         }
     });
@@ -195,11 +249,17 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
             finalidade: ["parametroAPI", function (parametroAPI) {
                 return "Locações";
             }],
-            tipo: ["parametroAPI", function (parametroAPI) {
+            tipo_descricao: ["parametroAPI", function (parametroAPI) {
                 return "Box";
             }],
-            imoveis: ["imovelLocacaoAPI", function(imovelLocacaoAPI) {
-                return imovelLocacaoAPI.getImoveis('box');
+            operacao: ["parametroAPI", function (parametroAPI) {
+                return "locacao";
+            }],
+            tipo: ["parametroAPI", function (parametroAPI) {
+                return "box";
+            }],
+            serviceAPI: ["imovelAPI", function(imovelAPI) {
+                return imovelAPI;
             }]
         }
     });
@@ -213,11 +273,17 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
             finalidade: ["parametroAPI", function (parametroAPI) {
                 return "Locações";
             }],
-            tipo: ["parametroAPI", function (parametroAPI) {
+            tipo_descricao: ["parametroAPI", function (parametroAPI) {
                 return "Terrenos/Áreas";
             }],
-            imoveis: ["imovelLocacaoAPI", function(imovelLocacaoAPI) {
-                return imovelLocacaoAPI.getImoveis('terreno');
+            operacao: ["parametroAPI", function (parametroAPI) {
+                return "locacao";
+            }],
+            tipo: ["parametroAPI", function (parametroAPI) {
+                return "terreno";
+            }],
+            serviceAPI: ["imovelAPI", function(imovelAPI) {
+                return imovelAPI;
             }]
         }
     });
@@ -231,11 +297,17 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
             finalidade: ["parametroAPI", function (parametroAPI) {
                 return "Locações";
             }],
-            tipo: ["parametroAPI", function (parametroAPI) {
+            tipo_descricao: ["parametroAPI", function (parametroAPI) {
                 return "Salas Comerciais";
             }],
-            imoveis: ["imovelLocacaoAPI", function(imovelLocacaoAPI) {
-                return imovelLocacaoAPI.getImoveis('sala-comercial');
+            operacao: ["parametroAPI", function (parametroAPI) {
+                return "locacao";
+            }],
+            tipo: ["parametroAPI", function (parametroAPI) {
+                return "sala-comercial";
+            }],
+            serviceAPI: ["imovelAPI", function(imovelAPI) {
+                return imovelAPI;
             }]
         }
     });
@@ -249,11 +321,17 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
             finalidade: ["parametroAPI", function (parametroAPI) {
                 return "Locações";
             }],
-            tipo: ["parametroAPI", function (parametroAPI) {
+            tipo_descricao: ["parametroAPI", function (parametroAPI) {
                 return "Lojas";
             }],
-            imoveis: ["imovelLocacaoAPI", function(imovelLocacaoAPI) {
-                return imovelLocacaoAPI.getImoveis('loja');
+            operacao: ["parametroAPI", function (parametroAPI) {
+                return "locacao";
+            }],
+            tipo: ["parametroAPI", function (parametroAPI) {
+                return "loja";
+            }],
+            serviceAPI: ["imovelAPI", function(imovelAPI) {
+                return imovelAPI;
             }]
         }
     });
@@ -267,11 +345,17 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
             finalidade: ["parametroAPI", function (parametroAPI) {
                 return "Locações";
             }],
-            tipo: ["parametroAPI", function (parametroAPI) {
+            tipo_descricao: ["parametroAPI", function (parametroAPI) {
                 return "Pavilhões";
             }],
-            imoveis: ["imovelLocacaoAPI", function(imovelLocacaoAPI) {
-                return imovelLocacaoAPI.getImoveis('pavilhao');
+            operacao: ["parametroAPI", function (parametroAPI) {
+                return "locacao";
+            }],
+            tipo: ["parametroAPI", function (parametroAPI) {
+                return "pavilhao";
+            }],
+            serviceAPI: ["imovelAPI", function(imovelAPI) {
+                return imovelAPI;
             }]
         }
     });
@@ -306,4 +390,5 @@ angular.module("appSite").config(["$routeProvider", function ($routeProvider) {
         }
     });
     $routeProvider.otherwise({redirectTo: "/home"});
+    $locationProvider.html5Mode(true);
 }]);

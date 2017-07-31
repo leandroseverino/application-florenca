@@ -7,7 +7,7 @@
                 {{finalidadeImovel}} <small> - {{tipoImovel}} para {{finalidadeImovelDesc}}.</small>
             </h1>
             <ol class="breadcrumb">
-                <li><i class="fa fa-home fa-1x"></i><a href="#/home" title="Página Inicial do site da Imobiliária Florença."> Inicio</a></li>
+                <li><i class="fa fa-home fa-1x"></i><a href="/home" title="Página Inicial do site da Imobiliária Florença."> Inicio</a></li>
                 <li>{{finalidadeImovel}}</li>
                 <li class="active">{{tipoImovel}}</li>
             </ol>
@@ -174,7 +174,7 @@
     <!-- Project One -->
     <div class="row well results_search font-small" ng-repeat="item in imoveis" ng-if="imoveis">
         <div class="col-md-7">
-            <a href="/#/detalhe-imovel/{{::item.imovel.slug}}" title="Veja os detalhes do imóvel:">
+            <a href="/detalhe-imovel/{{::item.imovel.slug}}" title="Veja os detalhes do imóvel:">
                 <img class="img-responsive img-hover"
                      ng-src="{{root_url}}/media/{{::item.resource_path}}"
                      alt="Foto do Imóvel: Cod.: {{::item.imovel.codigo}}"
@@ -194,7 +194,7 @@
             <p ng-bind-html="item.imovel.descricao | escapeHtml" class="result_description"></p>
             <p class="result_description" ng-if="item.imovel.finalidade_venda == 'S' && item.imovel.valor_venda">Valor Venda: <span style="color:red"><strong>{{::item.imovel.valor_venda|currency:"R$ ":2}}</strong></span></p>
             <button type="button" class="btn btn-danger btn-md" ng-if="item.imovel.disponivel == 'R'">Reservado</button>
-            <a class="btn btn-primary pull-right" href="/#detalhe-imovel/{{::item.imovel.slug}}" title="Veja os detalhes do imóvel:">Ver detalhes</i></a>
+            <a class="btn btn-primary pull-right" href="/detalhe-imovel/{{::item.imovel.slug}}" title="Veja os detalhes do imóvel:">Ver detalhes</i></a>
         </div>
     </div>
     <hr>
