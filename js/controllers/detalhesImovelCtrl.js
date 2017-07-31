@@ -22,12 +22,8 @@ angular.module("appSite").controller("detalhesImovelCtrl", ["$scope",
             }            
         }
     }
-    foto_destaque = $scope.obtem_foto_destaque();
-    $scope.myModel = {
-              Url: 'http://www.imobiliariaflorenca.com.br/#/detalhe-imovel/' + $scope.imovel.slug,
-              Name: "Detalhes do imóvel: " + $scope.imovel.codigo, 
-              ImageUrl: $scope.foto_destaque
-    };
+    $scope.foto_destaque= $scope.obtem_foto_destaque();
+    
 
     var _data = loaded_parameters.data;
     $scope.extract_root_url = function(_data) {
@@ -42,4 +38,10 @@ angular.module("appSite").controller("detalhesImovelCtrl", ["$scope",
 
     $scope.imoveisRelacionados = imoveisRelacionados.data;
 
+    $scope.myModel = {
+              Url: 'http://www.imobiliariaflorenca.com.br/#/detalhe-imovel/' + $scope.imovel.slug,
+              Name: "Detalhes do imóvel: " + $scope.imovel.codigo, 
+              ImageUrl: $scope.foto_destaque
+    };
+    
 }]);
