@@ -43,5 +43,5 @@ angular.module("appSite").controller("detalhesImovelCtrl", ["$scope",
               Name: "Detalhes do imóvel: " + $scope.imovel.codigo, 
               ImageUrl: $scope.foto_destaque
     };
-    
+        
 }]);
